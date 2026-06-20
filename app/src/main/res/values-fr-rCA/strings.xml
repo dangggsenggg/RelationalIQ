@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RelationalIQ</string>
+    <string name="app_tagline">Entraînez votre raisonnement relationnel</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Bienvenue sur RelationalIQ</string>
+    <string name="onboarding_welcome_subtitle">Entraînement cognitif fondé sur la théorie des cadres relationnels</string>
+    <string name="onboarding_science_title">La science derrière l\'entraînement SMART</string>
+    <string name="onboarding_science_subtitle">Renforcez votre raisonnement relationnel grâce à un entraînement progressif aux résultats prouvés</string>
+    <string name="onboarding_how_title">Comment ça fonctionne</string>
+    <string name="onboarding_how_subtitle">Lisez les prémisses relationnelles, dérivez la bonne réponse et observez vos progrès</string>
+    <string name="get_started">Commencer</string>
+    <string name="next">Suivant</string>
+    <string name="skip">Passer</string>
+
+    <!-- Assessment -->
+    <string name="pre_assessment">Pré-évaluation</string>
+    <string name="post_assessment">Post-évaluation</string>
+    <string name="start_assessment">Commencer l\'évaluation</string>
+    <string name="your_score">Votre score de compétences relationnelles</string>
+
+    <!-- Training -->
+    <string name="training">Entraînement</string>
+    <string name="stage">Étape %1$d</string>
+    <string name="yes_btn">OUI</string>
+    <string name="no_btn">NON</string>
+    <string name="correct">Correct !</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="try_derive">Essayez de dériver la relation à partir des prémisses</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Tableau de bord</string>
+    <string name="daily_streak">Série quotidienne</string>
+    <string name="total_xp">XP total</string>
+    <string name="accuracy">Précision</string>
+    <string name="stages_completed">Étapes complétées</string>
+    <string name="daily_challenge">Défi quotidien</string>
+    <string name="continue_training">Continuer l\'entraînement</string>
+
+    <!-- Settings -->
+    <string name="settings">Paramètres</string>
+    <string name="appearance">Apparence</string>
+    <string name="dark_mode">Mode sombre</string>
+    <string name="high_contrast">Contraste élevé</string>
+    <string name="training_preferences">Préférences d\'entraînement</string>
+    <string name="stimuli_style">Style de stimuli</string>
+    <string name="text_stimuli">Texte (syllabes sans sens)</string>
+    <string name="visual_stimuli">Visuel (formes abstraites)</string>
+    <string name="mixed_stimuli">Mixte</string>
+    <string name="sound_effects">Effets sonores</string>
+    <string name="haptic_feedback">Retour haptique</string>
+    <string name="accessibility">Accessibilité</string>
+    <string name="text_size">Taille du texte</string>
+    <string name="reduced_motion">Mouvement réduit</string>
+    <string name="about">À propos</string>
+
+    <!-- Science -->
+    <string name="science">La science</string>
+    <string name="disclaimer">Les résultats individuels peuvent varier. Cette application fournit un entraînement cognitif basé sur la théorie des cadres relationnels et ne constitue pas une intervention médicale.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_train">Entraîner</string>
+    <string name="nav_progress">Progrès</string>
+    <string name="nav_settings">Paramètres</string>
+</resources>
