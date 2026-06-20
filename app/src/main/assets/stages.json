@@ -1,0 +1,625 @@
+[
+  {
+    "id": 1,
+    "title": "Coordination Basics",
+    "description": "Learn Same/Different relations with simple single-premise trials",
+    "relationTypes": ["SAME", "DIFFERENT"],
+    "premiseCount": 1,
+    "difficulty": "BEGINNER",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 30,
+    "xpReward": 100,
+    "trainingTrials": [
+      {
+        "id": "s1_t1",
+        "premises": [{"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"}],
+        "probeStimA": "FYW",
+        "probeRelation": "SAME",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "If GYQ is the same as FYW, then FYW is the same as GYQ (symmetry)."
+      },
+      {
+        "id": "s1_t2",
+        "premises": [{"stimulusA": "VOP", "relationType": "SAME", "stimulusB": "CUB"}],
+        "probeStimA": "VOP",
+        "probeRelation": "DIFFERENT",
+        "probeStimB": "CUB",
+        "correctAnswer": false,
+        "explanation": "VOP is the SAME as CUB, not different."
+      },
+      {
+        "id": "s1_t3",
+        "premises": [{"stimulusA": "KES", "relationType": "DIFFERENT", "stimulusB": "DAX"}],
+        "probeStimA": "DAX",
+        "probeRelation": "DIFFERENT",
+        "probeStimB": "KES",
+        "correctAnswer": true,
+        "explanation": "If KES is different from DAX, then DAX is different from KES."
+      },
+      {
+        "id": "s1_t4",
+        "premises": [{"stimulusA": "PIR", "relationType": "DIFFERENT", "stimulusB": "MOQ"}],
+        "probeStimA": "PIR",
+        "probeRelation": "SAME",
+        "probeStimB": "MOQ",
+        "correctAnswer": false,
+        "explanation": "PIR is DIFFERENT from MOQ, not the same."
+      },
+      {
+        "id": "s1_t5",
+        "premises": [{"stimulusA": "ZUB", "relationType": "SAME", "stimulusB": "TEL"}],
+        "probeStimA": "TEL",
+        "probeRelation": "SAME",
+        "probeStimB": "ZUB",
+        "correctAnswer": true,
+        "explanation": "Same relation is symmetrical."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s1_x1",
+        "premises": [{"stimulusA": "BEQ", "relationType": "SAME", "stimulusB": "RUF"}],
+        "probeStimA": "RUF",
+        "probeRelation": "SAME",
+        "probeStimB": "BEQ",
+        "correctAnswer": true
+      },
+      {
+        "id": "s1_x2",
+        "premises": [{"stimulusA": "WEX", "relationType": "DIFFERENT", "stimulusB": "JOT"}],
+        "probeStimA": "WEX",
+        "probeRelation": "SAME",
+        "probeStimB": "JOT",
+        "correctAnswer": false
+      },
+      {
+        "id": "s1_x3",
+        "premises": [{"stimulusA": "NAV", "relationType": "SAME", "stimulusB": "QIP"}],
+        "probeStimA": "NAV",
+        "probeRelation": "DIFFERENT",
+        "probeStimB": "QIP",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Derived Coordination",
+    "description": "Derive Same relations through transitive chains (A=B, B=C → A=C)",
+    "relationTypes": ["SAME", "DIFFERENT"],
+    "premiseCount": 2,
+    "difficulty": "EASY",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 30,
+    "xpReward": 120,
+    "trainingTrials": [
+      {
+        "id": "s2_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "SAME", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "SAME",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "GYQ=FYW and FYW=VOP, so GYQ=VOP by transitivity."
+      },
+      {
+        "id": "s2_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "SAME", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "SAME", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "DAX",
+        "probeRelation": "SAME",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "CUB=KES=DAX, so DAX=CUB."
+      },
+      {
+        "id": "s2_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "SAME", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "DIFFERENT", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "PIR",
+        "probeRelation": "SAME",
+        "probeStimB": "ZUB",
+        "correctAnswer": false,
+        "explanation": "PIR=MOQ but MOQ≠ZUB, so PIR≠ZUB."
+      },
+      {
+        "id": "s2_t4",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "SAME", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "SAME", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "DIFFERENT",
+        "probeStimB": "TEL",
+        "correctAnswer": false,
+        "explanation": "TEL=BEQ=RUF, so RUF is the same as TEL, not different."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s2_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "SAME", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "SAME", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "SAME",
+        "probeStimB": "NAV",
+        "correctAnswer": true
+      },
+      {
+        "id": "s2_x2",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "SAME", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "DIFFERENT", "stimulusB": "FEZ"}
+        ],
+        "probeStimA": "QIP",
+        "probeRelation": "SAME",
+        "probeStimB": "FEZ",
+        "correctAnswer": false
+      },
+      {
+        "id": "s2_x3",
+        "premises": [
+          {"stimulusA": "LYR", "relationType": "SAME", "stimulusB": "HEW"},
+          {"stimulusA": "HEW", "relationType": "SAME", "stimulusB": "BOK"}
+        ],
+        "probeStimA": "BOK",
+        "probeRelation": "DIFFERENT",
+        "probeStimB": "LYR",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Opposition",
+    "description": "Learn Opposite relations and how they interact with Same",
+    "relationTypes": ["SAME", "OPPOSITE"],
+    "premiseCount": 2,
+    "difficulty": "EASY",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 30,
+    "xpReward": 130,
+    "trainingTrials": [
+      {
+        "id": "s3_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "OPPOSITE", "stimulusB": "FYW"}
+        ],
+        "probeStimA": "FYW",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "Opposite is symmetrical: if A is opposite B, then B is opposite A."
+      },
+      {
+        "id": "s3_t2",
+        "premises": [
+          {"stimulusA": "VOP", "relationType": "SAME", "stimulusB": "CUB"},
+          {"stimulusA": "CUB", "relationType": "OPPOSITE", "stimulusB": "KES"}
+        ],
+        "probeStimA": "VOP",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "KES",
+        "correctAnswer": true,
+        "explanation": "VOP=CUB and CUB is opposite KES, so VOP is opposite KES."
+      },
+      {
+        "id": "s3_t3",
+        "premises": [
+          {"stimulusA": "DAX", "relationType": "OPPOSITE", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "OPPOSITE", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "DAX",
+        "probeRelation": "SAME",
+        "probeStimB": "MOQ",
+        "correctAnswer": true,
+        "explanation": "DAX is opposite PIR, and PIR is opposite MOQ. Opposite of opposite = same."
+      },
+      {
+        "id": "s3_t4",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "OPPOSITE", "stimulusB": "TEL"}
+        ],
+        "probeStimA": "ZUB",
+        "probeRelation": "SAME",
+        "probeStimB": "TEL",
+        "correctAnswer": false,
+        "explanation": "ZUB is opposite TEL, not the same."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s3_x1",
+        "premises": [
+          {"stimulusA": "BEQ", "relationType": "SAME", "stimulusB": "RUF"},
+          {"stimulusA": "RUF", "relationType": "OPPOSITE", "stimulusB": "WEX"}
+        ],
+        "probeStimA": "BEQ",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "WEX",
+        "correctAnswer": true
+      },
+      {
+        "id": "s3_x2",
+        "premises": [
+          {"stimulusA": "JOT", "relationType": "OPPOSITE", "stimulusB": "NAV"},
+          {"stimulusA": "NAV", "relationType": "OPPOSITE", "stimulusB": "QIP"}
+        ],
+        "probeStimA": "JOT",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "QIP",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Comparison Basics",
+    "description": "Learn More Than / Less Than relations",
+    "relationTypes": ["MORE_THAN", "LESS_THAN"],
+    "premiseCount": 1,
+    "difficulty": "MEDIUM",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 25,
+    "xpReward": 150,
+    "trainingTrials": [
+      {
+        "id": "s4_t1",
+        "premises": [{"stimulusA": "GYQ", "relationType": "MORE_THAN", "stimulusB": "FYW"}],
+        "probeStimA": "FYW",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "If GYQ > FYW, then FYW < GYQ (inverse)."
+      },
+      {
+        "id": "s4_t2",
+        "premises": [{"stimulusA": "VOP", "relationType": "LESS_THAN", "stimulusB": "CUB"}],
+        "probeStimA": "CUB",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "If VOP < CUB, then CUB > VOP."
+      },
+      {
+        "id": "s4_t3",
+        "premises": [{"stimulusA": "KES", "relationType": "MORE_THAN", "stimulusB": "DAX"}],
+        "probeStimA": "DAX",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "KES",
+        "correctAnswer": false,
+        "explanation": "KES > DAX, so DAX is NOT more than KES."
+      },
+      {
+        "id": "s4_t4",
+        "premises": [{"stimulusA": "PIR", "relationType": "LESS_THAN", "stimulusB": "MOQ"}],
+        "probeStimA": "PIR",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "MOQ",
+        "correctAnswer": false,
+        "explanation": "PIR < MOQ, so PIR is NOT more than MOQ."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s4_x1",
+        "premises": [{"stimulusA": "ZUB", "relationType": "MORE_THAN", "stimulusB": "TEL"}],
+        "probeStimA": "TEL",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "ZUB",
+        "correctAnswer": true
+      },
+      {
+        "id": "s4_x2",
+        "premises": [{"stimulusA": "BEQ", "relationType": "LESS_THAN", "stimulusB": "RUF"}],
+        "probeStimA": "BEQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "RUF",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Derived Comparison",
+    "description": "Derive More/Less relations through transitive chains",
+    "relationTypes": ["MORE_THAN", "LESS_THAN"],
+    "premiseCount": 2,
+    "difficulty": "MEDIUM",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 25,
+    "xpReward": 160,
+    "trainingTrials": [
+      {
+        "id": "s5_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "MORE_THAN", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "MORE_THAN", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "GYQ > FYW > VOP, so GYQ > VOP."
+      },
+      {
+        "id": "s5_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "MORE_THAN", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "MORE_THAN", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "DAX",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "CUB",
+        "correctAnswer": false,
+        "explanation": "CUB > KES > DAX, so DAX is NOT more than CUB."
+      },
+      {
+        "id": "s5_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "LESS_THAN", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "LESS_THAN", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "PIR",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "ZUB",
+        "correctAnswer": true,
+        "explanation": "PIR < MOQ < ZUB, so PIR < ZUB."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s5_x1",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "MORE_THAN", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "MORE_THAN", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "RUF",
+        "correctAnswer": true
+      },
+      {
+        "id": "s5_x2",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "LESS_THAN", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "LESS_THAN", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "NAV",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "WEX",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Temporal Relations",
+    "description": "Learn Before/After relations and derive temporal order",
+    "relationTypes": ["BEFORE", "AFTER"],
+    "premiseCount": 2,
+    "difficulty": "MEDIUM",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 25,
+    "xpReward": 160,
+    "trainingTrials": [
+      {
+        "id": "s6_t1",
+        "premises": [{"stimulusA": "GYQ", "relationType": "BEFORE", "stimulusB": "FYW"}],
+        "probeStimA": "FYW",
+        "probeRelation": "AFTER",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "If GYQ is before FYW, then FYW is after GYQ."
+      },
+      {
+        "id": "s6_t2",
+        "premises": [
+          {"stimulusA": "VOP", "relationType": "BEFORE", "stimulusB": "CUB"},
+          {"stimulusA": "CUB", "relationType": "BEFORE", "stimulusB": "KES"}
+        ],
+        "probeStimA": "VOP",
+        "probeRelation": "BEFORE",
+        "probeStimB": "KES",
+        "correctAnswer": true,
+        "explanation": "VOP → CUB → KES, so VOP is before KES."
+      },
+      {
+        "id": "s6_t3",
+        "premises": [
+          {"stimulusA": "DAX", "relationType": "AFTER", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "AFTER", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "MOQ",
+        "probeRelation": "BEFORE",
+        "probeStimB": "DAX",
+        "correctAnswer": true,
+        "explanation": "MOQ → PIR → DAX, so MOQ is before DAX."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s6_x1",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "BEFORE", "stimulusB": "TEL"},
+          {"stimulusA": "TEL", "relationType": "BEFORE", "stimulusB": "BEQ"}
+        ],
+        "probeStimA": "BEQ",
+        "probeRelation": "BEFORE",
+        "probeStimB": "ZUB",
+        "correctAnswer": false
+      },
+      {
+        "id": "s6_x2",
+        "premises": [
+          {"stimulusA": "RUF", "relationType": "AFTER", "stimulusB": "WEX"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "BEFORE",
+        "probeStimB": "RUF",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Mixed Relations I",
+    "description": "Combine Same, Opposite, and Comparison relations",
+    "relationTypes": ["SAME", "OPPOSITE", "MORE_THAN", "LESS_THAN"],
+    "premiseCount": 2,
+    "difficulty": "HARD",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 25,
+    "xpReward": 200,
+    "trainingTrials": [
+      {
+        "id": "s7_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "MORE_THAN", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "GYQ=FYW and FYW>VOP, so GYQ>VOP."
+      },
+      {
+        "id": "s7_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "OPPOSITE", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "MORE_THAN", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "CUB",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "DAX",
+        "correctAnswer": true,
+        "explanation": "CUB is opposite KES, and KES>DAX. Opposite reverses the relation, so CUB<DAX."
+      },
+      {
+        "id": "s7_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "SAME", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "LESS_THAN", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "PIR",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "ZUB",
+        "correctAnswer": false,
+        "explanation": "PIR=MOQ and MOQ<ZUB, so PIR<ZUB, not more than."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s7_x1",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "OPPOSITE", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "LESS_THAN", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "RUF",
+        "correctAnswer": true
+      },
+      {
+        "id": "s7_x2",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "SAME", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "MORE_THAN", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "NAV",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "WEX",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Triple Premise Chains",
+    "description": "Derive relations across three-premise chains",
+    "relationTypes": ["SAME", "MORE_THAN", "LESS_THAN"],
+    "premiseCount": 3,
+    "difficulty": "HARD",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 35,
+    "xpReward": 220,
+    "trainingTrials": [
+      {
+        "id": "s8_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "MORE_THAN", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "MORE_THAN", "stimulusB": "CUB"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "GYQ=FYW>VOP>CUB, so GYQ>CUB."
+      },
+      {
+        "id": "s8_t2",
+        "premises": [
+          {"stimulusA": "KES", "relationType": "LESS_THAN", "stimulusB": "DAX"},
+          {"stimulusA": "DAX", "relationType": "SAME", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "LESS_THAN", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "KES",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "MOQ",
+        "correctAnswer": true,
+        "explanation": "KES<DAX=PIR<MOQ, so KES<MOQ."
+      },
+      {
+        "id": "s8_t3",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "MORE_THAN", "stimulusB": "TEL"},
+          {"stimulusA": "TEL", "relationType": "MORE_THAN", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "SAME", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "ZUB",
+        "correctAnswer": false,
+        "explanation": "ZUB>TEL>BEQ=RUF, so RUF is NOT more than ZUB."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s8_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "MORE_THAN", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "SAME", "stimulusB": "NAV"},
+          {"stimulusA": "NAV", "relationType": "MORE_THAN", "stimulusB": "QIP"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "QIP",
+        "correctAnswer": true
+      },
+      {
+        "id": "s8_x2",
+        "premises": [
+          {"stimulusA": "DUK", "relationType": "LESS_THAN", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "LESS_THAN", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "SAME", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "HEW",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "DUK",
+        "correctAnswer": false
+      }
+    ]
+  }
+]
