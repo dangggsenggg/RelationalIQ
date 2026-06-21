@@ -14,4 +14,5 @@ interface TrainingRepository {
     fun observeSessionsForStage(stageId: Int): Flow<List<TrainingSession>>
     fun observeAllSessions(): Flow<List<TrainingSession>>
     suspend fun getRecentSessions(limit: Int = 10): List<TrainingSession>
+    suspend fun getSessionById(sessionId: Long): TrainingSession?
 }

@@ -35,7 +35,13 @@ class StageDataSource @Inject constructor(
                 .bufferedReader().use { it.readText() }
             val type = object : TypeToken<List<StageJson>>() {}.type
             val stageJsonList: List<StageJson> = gson.fromJson(json, type)
-            stageJsonList.map { it.toDomain() }
+            stageJsonList.mapNotNull { stageJson ->
+                try {
+                    stageJson.toDomain()
+                } catch (e: IllegalArgumentException) {
+                    null
+                }
+            }
         } catch (e: Exception) {
             emptyList()
         }

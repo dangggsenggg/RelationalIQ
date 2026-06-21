@@ -29,8 +29,16 @@ interface StageProgressDao {
     @Query("UPDATE stage_progress SET isCompleted = 1, completedAt = :timestamp, bestAccuracy = CASE WHEN :accuracy > bestAccuracy THEN :accuracy ELSE bestAccuracy END WHERE stageId = :stageId")
     suspend fun markCompleted(stageId: Int, accuracy: Float, timestamp: Long = System.currentTimeMillis())
 
+    @Query("INSERT OR IGNORE INTO stage_progress (stageId, isUnlocked, isCompleted, bestAccuracy, bestTimeMs, attempts) VALUES (:stageId, 0, 0, 0, 0, 0)")
+    suspend fun insertIfAbsent(stageId: Int)
+
     @Query("UPDATE stage_progress SET attempts = attempts + 1 WHERE stageId = :stageId")
-    suspend fun incrementAttempts(stageId: Int)
+    suspend fun incrementAttemptsQuery(stageId: Int)
+
+    suspend fun incrementAttempts(stageId: Int) {
+        insertIfAbsent(stageId)
+        incrementAttemptsQuery(stageId)
+    }
 
     @Query("SELECT COUNT(*) FROM stage_progress WHERE isCompleted = 1")
     fun observeCompletedCount(): Flow<Int>

@@ -48,6 +48,7 @@ class TrainingViewModel @Inject constructor(
     val uiState: StateFlow<TrainingUiState> = _uiState.asStateFlow()
 
     private var timerJob: Job? = null
+    private var submitJob: Job? = null
     private var trialStartTime: Long = 0
     private var sessionStartTime: Long = 0
 
@@ -80,16 +81,18 @@ class TrainingViewModel @Inject constructor(
     }
 
     fun submitAnswer(answer: Boolean) {
+        timerJob?.cancel()
+        submitJob?.cancel()
+
         val state = _uiState.value
         val trial = state.currentTrial ?: return
         val responseTimeMs = System.currentTimeMillis() - trialStartTime
-        timerJob?.cancel()
 
-        viewModelScope.launch {
+        submitJob = viewModelScope.launch {
             val result = trainingEngine.submitAnswer(state.sessionId, trial, answer, responseTimeMs)
             val updatedResults = state.results + result
 
-            _uiState.value = state.copy(
+            _uiState.value = _uiState.value.copy(
                 lastResult = result,
                 showFeedback = true,
                 feedbackCorrect = result.isCorrect,
@@ -98,21 +101,22 @@ class TrainingViewModel @Inject constructor(
 
             delay(1500)
 
+            val freshState = _uiState.value
             val trials = getCurrentTrials()
-            val nextIndex = state.currentTrialIndex + 1
+            val nextIndex = freshState.currentTrialIndex + 1
 
             if (nextIndex >= trials.size) {
-                if (state.currentBlockType == BlockType.TRAINING) {
-                    switchToTestBlock(updatedResults)
+                if (freshState.currentBlockType == BlockType.TRAINING) {
+                    switchToTestBlock(freshState.results)
                 } else {
-                    completeSession(updatedResults)
+                    completeSession(freshState.results)
                 }
             } else {
-                _uiState.value = _uiState.value.copy(
+                _uiState.value = freshState.copy(
                     currentTrialIndex = nextIndex,
                     currentTrial = trials[nextIndex],
                     showFeedback = false,
-                    timeRemainingSeconds = state.stage?.timeLimitSeconds ?: 30
+                    timeRemainingSeconds = freshState.stage?.timeLimitSeconds ?: 30
                 )
                 startTimer()
             }
@@ -185,5 +189,6 @@ class TrainingViewModel @Inject constructor(
     override fun onCleared() {
         super.onCleared()
         timerJob?.cancel()
+        submitJob?.cancel()
     }
 }

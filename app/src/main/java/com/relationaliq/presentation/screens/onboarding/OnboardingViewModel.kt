@@ -17,14 +17,13 @@ class OnboardingViewModel @Inject constructor(
 
     fun completeOnboarding() {
         viewModelScope.launch {
-            var profile = userRepository.getProfile()
-            if (profile == null) {
-                val id = userRepository.createProfile(UserProfile())
-                profile = userRepository.getProfile()
+            val profile = userRepository.getProfile()
+            val userId = if (profile == null) {
+                userRepository.createProfile(UserProfile())
+            } else {
+                profile.id
             }
-            profile?.let {
-                userRepository.markOnboardingComplete(it.id)
-            }
+            userRepository.markOnboardingComplete(userId)
             progressRepository.initializeAchievements()
             progressRepository.unlockStage(1)
         }

@@ -5,6 +5,7 @@ import com.relationaliq.domain.model.Stage
 import com.relationaliq.domain.model.TrainingSession
 import com.relationaliq.domain.model.Trial
 import com.relationaliq.domain.model.TrialResult
+import com.relationaliq.domain.model.UserProfile
 import com.relationaliq.domain.repository.ProgressRepository
 import com.relationaliq.domain.repository.TrainingRepository
 import com.relationaliq.domain.repository.UserRepository
@@ -81,7 +82,7 @@ class TrainingEngineUseCase @Inject constructor(
             if (profile != null) {
                 userRepository.addXp(profile.id, xpEarned)
                 userRepository.updateCurrentStage(profile.id, stageId + 1)
-                updateStreak(profile.id)
+                updateStreak(profile)
             }
         }
 
@@ -95,13 +96,17 @@ class TrainingEngineUseCase @Inject constructor(
         )
     }
 
-    private suspend fun updateStreak(userId: Long) {
-        val profile = userRepository.getProfile() ?: return
+    private suspend fun updateStreak(profile: UserProfile) {
         val now = System.currentTimeMillis()
         val oneDayMs = 24 * 60 * 60 * 1000L
         val lastDate = profile.lastTrainingDate ?: 0L
-        val newStreak = if (now - lastDate < oneDayMs * 2) profile.currentStreak + 1 else 1
-        userRepository.updateStreak(userId, newStreak, now)
+        val elapsed = now - lastDate
+        val newStreak = when {
+            elapsed < oneDayMs -> profile.currentStreak
+            elapsed < oneDayMs * 2 -> profile.currentStreak + 1
+            else -> 1
+        }
+        userRepository.updateStreak(profile.id, newStreak, now)
     }
 
     private fun calculateXp(accuracy: Float, avgResponseTimeMs: Long, baseXp: Int): Int {

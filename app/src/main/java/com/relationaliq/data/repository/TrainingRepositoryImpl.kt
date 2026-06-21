@@ -48,4 +48,7 @@ class TrainingRepositoryImpl @Inject constructor(
 
     override suspend fun getRecentSessions(limit: Int): List<TrainingSession> =
         trainingSessionDao.getRecentSessions(limit).map { it.toDomain() }
+
+    override suspend fun getSessionById(sessionId: Long): TrainingSession? =
+        trainingSessionDao.getById(sessionId)?.toDomain()
 }

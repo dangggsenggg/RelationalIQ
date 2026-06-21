@@ -23,15 +23,15 @@ class SessionSummaryViewModel @Inject constructor(
     private val trainingRepository: TrainingRepository
 ) : ViewModel() {
 
+    private val sessionId: Long = savedStateHandle["sessionId"] ?: 0L
+
     private val _uiState = MutableStateFlow(SessionSummaryUiState())
     val uiState: StateFlow<SessionSummaryUiState> = _uiState.asStateFlow()
 
     init {
         viewModelScope.launch {
-            trainingRepository.observeAllSessions().collect { sessions ->
-                val session = sessions.firstOrNull()
-                _uiState.value = SessionSummaryUiState(session = session, isLoading = false)
-            }
+            val session = trainingRepository.getSessionById(sessionId)
+            _uiState.value = SessionSummaryUiState(session = session, isLoading = false)
         }
     }
 }

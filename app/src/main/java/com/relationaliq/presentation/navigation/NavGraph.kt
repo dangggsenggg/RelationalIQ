@@ -116,20 +116,11 @@ fun NavGraph(
         }
 
         composable(Screen.Progress.route) {
-            DashboardScreen(
-                onNavigateToTraining = { stageId ->
+            StageListScreen(
+                onStageSelected = { stageId ->
                     navController.navigate(Screen.Training.createRoute(stageId))
                 },
-                onNavigateToStages = {
-                    navController.navigate(Screen.StageList.route)
-                },
-                onNavigateToProgress = {},
-                onNavigateToSettings = {
-                    navController.navigate(Screen.Settings.route)
-                },
-                onNavigateToScience = {
-                    navController.navigate(Screen.Science.route)
-                }
+                onBack = { navController.popBackStack() }
             )
         }
 
