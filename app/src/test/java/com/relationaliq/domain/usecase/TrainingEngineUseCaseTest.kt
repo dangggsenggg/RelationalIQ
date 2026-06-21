@@ -261,6 +261,7 @@ class FakeTrainingRepository : TrainingRepository {
     override fun observeAllSessions(): Flow<List<TrainingSession>> = flowOf(sessions.values.toList())
     override suspend fun getRecentSessions(limit: Int): List<TrainingSession> =
         sessions.values.toList().takeLast(limit)
+    override suspend fun getSessionById(sessionId: Long): TrainingSession? = sessions[sessionId]
 }
 
 class FakeProgressRepository : ProgressRepository {
