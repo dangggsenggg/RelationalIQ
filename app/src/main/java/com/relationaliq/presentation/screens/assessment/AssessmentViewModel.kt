@@ -79,104 +79,252 @@ class AssessmentViewModel @Inject constructor(
     }
 
     private fun generateAssessmentTrials(): List<Trial> {
-        val stimuli = listOf("GYQ", "FYW", "VOP", "CUB", "KES", "DAX", "PIR", "MOQ", "ZUB", "TEL")
-        val trials = mutableListOf<Trial>()
+        // All assessment trials use multi-premise chains.
+        // The user must derive a relation between non-adjacent stimuli.
+        return listOf(
+            // ---- EASY: 2-premise chains ----
 
-        // Same relations (easy)
-        trials.add(createTrial("a1", stimuli[0], RelationType.SAME, stimuli[1], stimuli[0], RelationType.SAME, stimuli[1], true))
-        trials.add(createTrial("a2", stimuli[2], RelationType.SAME, stimuli[3], stimuli[3], RelationType.SAME, stimuli[2], true))
-        trials.add(createTrial("a3", stimuli[0], RelationType.SAME, stimuli[1], stimuli[0], RelationType.DIFFERENT, stimuli[1], false))
+            // Q1: SAME transitivity: GYQ=FYW, FYW=VOP → GYQ=VOP? YES
+            Trial(
+                id = "a1",
+                premises = listOf(
+                    Premise("GYQ", RelationType.SAME, "FYW"),
+                    Premise("FYW", RelationType.SAME, "VOP")
+                ),
+                probeStimA = "GYQ", probeRelation = RelationType.SAME, probeStimB = "VOP",
+                correctAnswer = true,
+                explanation = "GYQ = FYW and FYW = VOP, so by transitivity GYQ = VOP."
+            ),
+            // Q2: SAME transitivity, wrong probe: KES=DAX, DAX=PIR → KES≠PIR? NO
+            Trial(
+                id = "a2",
+                premises = listOf(
+                    Premise("KES", RelationType.SAME, "DAX"),
+                    Premise("DAX", RelationType.SAME, "PIR")
+                ),
+                probeStimA = "KES", probeRelation = RelationType.DIFFERENT, probeStimB = "PIR",
+                correctAnswer = false,
+                explanation = "KES = DAX = PIR, so KES is the SAME as PIR, not different."
+            ),
+            // Q3: MORE_THAN transitivity: AWX>EGC, EGC>OPA → AWX>OPA? YES
+            Trial(
+                id = "a3",
+                premises = listOf(
+                    Premise("AWX", RelationType.MORE_THAN, "EGC"),
+                    Premise("EGC", RelationType.MORE_THAN, "OPA")
+                ),
+                probeStimA = "AWX", probeRelation = RelationType.MORE_THAN, probeStimB = "OPA",
+                correctAnswer = true,
+                explanation = "AWX > EGC > OPA, so AWX > OPA."
+            ),
+            // Q4: MORE_THAN reversed: BGW>MOQ, MOQ>TEL → TEL>BGW? NO
+            Trial(
+                id = "a4",
+                premises = listOf(
+                    Premise("BGW", RelationType.MORE_THAN, "MOQ"),
+                    Premise("MOQ", RelationType.MORE_THAN, "TEL")
+                ),
+                probeStimA = "TEL", probeRelation = RelationType.MORE_THAN, probeStimB = "BGW",
+                correctAnswer = false,
+                explanation = "BGW > MOQ > TEL, so TEL is LESS than BGW, not more."
+            ),
+            // Q5: LESS_THAN transitivity: ZUB<HEW, HEW<JOT → ZUB<JOT? YES
+            Trial(
+                id = "a5",
+                premises = listOf(
+                    Premise("ZUB", RelationType.LESS_THAN, "HEW"),
+                    Premise("HEW", RelationType.LESS_THAN, "JOT")
+                ),
+                probeStimA = "ZUB", probeRelation = RelationType.LESS_THAN, probeStimB = "JOT",
+                correctAnswer = true,
+                explanation = "ZUB < HEW < JOT, so ZUB < JOT."
+            ),
 
-        // Derived same relations
-        trials.add(createDerivedTrial("a4",
-            listOf(Premise(stimuli[0], RelationType.SAME, stimuli[1]), Premise(stimuli[1], RelationType.SAME, stimuli[2])),
-            stimuli[0], RelationType.SAME, stimuli[2], true))
+            // ---- MEDIUM: 2-premise mixed-relation chains ----
 
-        // Opposite relations
-        trials.add(createTrial("a5", stimuli[4], RelationType.OPPOSITE, stimuli[5], stimuli[5], RelationType.OPPOSITE, stimuli[4], true))
-        trials.add(createTrial("a6", stimuli[4], RelationType.OPPOSITE, stimuli[5], stimuli[4], RelationType.SAME, stimuli[5], false))
+            // Q6: SAME + MORE: RUF=WEX, WEX>NAV → RUF>NAV? YES
+            Trial(
+                id = "a6",
+                premises = listOf(
+                    Premise("RUF", RelationType.SAME, "WEX"),
+                    Premise("WEX", RelationType.MORE_THAN, "NAV")
+                ),
+                probeStimA = "RUF", probeRelation = RelationType.MORE_THAN, probeStimB = "NAV",
+                correctAnswer = true,
+                explanation = "RUF = WEX and WEX > NAV, so RUF > NAV."
+            ),
+            // Q7: SAME + MORE, wrong probe: QIP=DUK, DUK>FEZ → QIP<FEZ? NO
+            Trial(
+                id = "a7",
+                premises = listOf(
+                    Premise("QIP", RelationType.SAME, "DUK"),
+                    Premise("DUK", RelationType.MORE_THAN, "FEZ")
+                ),
+                probeStimA = "QIP", probeRelation = RelationType.LESS_THAN, probeStimB = "FEZ",
+                correctAnswer = false,
+                explanation = "QIP = DUK and DUK > FEZ, so QIP > FEZ, not less than."
+            ),
+            // Q8: OPPOSITE of OPPOSITE = SAME: LYR↔BOK, BOK↔CUB → LYR=CUB? YES
+            Trial(
+                id = "a8",
+                premises = listOf(
+                    Premise("LYR", RelationType.OPPOSITE, "BOK"),
+                    Premise("BOK", RelationType.OPPOSITE, "CUB")
+                ),
+                probeStimA = "LYR", probeRelation = RelationType.SAME, probeStimB = "CUB",
+                correctAnswer = true,
+                explanation = "LYR is opposite BOK, and BOK is opposite CUB. Opposite of opposite = same, so LYR = CUB."
+            ),
+            // Q9: SAME + OPPOSITE: KES=DAX, DAX↔PIR → KES↔PIR? YES
+            Trial(
+                id = "a9",
+                premises = listOf(
+                    Premise("KES", RelationType.SAME, "DAX"),
+                    Premise("DAX", RelationType.OPPOSITE, "PIR")
+                ),
+                probeStimA = "KES", probeRelation = RelationType.OPPOSITE, probeStimB = "PIR",
+                correctAnswer = true,
+                explanation = "KES = DAX and DAX is opposite PIR, so KES is opposite PIR."
+            ),
+            // Q10: BEFORE transitivity: AWX→EGC, EGC→OPA → AWX before OPA? YES
+            Trial(
+                id = "a10",
+                premises = listOf(
+                    Premise("AWX", RelationType.BEFORE, "EGC"),
+                    Premise("EGC", RelationType.BEFORE, "OPA")
+                ),
+                probeStimA = "AWX", probeRelation = RelationType.BEFORE, probeStimB = "OPA",
+                correctAnswer = true,
+                explanation = "AWX comes before EGC, and EGC comes before OPA, so AWX comes before OPA."
+            ),
 
-        // More/Less relations
-        trials.add(createTrial("a7", stimuli[6], RelationType.MORE_THAN, stimuli[7], stimuli[7], RelationType.LESS_THAN, stimuli[6], true))
-        trials.add(createTrial("a8", stimuli[6], RelationType.MORE_THAN, stimuli[7], stimuli[6], RelationType.LESS_THAN, stimuli[7], false))
+            // ---- HARD: 3-premise chains ----
 
-        // Derived comparison
-        trials.add(createDerivedTrial("a9",
-            listOf(Premise(stimuli[0], RelationType.MORE_THAN, stimuli[1]), Premise(stimuli[1], RelationType.MORE_THAN, stimuli[2])),
-            stimuli[0], RelationType.MORE_THAN, stimuli[2], true))
-        trials.add(createDerivedTrial("a10",
-            listOf(Premise(stimuli[0], RelationType.MORE_THAN, stimuli[1]), Premise(stimuli[1], RelationType.MORE_THAN, stimuli[2])),
-            stimuli[2], RelationType.MORE_THAN, stimuli[0], false))
+            // Q11: 3-step MORE chain: BGW>MOQ, MOQ>TEL, TEL>ZUB → BGW>ZUB? YES
+            Trial(
+                id = "a11",
+                premises = listOf(
+                    Premise("BGW", RelationType.MORE_THAN, "MOQ"),
+                    Premise("MOQ", RelationType.MORE_THAN, "TEL"),
+                    Premise("TEL", RelationType.MORE_THAN, "ZUB")
+                ),
+                probeStimA = "BGW", probeRelation = RelationType.MORE_THAN, probeStimB = "ZUB",
+                correctAnswer = true,
+                explanation = "BGW > MOQ > TEL > ZUB, so BGW > ZUB."
+            ),
+            // Q12: 3-step MORE reversed: HEW>JOT, JOT>RUF, RUF>WEX → WEX>HEW? NO
+            Trial(
+                id = "a12",
+                premises = listOf(
+                    Premise("HEW", RelationType.MORE_THAN, "JOT"),
+                    Premise("JOT", RelationType.MORE_THAN, "RUF"),
+                    Premise("RUF", RelationType.MORE_THAN, "WEX")
+                ),
+                probeStimA = "WEX", probeRelation = RelationType.MORE_THAN, probeStimB = "HEW",
+                correctAnswer = false,
+                explanation = "HEW > JOT > RUF > WEX, so WEX is LESS than HEW, not more."
+            ),
+            // Q13: SAME + 2-step MORE: NAV=QIP, QIP>DUK, DUK>FEZ → NAV>FEZ? YES
+            Trial(
+                id = "a13",
+                premises = listOf(
+                    Premise("NAV", RelationType.SAME, "QIP"),
+                    Premise("QIP", RelationType.MORE_THAN, "DUK"),
+                    Premise("DUK", RelationType.MORE_THAN, "FEZ")
+                ),
+                probeStimA = "NAV", probeRelation = RelationType.MORE_THAN, probeStimB = "FEZ",
+                correctAnswer = true,
+                explanation = "NAV = QIP > DUK > FEZ, so NAV > FEZ."
+            ),
+            // Q14: OPPOSITE + SAME + MORE: LYR↔BOK, BOK=CUB, CUB>FYW → LYR<FYW? YES
+            Trial(
+                id = "a14",
+                premises = listOf(
+                    Premise("LYR", RelationType.OPPOSITE, "BOK"),
+                    Premise("BOK", RelationType.SAME, "CUB"),
+                    Premise("CUB", RelationType.MORE_THAN, "FYW")
+                ),
+                probeStimA = "LYR", probeRelation = RelationType.LESS_THAN, probeStimB = "FYW",
+                correctAnswer = true,
+                explanation = "BOK = CUB > FYW, so BOK > FYW. LYR is opposite BOK, so LYR < FYW."
+            ),
+            // Q15: 3-step LESS chain: KES<DAX, DAX<PIR, PIR<AWX → KES<AWX? YES
+            Trial(
+                id = "a15",
+                premises = listOf(
+                    Premise("KES", RelationType.LESS_THAN, "DAX"),
+                    Premise("DAX", RelationType.LESS_THAN, "PIR"),
+                    Premise("PIR", RelationType.LESS_THAN, "AWX")
+                ),
+                probeStimA = "KES", probeRelation = RelationType.LESS_THAN, probeStimB = "AWX",
+                correctAnswer = true,
+                explanation = "KES < DAX < PIR < AWX, so KES < AWX."
+            ),
 
-        // Before/After
-        trials.add(createTrial("a11", stimuli[8], RelationType.BEFORE, stimuli[9], stimuli[9], RelationType.AFTER, stimuli[8], true))
+            // ---- VERY HARD: 3-4 premise complex chains ----
 
-        // Complex derived
-        trials.add(createDerivedTrial("a12",
-            listOf(Premise(stimuli[3], RelationType.SAME, stimuli[4]), Premise(stimuli[4], RelationType.MORE_THAN, stimuli[5])),
-            stimuli[3], RelationType.MORE_THAN, stimuli[5], true))
-
-        trials.add(createDerivedTrial("a13",
-            listOf(Premise(stimuli[6], RelationType.OPPOSITE, stimuli[7]), Premise(stimuli[7], RelationType.MORE_THAN, stimuli[8])),
-            stimuli[6], RelationType.LESS_THAN, stimuli[8], true))
-
-        // Multi-premise chains
-        trials.add(createDerivedTrial("a14",
-            listOf(Premise(stimuli[0], RelationType.SAME, stimuli[1]), Premise(stimuli[1], RelationType.MORE_THAN, stimuli[2]), Premise(stimuli[2], RelationType.MORE_THAN, stimuli[3])),
-            stimuli[0], RelationType.MORE_THAN, stimuli[3], true))
-
-        trials.add(createDerivedTrial("a15",
-            listOf(Premise(stimuli[4], RelationType.BEFORE, stimuli[5]), Premise(stimuli[5], RelationType.BEFORE, stimuli[6])),
-            stimuli[4], RelationType.BEFORE, stimuli[6], true))
-
-        trials.add(createDerivedTrial("a16",
-            listOf(Premise(stimuli[7], RelationType.SAME, stimuli[8]), Premise(stimuli[8], RelationType.OPPOSITE, stimuli[9])),
-            stimuli[7], RelationType.OPPOSITE, stimuli[9], true))
-
-        trials.add(createDerivedTrial("a17",
-            listOf(Premise(stimuli[0], RelationType.MORE_THAN, stimuli[1]), Premise(stimuli[1], RelationType.SAME, stimuli[2])),
-            stimuli[2], RelationType.MORE_THAN, stimuli[0], false))
-
-        trials.add(createDerivedTrial("a18",
-            listOf(Premise(stimuli[3], RelationType.LESS_THAN, stimuli[4]), Premise(stimuli[4], RelationType.LESS_THAN, stimuli[5])),
-            stimuli[3], RelationType.LESS_THAN, stimuli[5], true))
-
-        trials.add(createDerivedTrial("a19",
-            listOf(Premise(stimuli[6], RelationType.AFTER, stimuli[7]), Premise(stimuli[7], RelationType.AFTER, stimuli[8])),
-            stimuli[8], RelationType.BEFORE, stimuli[6], true))
-
-        trials.add(createDerivedTrial("a20",
-            listOf(Premise(stimuli[0], RelationType.SAME, stimuli[1]), Premise(stimuli[1], RelationType.OPPOSITE, stimuli[2]), Premise(stimuli[2], RelationType.MORE_THAN, stimuli[3])),
-            stimuli[0], RelationType.LESS_THAN, stimuli[3], true))
-
-        return trials
+            // Q16: 3-step BEFORE reversed: EGC→OPA, OPA→BGW, BGW→MOQ → MOQ before EGC? NO
+            Trial(
+                id = "a16",
+                premises = listOf(
+                    Premise("EGC", RelationType.BEFORE, "OPA"),
+                    Premise("OPA", RelationType.BEFORE, "BGW"),
+                    Premise("BGW", RelationType.BEFORE, "MOQ")
+                ),
+                probeStimA = "MOQ", probeRelation = RelationType.BEFORE, probeStimB = "EGC",
+                correctAnswer = false,
+                explanation = "EGC → OPA → BGW → MOQ, so MOQ comes AFTER EGC, not before."
+            ),
+            // Q17: SAME + LESS chain: TEL=ZUB, ZUB<HEW, HEW<JOT → JOT>TEL? YES
+            Trial(
+                id = "a17",
+                premises = listOf(
+                    Premise("TEL", RelationType.SAME, "ZUB"),
+                    Premise("ZUB", RelationType.LESS_THAN, "HEW"),
+                    Premise("HEW", RelationType.LESS_THAN, "JOT")
+                ),
+                probeStimA = "JOT", probeRelation = RelationType.MORE_THAN, probeStimB = "TEL",
+                correctAnswer = true,
+                explanation = "TEL = ZUB < HEW < JOT, so JOT > TEL."
+            ),
+            // Q18: OPPOSITE + SAME + MORE: RUF↔WEX, WEX=NAV, NAV>QIP → RUF>QIP? NO
+            Trial(
+                id = "a18",
+                premises = listOf(
+                    Premise("RUF", RelationType.OPPOSITE, "WEX"),
+                    Premise("WEX", RelationType.SAME, "NAV"),
+                    Premise("NAV", RelationType.MORE_THAN, "QIP")
+                ),
+                probeStimA = "RUF", probeRelation = RelationType.MORE_THAN, probeStimB = "QIP",
+                correctAnswer = false,
+                explanation = "WEX = NAV > QIP, so WEX > QIP. RUF is opposite WEX, so RUF < QIP, not more."
+            ),
+            // Q19: 4-step MORE chain: AWX>EGC, EGC>OPA, OPA>BGW, BGW>DUK → AWX>DUK? YES
+            Trial(
+                id = "a19",
+                premises = listOf(
+                    Premise("AWX", RelationType.MORE_THAN, "EGC"),
+                    Premise("EGC", RelationType.MORE_THAN, "OPA"),
+                    Premise("OPA", RelationType.MORE_THAN, "BGW"),
+                    Premise("BGW", RelationType.MORE_THAN, "DUK")
+                ),
+                probeStimA = "AWX", probeRelation = RelationType.MORE_THAN, probeStimB = "DUK",
+                correctAnswer = true,
+                explanation = "AWX > EGC > OPA > BGW > DUK, so AWX > DUK."
+            ),
+            // Q20: 4-premise mixed: FEZ=LYR, LYR>BOK, BOK=CUB, CUB>GYQ → FEZ>GYQ? YES
+            Trial(
+                id = "a20",
+                premises = listOf(
+                    Premise("FEZ", RelationType.SAME, "LYR"),
+                    Premise("LYR", RelationType.MORE_THAN, "BOK"),
+                    Premise("BOK", RelationType.SAME, "CUB"),
+                    Premise("CUB", RelationType.MORE_THAN, "GYQ")
+                ),
+                probeStimA = "FEZ", probeRelation = RelationType.MORE_THAN, probeStimB = "GYQ",
+                correctAnswer = true,
+                explanation = "FEZ = LYR > BOK = CUB > GYQ, so FEZ > GYQ."
+            )
+        )
     }
-
-    private fun createTrial(
-        id: String,
-        stimA: String, relation: RelationType, stimB: String,
-        probeA: String, probeRel: RelationType, probeB: String,
-        correct: Boolean
-    ): Trial = Trial(
-        id = id,
-        premises = listOf(Premise(stimA, relation, stimB)),
-        probeStimA = probeA,
-        probeRelation = probeRel,
-        probeStimB = probeB,
-        correctAnswer = correct
-    )
-
-    private fun createDerivedTrial(
-        id: String,
-        premises: List<Premise>,
-        probeA: String, probeRel: RelationType, probeB: String,
-        correct: Boolean
-    ): Trial = Trial(
-        id = id,
-        premises = premises,
-        probeStimA = probeA,
-        probeRelation = probeRel,
-        probeStimB = probeB,
-        correctAnswer = correct
-    )
 }
