@@ -4,11 +4,21 @@
 # Android build outputs
 *.apk
 *.aab
+*.jks
+*.keystore
 build/
-.gradle/
+/build
+/app/build
+/app/release
+.gradle
+/local.properties
 local.properties
 
 # IDE
 .idea/
+/.idea
 *.iml
 .DS_Store
+/captures
+.externalNativeBuild
+.cxx
