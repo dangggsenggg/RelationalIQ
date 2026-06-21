@@ -1,16 +1,14 @@
-*.iml
-.gradle
-/local.properties
-/.idea
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-/app/build
-/app/release
+# Android SDK tools (local only, not for version control)
+.tools/
+
+# Android build outputs
 *.apk
 *.aab
-*.jks
-*.keystore
+build/
+.gradle/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store

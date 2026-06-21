@@ -1,0 +1,307 @@
+**RaiseYourIQ Android Replica – Full App Building Requirements & Agentic Programming Specification**
+
+**Document Purpose**: This is a complete, production-ready Product Requirements Document (PRD) + Technical Specification tailored for **agentic/AI-assisted development**. It enables you (or AI coding agents like Windsurf, Cursor, Claude, Devin-style multi-agent systems) to build a high-fidelity Android replica of the RaiseYourIQ app.
+
+The original app implements **SMART training** (Strengthening Mental Abilities with Relational Training), grounded in **Relational Frame Theory (RFT)**. It trains **arbitrarily applicable relational responding** (derived relations) using nonsense stimuli and progressive complexity to improve general intelligence, fluid reasoning, academic skills, and working memory. Multiple peer-reviewed studies support significant gains (often 0.5–1+ SD in IQ measures and scholastic performance).
+
+**Important Disclaimers**:
+- This is an **inspired educational replica**, not an official or licensed product.
+- Do **not** copy proprietary branding, exact stimuli sets, or marketing claims verbatim.
+- Avoid unsubstantiated medical/diagnostic claims. Frame as “evidence-based cognitive training inspired by Relational Frame Theory” with clear disclaimers (“individual results vary; not a medical intervention”).
+- Consult a lawyer for commercial use, trademarks, and data privacy (cognitive performance data is sensitive).
+
+---
+
+### 1. Vision & Objectives
+
+**App Name Suggestion** (to avoid trademark issues): **RelationalIQ**, **FrameForge**, **DeriveIQ**, or **SMART Frame Trainer**. (You can brand it “RaiseYourIQ – Community Edition” for personal/open use.)
+
+**Core Vision**: Build the most effective, engaging, science-aligned relational training app available on Android. Deliver measurable improvements in relational reasoning skills through gamified, adaptive, multiple-exemplar training (MET).
+
+**Primary Goals**:
+- Replicate the core SMART mechanism (progressive relational derivation training with nonsense/arbitrary stimuli).
+- Make it more engaging and modern than the original (better visuals, smoother UX, stronger gamification).
+- Fully offline-capable with optional cloud sync.
+- Data-driven & extensible content system (easy to add hundreds of stages).
+- Optimized for agentic development: modular, well-specified components with clear contracts.
+
+**Success Metrics (MVP)**:
+- Users complete pre-assessment → 20–40 training stages.
+- ≥80% of users show measurable improvement on post-assessment relational fluency/accuracy.
+- High session completion rate (>70% of started sessions finished).
+- Positive qualitative feedback on “feeling smarter” / clearer thinking.
+
+---
+
+### 2. Scientific Foundation (for reference & in-app education)
+
+**Relational Frame Theory (RFT)**: Human intelligence heavily depends on learned ability to derive relations between stimuli (same, different/opposite, more/less, before/after, contains, etc.) even when stimuli are arbitrary (nonsense words, abstract shapes). Training these skills via **Multiple Exemplar Training (MET)** leads to generalized improvements in cognition and academics.
+
+**SMART Mechanics** (publicly described):
+- **Stimuli**: Nonsense words (e.g., GYQ, FYW, VOP, CUB, KES) or arbitrary visuals.
+- **Premises**: 1–4+ relational statements (e.g., “GYQ is the same as FYW. FYW is more than VOP.”).
+- **Probe**: Yes/No question on a derived relation (e.g., “Is GYQ more than VOP?”).
+- **Structure**: Training blocks (with feedback) → Test blocks (no feedback). Mastery required to advance.
+- **Progression**: ~55 stages increasing in:
+  - Number/complexity of premises
+  - Types of relations (coordination → opposition → comparison → temporal → hierarchical → combined)
+  - Depth of derivation
+  - Time pressure / fluency demands
+- **Assessment**: Pre/post **Relational Abilities Index (RAI)**-style test (accuracy + speed/fluency).
+
+**Recommended Reading** (include short summaries or links in-app “Science” section):
+- Cassidy et al. (2011, 2016), Colbert et al. (2018), McLoughlin et al. (2020+), May et al. meta-analysis, etc.
+
+---
+
+### 3. Core Features & User Flows
+
+#### 3.1 Onboarding & Pre-Assessment (MVP Priority)
+- Welcome + short science explainer (2–3 screens or interactive cards).
+- Optional quick profile (age group, goals: child/adult, focus areas).
+- **Pre-Assessment**: 20–40 item relational test (similar format to training but diagnostic). Measures baseline accuracy + response time.
+- Results screen: “Relational Skill Score” (e.g., 42/100) + estimated cognitive profile + motivation message.
+- “Start Your 8–12 Week Program” CTA.
+
+#### 3.2 Training Engine (The Heart of the App)
+This is the most critical component for agentic building.
+
+**Key Requirements**:
+- **Data-driven stages**: All content defined in JSON (or Room entities) so agents/content creators can expand without code changes.
+- **Flexible relation engine**: Support multiple frames (Same/Different, More/Less, Opposite, Before/After, Contains/Within, and combinations).
+- **Trial Structure**:
+  - Display 1–4 premise statements (beautiful cards or connected graph visualization).
+  - Clear Yes/No question on derived relation.
+  - Large, thumb-friendly Yes/No buttons + haptic feedback.
+  - 20–40 second time limit per trial (configurable).
+  - Immediate animated feedback (correct = green + subtle celebration; incorrect = red + brief explanation or “try to derive it”).
+- **Block Structure**:
+  - Training block (feedback + mastery tracking).
+  - Test block (no feedback, accuracy gate e.g. ≥85%).
+- **Progression**: Linear or adaptive (unlock next stage on mastery). 50–100+ stages planned.
+- **Stimuli Options** (for engagement):
+  - Text (nonsense syllables) – faithful to original.
+  - Visual (colored abstract shapes, icons, procedurally generated symbols) – recommended enhancement.
+  - Mixed mode.
+
+**Adaptive Elements**:
+- Performance-based difficulty (accuracy + speed).
+- Spaced repetition for weak relations.
+- Optional “Focus Mode” for specific frames.
+
+#### 3.3 Gamification & Engagement (Critical for Retention)
+- XP / Level system tied to stages completed + accuracy + speed.
+- Daily streak + “Daily Challenge” (short curated set).
+- Badges/achievements (e.g., “Master of Opposition”, “Fluent Deriver”, “30-Day Streak”).
+- Session summary: Accuracy %, Avg response time, Relations strengthened, “Cognitive Gain Estimate”.
+- Progress dashboard with beautiful charts (relational skill over time, stage completion heatmap).
+- Optional light social: Anonymous leaderboards or “compare to average user” (privacy-first).
+
+#### 3.4 Post-Training & Insights
+- Post-assessment (same format as pre, different items).
+- Detailed before/after report + “Your relational reasoning improved X%”.
+- Personalized recommendations (“You strengthened comparison relations — great for math/problem-solving”).
+- Exportable progress report (PDF).
+
+#### 3.5 Other Features
+- **Settings**: Theme (light/dark + high contrast), sound/haptics, text size, stimuli style (text vs visual), session length preference, notifications.
+- **Accessibility**: Full TalkBack support, scalable fonts, color-blind friendly palettes, reduced motion option.
+- **Offline-first**: Everything works without internet after
+
+**Continuing the RaiseYourIQ Android App – Full Build Requirements & Agentic Programming Specification**
+
+### 3. Core Features & User Flows (continued)
+
+**3.5 Additional Features (Post-MVP or Parallel Tracks)**
+
+- **Offline-first architecture**: Full functionality after initial download. All training content, progress, and assessments stored locally. Optional background sync when online.
+- **Cloud Sync & Multi-device** (optional but recommended): User accounts (email + password or Google/Apple Sign-In). Progress, streaks, and custom settings sync via your FastAPI backend.
+- **Parent/Educator Mode** (high-value for families): Separate view showing child’s progress, suggested session schedules, and simple reports. PIN-protected.
+- **Notifications**: Smart, non-intrusive reminders (“Time for your relational workout?”). Configurable frequency. Use exact scheduling or WorkManager.
+- **French Localization** (strongly recommended for your Quebec market): Full support for French (Canada). All science explanations, UI, and onboarding available in French. Use Android resource qualifiers (`values-fr-rCA`).
+- **Accessibility & Inclusion**: High contrast mode, large text, reduced animations, screen reader optimized, alternative input methods.
+
+---
+
+### 4. Technical Architecture & Recommended Stack (Optimized for Agentic Development)
+
+**Primary Stack (Modern, Declarative, AI-friendly)**:
+- **Language**: Kotlin 2.1+
+- **UI**: Jetpack Compose + Material 3 (Expressive) — best choice for agentic coding because it is declarative and highly predictable for LLMs.
+- **Architecture**: Clean Architecture + MVI (or MVVM with StateFlow). Use **Orbit-MVI** or a simple custom MVI setup for predictability.
+- **Dependency Injection**: Hilt (or Koin if you prefer lighter).
+- **Navigation**: Compose Navigation + Type-Safe args (or Navigation 3 when stable).
+- **Persistence**:
+  - Room + Kotlinx Serialization for structured data.
+  - DataStore (Proto) for user preferences and lightweight progress.
+- **Asynchronous**: Kotlin Coroutines + Flow (heavy use of `StateFlow` and `SharedFlow`).
+- **Content Management**: JSON files in `assets/` or Room entities for stages. Make the entire training engine **data-driven**.
+- **Backend (Recommended)**: Your existing FastAPI + PostgreSQL stack (or Supabase/PostgREST if you want speed). Use it for:
+  - User auth & progress sync
+  - Dynamic stage/content updates (without app updates)
+  - Anonymous analytics (privacy-first)
+- **Optional but powerful**: Ktor client for backend communication, WorkManager for background tasks, DataStore for offline queue.
+
+**Why this stack is excellent for agentic programming**:
+- Compose screens are self-contained and easy for agents to generate/iterate.
+- Clear separation of concerns (Domain → Data → Presentation).
+- JSON-driven content means agents can focus on logic while you or another agent expands training stages.
+
+---
+
+### 5. Data Models & Content Structure (Critical for Scalability)
+
+Make the training engine **completely data-driven**. This is the single biggest enabler for long-term success and easy content expansion.
+
+**Core Entities** (Room + JSON):
+
+```kotlin
+// Example simplified models
+data class RelationalStage(
+    val id: Int,
+    val level: Int,
+    val title: String,
+    val description: String,
+    val relationTypes: List<RelationType>, // SAME, OPPOSITE, MORE_LESS, etc.
+    val trials: List<TrainingTrial>
+)
+
+data class TrainingTrial(
+    val id: String,
+    val premises: List<String>,           // e.g. ["GYQ is the same as FYW", "FYW is more than VOP"]
+    val question: String,                 // "Is GYQ more than VOP?"
+    val correctAnswer: Boolean,           // true = YES
+    val explanation: String?,             // shown on incorrect in training mode
+    val timeLimitSeconds: Int = 30,
+    val stimuliVisuals: List<VisualStimulus>? = null // for visual mode
+)
+```
+
+**Stage Definition Strategy**:
+- Start with 40–60 high-quality curated stages.
+- Create a Python script (you already like Python/FastAPI) that generates additional stages using rules + LLM assistance for nonsense word creation and relation validation.
+- Store stages as versioned JSON files or in a content database table.
+
+**User Progress Model**:
+- `UserProfile`, `AssessmentResult` (pre/post with scores), `StageProgress` (accuracy, best time, attempts, mastery date), `SessionLog`, `StreakData`.
+
+---
+
+### 6. Key Screens & UI/UX Specifications
+
+**Priority Screens for MVP**:
+1. **Splash / Onboarding** (3–5 screens max)
+2. **Dashboard** (Home) — Streak, today’s recommended session, overall progress ring, quick stats
+3. **Pre/Post Assessment** — Clean, focused test experience
+4. **Training Trial Screen** (most important):
+   - Top: Progress indicator (Stage X of Y, Block type)
+   - Center: Premises displayed as elegant cards or connected nodes
+   - Prominent Yes / No buttons (large, high contrast)
+   - Timer + accuracy counter
+   - Smooth animated feedback
+5. **Session Summary**
+6. **Progress & Insights** (beautiful charts using Compose charting libraries or Vico)
+7. **Settings**
+
+**Design Principles**:
+- Calm, focused, premium cognitive feel (think Duolingo meets serious science app).
+- Generous whitespace, excellent typography.
+- Micro-interactions and subtle animations that reward correct derivations.
+- Dark mode first (many users train in evening).
+
+---
+
+### 7. Agentic Development Workflow & Module Breakdown
+
+This is structured so you can hand well-defined tasks to AI coding agents and get high-quality, consistent output.
+
+**Recommended Workflow**:
+1. Create a new project with the chosen stack.
+2. Define core interfaces/contracts first (Domain layer).
+3. Build one module at a time with clear acceptance criteria.
+4. Use Test-Driven Development where practical (especially the training engine logic).
+5. Iterate with the agent: “Improve the feedback animation”, “Make the stage loader more robust”, etc.
+
+**Suggested Module / Epic Breakdown** (build in this rough order):
+
+| Priority | Module/Epic                        | Description                                                                 | Agent Prompt Style                              | Estimated Complexity |
+|----------|------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------|----------------------|
+| 1        | Project Setup + Core Architecture  | Hilt, Navigation, Theme, Base MVI structure                                 | "Scaffold a modern Jetpack Compose + MVI Android project with Hilt" | Low |
+| 2        | Data Layer & Content System        | Room entities, JSON stage loader, Repository pattern                        | "Create Room database and repository for relational training stages" | Medium |
+| 3        | Pre/Post Assessment Engine         | Assessment screen + scoring logic + result storage                          | "Build a reusable assessment component with timed yes/no trials" | Medium-High |
+| 4        | Core Training Engine               | Trial display, feedback, block logic, mastery system                        | "Implement a data-driven relational training trial screen with YES/NO and animated feedback" | High (core) |
+| 5        | Gamification & Progress Tracking   | XP, streaks, badges, dashboard charts                                       | "Create a beautiful dashboard with streak counter and progress visualization" | Medium |
+| 6        | User Onboarding & Profile          | Welcome flow, profile creation, first assessment                            | "Build a multi-step onboarding flow with science introduction" | Low-Medium |
+| 7        | Backend Sync (FastAPI side)        | User auth, progress sync endpoints                                          | "Design FastAPI endpoints for user progress sync with JWT" | Medium |
+| 8        | Polish, Accessibility, Localization| Dark mode, TalkBack, French strings, performance tuning                     | "Add full accessibility support and French (Canada) localization" | Medium |
+
+**Example High-Quality Agent Prompt** (copy-paste ready):
+
+> "You are an expert Jetpack Compose + Kotlin MVI developer. Create a Composable called `TrainingTrialScreen` that displays a relational training trial. It receives a `TrainingTrial` object. Show the premises as a vertical list of elegant cards. Below them show the question in bold. Provide two large, rounded Material 3 buttons: 'YES' (green tint) and 'NO' (red tint). On button press, show a smooth animated feedback overlay (green check or red X with scale + fade). Support a configurable time limit with a countdown. Use StateFlow in a ViewModel. Make it fully accessible and beautiful. Provide the full Composable + ViewModel code."
+
+You can create dozens of such targeted prompts.
+
+---
+
+### 8. MVP Scope & Phased Roadmap
+
+**MVP (8–12 weeks realistic with agentic help)**:
+- Onboarding + Pre-assessment
+- 30–50 high-quality training stages
+- Full training engine (training + test blocks)
+- Basic gamification (XP, streak, level)
+- Dashboard + simple progress view
+- Local persistence only (offline-first)
+- Settings + dark mode
+
+**Phase 2**:
+- Post-assessment + insights report
+- Cloud sync + accounts (FastAPI)
+- More stages (100+)
+- Visual stimuli mode
+- Parent/educator features
+- French localization
+- Polish animations & sound design
+
+**Phase 3**:
+- Advanced personalization & adaptive algorithms
+- Detailed analytics
+- Optional web version (Kotlin Multiplatform or separate)
+- Research mode (export anonymized data for studies)
+
+---
+
+### 9. Non-Functional Requirements
+
+- **Performance**: Smooth 60fps on mid-range devices. Training trials must feel instant.
+- **Offline**: 100% functional without network after first launch.
+- **Privacy & Security**: Minimal data collection. Clear consent. Option to delete all data. Comply with Quebec privacy expectations and PIPEDA.
+- **Battery & Resource**: Efficient. Use WorkManager wisely.
+- **Testing**: Unit tests for training engine logic + Compose UI tests for critical screens.
+
+---
+
+### 10. Legal, Ethical & Monetization Notes
+
+- **Claims**: Use cautious language. “Training based on Relational Frame Theory shown in studies to improve relational reasoning and cognitive skills.”
+- **Monetization Ideas**:
+  - Freemium: Limited free stages + full program via subscription or one-time unlock.
+  - “Pro” features: Detailed insights, unlimited stages, parent dashboard, export reports.
+- **Data**: Be extremely transparent. Consider open-sourcing the training engine logic later for credibility.
+
+---
+
+### Next Steps Recommendation
+
+1. Decide on final app name and branding.
+2. Set up the base project using the architecture described.
+3. Start with **Module 2 + 4** (Content system + Training Engine) — these are the highest leverage.
+4. I can help you refine any section, generate specific JSON stage examples, create detailed agent prompts for any module, or even draft the first FastAPI sync endpoints.
+
+Would you like me to:
+- Provide a **sample JSON stage definition** with 3–4 example trials?
+- Generate **ready-to-use agent prompts** for the first 3 modules?
+- Create a **detailed FastAPI backend specification** to go with this Android app?
+- Or expand any other specific section (e.g., full UI component specs, assessment scoring algorithm)?
+
+Just tell me where you want to go deeper and I’ll continue building this out with you. This foundation is solid enough to start agentic development immediately.
