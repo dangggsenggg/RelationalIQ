@@ -1,0 +1,184 @@
+{
+  "id": 13,
+  "title": "Same + Less Than",
+  "description": "Practice deriving less-than relations through equivalence.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 150,
+  "trainingTrials": [
+    {
+      "id": "s013_t01",
+      "premises": [
+        {
+          "stimulusA": "BIQO",
+          "relationType": "SAME",
+          "stimulusB": "CIQE"
+        },
+        {
+          "stimulusA": "CIQE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NEJI"
+        }
+      ],
+      "probeStimA": "BIQO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "NEJI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "BIQO = CIQE and CIQE < NEJI, so BIQO < NEJI."
+    },
+    {
+      "id": "s013_t02",
+      "premises": [
+        {
+          "stimulusA": "CEPE",
+          "relationType": "SAME",
+          "stimulusB": "XUMU"
+        },
+        {
+          "stimulusA": "XUMU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JAYO"
+        }
+      ],
+      "probeStimA": "CEPE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JAYO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "CEPE = XUMU and XUMU > JAYO, so CEPE > JAYO."
+    },
+    {
+      "id": "s013_t03",
+      "premises": [
+        {
+          "stimulusA": "MENI",
+          "relationType": "SAME",
+          "stimulusB": "MIDI"
+        },
+        {
+          "stimulusA": "MIDI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XOKE"
+        }
+      ],
+      "probeStimA": "XOKE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MENI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "MENI = MIDI > XOKE, so XOKE is NOT more than MENI."
+    },
+    {
+      "id": "s013_t04",
+      "premises": [
+        {
+          "stimulusA": "NUFU",
+          "relationType": "SAME",
+          "stimulusB": "FOJA"
+        },
+        {
+          "stimulusA": "FOJA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HULU"
+        }
+      ],
+      "probeStimA": "NUFU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HULU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "NUFU = FOJA and FOJA > HULU, so NUFU > HULU."
+    },
+    {
+      "id": "s013_t05",
+      "premises": [
+        {
+          "stimulusA": "MEKI",
+          "relationType": "SAME",
+          "stimulusB": "NUDU"
+        },
+        {
+          "stimulusA": "NUDU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NOCA"
+        }
+      ],
+      "probeStimA": "NOCA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MEKI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "MEKI = NUDU > NOCA, so NOCA is NOT more than MEKI."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s013_x01",
+      "premises": [
+        {
+          "stimulusA": "RAHA",
+          "relationType": "SAME",
+          "stimulusB": "HEZI"
+        },
+        {
+          "stimulusA": "HEZI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "SEZU"
+        }
+      ],
+      "probeStimA": "RAHA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SEZU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s013_x02",
+      "premises": [
+        {
+          "stimulusA": "YUSU",
+          "relationType": "SAME",
+          "stimulusB": "FECO"
+        },
+        {
+          "stimulusA": "FECO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DOPE"
+        }
+      ],
+      "probeStimA": "YUSU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DOPE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s013_x03",
+      "premises": [
+        {
+          "stimulusA": "YUTI",
+          "relationType": "SAME",
+          "stimulusB": "TUJU"
+        },
+        {
+          "stimulusA": "TUJU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KEXA"
+        }
+      ],
+      "probeStimA": "YUTI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "KEXA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

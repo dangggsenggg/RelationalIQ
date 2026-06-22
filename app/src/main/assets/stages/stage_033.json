@@ -1,0 +1,225 @@
+{
+  "id": 33,
+  "title": "Triple Mixed Relations",
+  "description": "Three premises combining same, opposite, and comparison.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 220,
+  "trainingTrials": [
+    {
+      "id": "s033_t01",
+      "premises": [
+        {
+          "stimulusA": "XENU",
+          "relationType": "SAME",
+          "stimulusB": "CIKA"
+        },
+        {
+          "stimulusA": "CIKA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TACA"
+        },
+        {
+          "stimulusA": "TACA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PUBE"
+        }
+      ],
+      "probeStimA": "XENU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PUBE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "XENU = CIKA > TACA > PUBE, so XENU > PUBE."
+    },
+    {
+      "id": "s033_t02",
+      "premises": [
+        {
+          "stimulusA": "HAHE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ZICI"
+        },
+        {
+          "stimulusA": "ZICI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WOTO"
+        },
+        {
+          "stimulusA": "WOTO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DIDA"
+        }
+      ],
+      "probeStimA": "HAHE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DIDA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "HAHE is opposite ZICI, and ZICI > WOTO. Opposition reverses the relation."
+    },
+    {
+      "id": "s033_t03",
+      "premises": [
+        {
+          "stimulusA": "QAZO",
+          "relationType": "SAME",
+          "stimulusB": "FOVO"
+        },
+        {
+          "stimulusA": "FOVO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BIHO"
+        },
+        {
+          "stimulusA": "BIHO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NOMA"
+        }
+      ],
+      "probeStimA": "QAZO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NOMA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "QAZO = FOVO > BIHO > NOMA, so QAZO > NOMA."
+    },
+    {
+      "id": "s033_t04",
+      "premises": [
+        {
+          "stimulusA": "RAMU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "HIXI"
+        },
+        {
+          "stimulusA": "HIXI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HILE"
+        },
+        {
+          "stimulusA": "HILE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GEQO"
+        }
+      ],
+      "probeStimA": "RAMU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "GEQO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "RAMU is opposite HIXI, and HIXI > HILE. Opposition reverses the relation."
+    },
+    {
+      "id": "s033_t05",
+      "premises": [
+        {
+          "stimulusA": "CORE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KIQU"
+        },
+        {
+          "stimulusA": "KIQU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JAZI"
+        },
+        {
+          "stimulusA": "JAZI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HUZU"
+        }
+      ],
+      "probeStimA": "CORE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "HUZU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "CORE is opposite KIQU, and KIQU > JAZI. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s033_x01",
+      "premises": [
+        {
+          "stimulusA": "WAZE",
+          "relationType": "SAME",
+          "stimulusB": "DABI"
+        },
+        {
+          "stimulusA": "DABI",
+          "relationType": "SAME",
+          "stimulusB": "PUFA"
+        },
+        {
+          "stimulusA": "PUFA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PIQA"
+        }
+      ],
+      "probeStimA": "WAZE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PIQA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s033_x02",
+      "premises": [
+        {
+          "stimulusA": "XEPE",
+          "relationType": "SAME",
+          "stimulusB": "ZOHE"
+        },
+        {
+          "stimulusA": "ZOHE",
+          "relationType": "SAME",
+          "stimulusB": "ZUQI"
+        },
+        {
+          "stimulusA": "ZUQI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VIXI"
+        }
+      ],
+      "probeStimA": "XEPE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VIXI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s033_x03",
+      "premises": [
+        {
+          "stimulusA": "CABO",
+          "relationType": "SAME",
+          "stimulusB": "WONO"
+        },
+        {
+          "stimulusA": "WONO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KAMA"
+        },
+        {
+          "stimulusA": "KAMA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YABI"
+        }
+      ],
+      "probeStimA": "CABO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YABI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

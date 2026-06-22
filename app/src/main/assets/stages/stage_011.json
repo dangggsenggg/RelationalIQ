@@ -1,0 +1,184 @@
+{
+  "id": 11,
+  "title": "Same + Comparison Intro",
+  "description": "Learn to derive relations across 'is the same as' combined with comparison.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 140,
+  "trainingTrials": [
+    {
+      "id": "s011_t01",
+      "premises": [
+        {
+          "stimulusA": "XAQE",
+          "relationType": "SAME",
+          "stimulusB": "BABU"
+        },
+        {
+          "stimulusA": "BABU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LIHI"
+        }
+      ],
+      "probeStimA": "XAQE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LIHI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "XAQE = BABU and BABU > LIHI, so XAQE > LIHI."
+    },
+    {
+      "id": "s011_t02",
+      "premises": [
+        {
+          "stimulusA": "HOPE",
+          "relationType": "SAME",
+          "stimulusB": "RAVA"
+        },
+        {
+          "stimulusA": "RAVA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "JACI"
+        }
+      ],
+      "probeStimA": "HOPE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JACI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "HOPE = RAVA < JACI, so HOPE is NOT more than JACI."
+    },
+    {
+      "id": "s011_t03",
+      "premises": [
+        {
+          "stimulusA": "PIRI",
+          "relationType": "SAME",
+          "stimulusB": "HIPE"
+        },
+        {
+          "stimulusA": "HIPE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "CIBU"
+        }
+      ],
+      "probeStimA": "PIRI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CIBU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "PIRI = HIPE and HIPE < CIBU, so PIRI < CIBU."
+    },
+    {
+      "id": "s011_t04",
+      "premises": [
+        {
+          "stimulusA": "NOKE",
+          "relationType": "SAME",
+          "stimulusB": "YULE"
+        },
+        {
+          "stimulusA": "YULE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "MANE"
+        }
+      ],
+      "probeStimA": "NOKE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "MANE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "NOKE = YULE and YULE < MANE, so NOKE < MANE."
+    },
+    {
+      "id": "s011_t05",
+      "premises": [
+        {
+          "stimulusA": "HAFI",
+          "relationType": "SAME",
+          "stimulusB": "DOYA"
+        },
+        {
+          "stimulusA": "DOYA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "XOJU"
+        }
+      ],
+      "probeStimA": "HAFI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XOJU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "HAFI = DOYA < XOJU, so HAFI is NOT more than XOJU."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s011_x01",
+      "premises": [
+        {
+          "stimulusA": "GUKU",
+          "relationType": "SAME",
+          "stimulusB": "XUQE"
+        },
+        {
+          "stimulusA": "XUQE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAPO"
+        }
+      ],
+      "probeStimA": "GUKU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZAPO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s011_x02",
+      "premises": [
+        {
+          "stimulusA": "MESU",
+          "relationType": "SAME",
+          "stimulusB": "NIHE"
+        },
+        {
+          "stimulusA": "NIHE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "MADO"
+        }
+      ],
+      "probeStimA": "MESU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "MADO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s011_x03",
+      "premises": [
+        {
+          "stimulusA": "LOPE",
+          "relationType": "SAME",
+          "stimulusB": "LAME"
+        },
+        {
+          "stimulusA": "LAME",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TIGU"
+        }
+      ],
+      "probeStimA": "LOPE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TIGU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

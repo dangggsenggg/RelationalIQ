@@ -1,0 +1,223 @@
+{
+  "id": 25,
+  "title": "Deeper Chain Derivation",
+  "description": "Derive relations across 4-item transitive comparison chains.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 40,
+  "xpReward": 230,
+  "trainingTrials": [
+    {
+      "id": "s025_t01",
+      "premises": [
+        {
+          "stimulusA": "WIYO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "RARO"
+        },
+        {
+          "stimulusA": "RARO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "PACE"
+        },
+        {
+          "stimulusA": "PACE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NURO"
+        }
+      ],
+      "probeStimA": "WIYO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "NURO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "WIYO < RARO < PACE < NURO, so WIYO is less than NURO."
+    },
+    {
+      "id": "s025_t02",
+      "premises": [
+        {
+          "stimulusA": "QOPO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NENU"
+        },
+        {
+          "stimulusA": "NENU",
+          "relationType": "LESS_THAN",
+          "stimulusB": "SOPI"
+        },
+        {
+          "stimulusA": "SOPI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZUTO"
+        }
+      ],
+      "probeStimA": "ZUTO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "QOPO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "ZUTO > SOPI > NENU > QOPO, so ZUTO is NOT less than QOPO."
+    },
+    {
+      "id": "s025_t03",
+      "premises": [
+        {
+          "stimulusA": "PIHO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XIDO"
+        },
+        {
+          "stimulusA": "XIDO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VIYI"
+        },
+        {
+          "stimulusA": "VIYI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MANO"
+        }
+      ],
+      "probeStimA": "MANO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PIHO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "PIHO > XIDO > VIYI > MANO, so MANO is NOT more than PIHO."
+    },
+    {
+      "id": "s025_t04",
+      "premises": [
+        {
+          "stimulusA": "DOYE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "DATI"
+        },
+        {
+          "stimulusA": "DATI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "XISI"
+        },
+        {
+          "stimulusA": "XISI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "RUGU"
+        }
+      ],
+      "probeStimA": "RUGU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DOYE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "RUGU > XISI > DATI > DOYE, so RUGU is NOT less than DOYE."
+    },
+    {
+      "id": "s025_t05",
+      "premises": [
+        {
+          "stimulusA": "JECA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "YUPU"
+        },
+        {
+          "stimulusA": "YUPU",
+          "relationType": "LESS_THAN",
+          "stimulusB": "LETE"
+        },
+        {
+          "stimulusA": "LETE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "DAQE"
+        }
+      ],
+      "probeStimA": "JECA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DAQE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "JECA < YUPU < LETE < DAQE, so JECA is less than DAQE."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s025_x01",
+      "premises": [
+        {
+          "stimulusA": "CIHU",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NICI"
+        },
+        {
+          "stimulusA": "NICI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZISE"
+        },
+        {
+          "stimulusA": "ZISE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BOQU"
+        }
+      ],
+      "probeStimA": "CIHU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "BOQU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s025_x02",
+      "premises": [
+        {
+          "stimulusA": "DEXE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BUGO"
+        },
+        {
+          "stimulusA": "BUGO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZESO"
+        },
+        {
+          "stimulusA": "ZESO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XEYO"
+        }
+      ],
+      "probeStimA": "XEYO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DEXE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s025_x03",
+      "premises": [
+        {
+          "stimulusA": "LOKA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "GUSE"
+        },
+        {
+          "stimulusA": "GUSE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TUTO"
+        },
+        {
+          "stimulusA": "TUTO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "JALE"
+        }
+      ],
+      "probeStimA": "LOKA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "JALE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": 27,
+  "title": "Opposite + Same",
+  "description": "Derive opposite relations through sameness chains.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE"
+  ],
+  "premiseCount": 2,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 180,
+  "trainingTrials": [
+    {
+      "id": "s027_t01",
+      "premises": [
+        {
+          "stimulusA": "CUKI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "XEHU"
+        },
+        {
+          "stimulusA": "XEHU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ZIDE"
+        }
+      ],
+      "probeStimA": "CUKI",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "ZIDE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "CUKI is opposite XEHU, XEHU is opposite ZIDE. Opposite of opposite = same, not opposite."
+    },
+    {
+      "id": "s027_t02",
+      "premises": [
+        {
+          "stimulusA": "KAWE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "XUQE"
+        },
+        {
+          "stimulusA": "XUQE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JARU"
+        }
+      ],
+      "probeStimA": "KAWE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JARU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "KAWE is opposite XUQE, and XUQE > JARU. Opposite reverses, so KAWE is NOT more than JARU."
+    },
+    {
+      "id": "s027_t03",
+      "premises": [
+        {
+          "stimulusA": "DUFI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ROBU"
+        },
+        {
+          "stimulusA": "ROBU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "XOSI"
+        }
+      ],
+      "probeStimA": "DUFI",
+      "probeRelation": "SAME",
+      "probeStimB": "XOSI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "DUFI is opposite ROBU, ROBU is opposite XOSI. Opposite of opposite = same."
+    },
+    {
+      "id": "s027_t04",
+      "premises": [
+        {
+          "stimulusA": "TITU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SACI"
+        },
+        {
+          "stimulusA": "SACI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "QERE"
+        }
+      ],
+      "probeStimA": "TITU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "QERE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "TITU is opposite SACI, SACI is opposite QERE. Opposite of opposite = same, not opposite."
+    },
+    {
+      "id": "s027_t05",
+      "premises": [
+        {
+          "stimulusA": "QINE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "HIMI"
+        },
+        {
+          "stimulusA": "HIMI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BASO"
+        }
+      ],
+      "probeStimA": "QINE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "BASO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "QINE is opposite HIMI, and HIMI > BASO. Opposite reverses, so QINE < BASO."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s027_x01",
+      "premises": [
+        {
+          "stimulusA": "TAXI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "DAVI"
+        },
+        {
+          "stimulusA": "DAVI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "PUNO"
+        }
+      ],
+      "probeStimA": "TAXI",
+      "probeRelation": "SAME",
+      "probeStimB": "PUNO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s027_x02",
+      "premises": [
+        {
+          "stimulusA": "NACA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "XAVU"
+        },
+        {
+          "stimulusA": "XAVU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RAYO"
+        }
+      ],
+      "probeStimA": "NACA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "RAYO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s027_x03",
+      "premises": [
+        {
+          "stimulusA": "BOXI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "JUSA"
+        },
+        {
+          "stimulusA": "JUSA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YABU"
+        }
+      ],
+      "probeStimA": "BOXI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "YABU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

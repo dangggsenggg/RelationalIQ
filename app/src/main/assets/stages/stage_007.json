@@ -1,0 +1,183 @@
+{
+  "id": 7,
+  "title": "Longer Chains II",
+  "description": "Continue building transitive reasoning fluency.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 130,
+  "trainingTrials": [
+    {
+      "id": "s007_t01",
+      "premises": [
+        {
+          "stimulusA": "HAT",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JAR"
+        },
+        {
+          "stimulusA": "JAR",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YUQ"
+        }
+      ],
+      "probeStimA": "YUQ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HAT",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "HAT > JAR > YUQ, so YUQ is NOT more than HAT."
+    },
+    {
+      "id": "s007_t02",
+      "premises": [
+        {
+          "stimulusA": "MEY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KIM"
+        },
+        {
+          "stimulusA": "KIM",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SIV"
+        }
+      ],
+      "probeStimA": "SIV",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MEY",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "MEY > KIM > SIV, so SIV is NOT more than MEY."
+    },
+    {
+      "id": "s007_t03",
+      "premises": [
+        {
+          "stimulusA": "LIS",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SEH"
+        },
+        {
+          "stimulusA": "SEH",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUJ"
+        }
+      ],
+      "probeStimA": "KUJ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LIS",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "LIS > SEH > KUJ, so KUJ is NOT more than LIS."
+    },
+    {
+      "id": "s007_t04",
+      "premises": [
+        {
+          "stimulusA": "GUP",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NES"
+        },
+        {
+          "stimulusA": "NES",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LEL"
+        }
+      ],
+      "probeStimA": "GUP",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LEL",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "GUP > NES > LEL, so GUP is more than LEL."
+    },
+    {
+      "id": "s007_t05",
+      "premises": [
+        {
+          "stimulusA": "NOV",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JAC"
+        },
+        {
+          "stimulusA": "JAC",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WUS"
+        }
+      ],
+      "probeStimA": "WUS",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NOV",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "NOV > JAC > WUS, so WUS is NOT more than NOV."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s007_x01",
+      "premises": [
+        {
+          "stimulusA": "YAT",
+          "relationType": "LESS_THAN",
+          "stimulusB": "QAL"
+        },
+        {
+          "stimulusA": "QAL",
+          "relationType": "LESS_THAN",
+          "stimulusB": "HEQ"
+        }
+      ],
+      "probeStimA": "YAT",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "HEQ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s007_x02",
+      "premises": [
+        {
+          "stimulusA": "SUZ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "XAD"
+        },
+        {
+          "stimulusA": "XAD",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BIW"
+        }
+      ],
+      "probeStimA": "BIW",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SUZ",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s007_x03",
+      "premises": [
+        {
+          "stimulusA": "MIQ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VAM"
+        },
+        {
+          "stimulusA": "VAM",
+          "relationType": "LESS_THAN",
+          "stimulusB": "WIS"
+        }
+      ],
+      "probeStimA": "MIQ",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WIS",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    }
+  ]
+}

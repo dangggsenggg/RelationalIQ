@@ -1,0 +1,224 @@
+{
+  "id": 22,
+  "title": "Derived Relations II",
+  "description": "Continue building derived relational responding fluency.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 210,
+  "trainingTrials": [
+    {
+      "id": "s022_t01",
+      "premises": [
+        {
+          "stimulusA": "XISA",
+          "relationType": "SAME",
+          "stimulusB": "QIZA"
+        },
+        {
+          "stimulusA": "QIZA",
+          "relationType": "SAME",
+          "stimulusB": "CIJI"
+        },
+        {
+          "stimulusA": "CIJI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XAHA"
+        }
+      ],
+      "probeStimA": "XISA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XAHA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "XISA = QIZA = CIJI > XAHA, so XISA > XAHA."
+    },
+    {
+      "id": "s022_t02",
+      "premises": [
+        {
+          "stimulusA": "RORO",
+          "relationType": "SAME",
+          "stimulusB": "GAQI"
+        },
+        {
+          "stimulusA": "GAQI",
+          "relationType": "SAME",
+          "stimulusB": "FEDI"
+        },
+        {
+          "stimulusA": "FEDI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NOLA"
+        }
+      ],
+      "probeStimA": "RORO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NOLA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "RORO = GAQI = FEDI > NOLA, so RORO > NOLA."
+    },
+    {
+      "id": "s022_t03",
+      "premises": [
+        {
+          "stimulusA": "TEMI",
+          "relationType": "SAME",
+          "stimulusB": "GAFU"
+        },
+        {
+          "stimulusA": "GAFU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ROHO"
+        },
+        {
+          "stimulusA": "ROHO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PATI"
+        }
+      ],
+      "probeStimA": "TEMI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PATI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "TEMI = GAFU > ROHO > PATI, so TEMI > PATI."
+    },
+    {
+      "id": "s022_t04",
+      "premises": [
+        {
+          "stimulusA": "FOGE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "WUHA"
+        },
+        {
+          "stimulusA": "WUHA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAFE"
+        },
+        {
+          "stimulusA": "ZAFE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CETA"
+        }
+      ],
+      "probeStimA": "FOGE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CETA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "FOGE is opposite WUHA, and WUHA > ZAFE. Opposition reverses the relation."
+    },
+    {
+      "id": "s022_t05",
+      "premises": [
+        {
+          "stimulusA": "LOLI",
+          "relationType": "SAME",
+          "stimulusB": "KOLI"
+        },
+        {
+          "stimulusA": "KOLI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YIMA"
+        },
+        {
+          "stimulusA": "YIMA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PETE"
+        }
+      ],
+      "probeStimA": "LOLI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PETE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "LOLI = KOLI > YIMA > PETE, so LOLI > PETE."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s022_x01",
+      "premises": [
+        {
+          "stimulusA": "TESA",
+          "relationType": "SAME",
+          "stimulusB": "DUCO"
+        },
+        {
+          "stimulusA": "DUCO",
+          "relationType": "SAME",
+          "stimulusB": "CIWU"
+        },
+        {
+          "stimulusA": "CIWU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VACU"
+        }
+      ],
+      "probeStimA": "TESA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VACU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s022_x02",
+      "premises": [
+        {
+          "stimulusA": "FUKU",
+          "relationType": "SAME",
+          "stimulusB": "LICE"
+        },
+        {
+          "stimulusA": "LICE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUDO"
+        },
+        {
+          "stimulusA": "KUDO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HOPO"
+        }
+      ],
+      "probeStimA": "FUKU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HOPO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s022_x03",
+      "premises": [
+        {
+          "stimulusA": "VOVA",
+          "relationType": "SAME",
+          "stimulusB": "KEZU"
+        },
+        {
+          "stimulusA": "KEZU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TAHA"
+        },
+        {
+          "stimulusA": "TAHA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TOFE"
+        }
+      ],
+      "probeStimA": "VOVA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TOFE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

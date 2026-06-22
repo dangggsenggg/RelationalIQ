@@ -1,0 +1,251 @@
+{
+  "id": 38,
+  "title": "All Relations Combined II",
+  "description": "Continue mastering complex multi-relation derivation.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 4,
+  "difficulty": "ADVANCED",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 45,
+  "xpReward": 280,
+  "trainingTrials": [
+    {
+      "id": "s038_t01",
+      "premises": [
+        {
+          "stimulusA": "FIXO",
+          "relationType": "SAME",
+          "stimulusB": "KEHA"
+        },
+        {
+          "stimulusA": "KEHA",
+          "relationType": "SAME",
+          "stimulusB": "TAVI"
+        },
+        {
+          "stimulusA": "TAVI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JUDO"
+        }
+      ],
+      "probeStimA": "FIXO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JUDO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "FIXO = KEHA = TAVI > JUDO, so FIXO > JUDO."
+    },
+    {
+      "id": "s038_t02",
+      "premises": [
+        {
+          "stimulusA": "WEWO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "QAMO"
+        },
+        {
+          "stimulusA": "QAMO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HAWO"
+        },
+        {
+          "stimulusA": "HAWO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUYO"
+        }
+      ],
+      "probeStimA": "WEWO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "TUTE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "WEWO is opposite QAMO, and QAMO > HAWO. Opposition reverses the relation."
+    },
+    {
+      "id": "s038_t03",
+      "premises": [
+        {
+          "stimulusA": "CUBE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "RIHE"
+        },
+        {
+          "stimulusA": "RIHE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VEWA"
+        },
+        {
+          "stimulusA": "VEWA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JEGU"
+        }
+      ],
+      "probeStimA": "CUBE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "BUPI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "CUBE is opposite RIHE, and RIHE > VEWA. Opposition reverses the relation."
+    },
+    {
+      "id": "s038_t04",
+      "premises": [
+        {
+          "stimulusA": "FARU",
+          "relationType": "SAME",
+          "stimulusB": "LEMO"
+        },
+        {
+          "stimulusA": "LEMO",
+          "relationType": "SAME",
+          "stimulusB": "LINO"
+        },
+        {
+          "stimulusA": "LINO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DASI"
+        }
+      ],
+      "probeStimA": "FARU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DASI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "FARU = LEMO = LINO > DASI, so FARU > DASI."
+    },
+    {
+      "id": "s038_t05",
+      "premises": [
+        {
+          "stimulusA": "PELI",
+          "relationType": "SAME",
+          "stimulusB": "LANE"
+        },
+        {
+          "stimulusA": "LANE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DAWE"
+        },
+        {
+          "stimulusA": "DAWE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CAKO"
+        }
+      ],
+      "probeStimA": "PELI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JOMI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "PELI = LANE > DAWE > CAKO, so PELI > JOMI."
+    },
+    {
+      "id": "s038_t06",
+      "premises": [
+        {
+          "stimulusA": "YELU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MISO"
+        },
+        {
+          "stimulusA": "MISO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LOPI"
+        },
+        {
+          "stimulusA": "LOPI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MEYE"
+        }
+      ],
+      "probeStimA": "YELU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "KIXE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 45,
+      "explanation": "YELU is opposite MISO, and MISO > LOPI. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s038_x01",
+      "premises": [
+        {
+          "stimulusA": "JIME",
+          "relationType": "SAME",
+          "stimulusB": "DOXU"
+        },
+        {
+          "stimulusA": "DOXU",
+          "relationType": "SAME",
+          "stimulusB": "TIMI"
+        },
+        {
+          "stimulusA": "TIMI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XENI"
+        }
+      ],
+      "probeStimA": "JIME",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XENI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    },
+    {
+      "id": "s038_x02",
+      "premises": [
+        {
+          "stimulusA": "LACI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BOQU"
+        },
+        {
+          "stimulusA": "BOQU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BODE"
+        },
+        {
+          "stimulusA": "BODE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JEDO"
+        }
+      ],
+      "probeStimA": "LACI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "FAQU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    },
+    {
+      "id": "s038_x03",
+      "premises": [
+        {
+          "stimulusA": "QIVI",
+          "relationType": "SAME",
+          "stimulusB": "PEKU"
+        },
+        {
+          "stimulusA": "PEKU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SUNE"
+        },
+        {
+          "stimulusA": "SUNE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LILA"
+        }
+      ],
+      "probeStimA": "QIVI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XEPA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    }
+  ]
+}

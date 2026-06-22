@@ -1,0 +1,184 @@
+{
+  "id": 12,
+  "title": "Equivalence Derivation",
+  "description": "Derive comparisons through equivalence chains.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 150,
+  "trainingTrials": [
+    {
+      "id": "s012_t01",
+      "premises": [
+        {
+          "stimulusA": "SUPA",
+          "relationType": "SAME",
+          "stimulusB": "JAGE"
+        },
+        {
+          "stimulusA": "JAGE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "PUYU"
+        }
+      ],
+      "probeStimA": "SUPA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "PUYU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "SUPA = JAGE and JAGE < PUYU, so SUPA < PUYU."
+    },
+    {
+      "id": "s012_t02",
+      "premises": [
+        {
+          "stimulusA": "NAKO",
+          "relationType": "SAME",
+          "stimulusB": "MUGE"
+        },
+        {
+          "stimulusA": "MUGE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FOFA"
+        }
+      ],
+      "probeStimA": "NAKO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FOFA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "NAKO = MUGE < FOFA, so NAKO is NOT more than FOFA."
+    },
+    {
+      "id": "s012_t03",
+      "premises": [
+        {
+          "stimulusA": "DEBE",
+          "relationType": "SAME",
+          "stimulusB": "CUDI"
+        },
+        {
+          "stimulusA": "CUDI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FOSE"
+        }
+      ],
+      "probeStimA": "DEBE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "FOSE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "DEBE = CUDI and CUDI < FOSE, so DEBE < FOSE."
+    },
+    {
+      "id": "s012_t04",
+      "premises": [
+        {
+          "stimulusA": "YISA",
+          "relationType": "SAME",
+          "stimulusB": "ZIKO"
+        },
+        {
+          "stimulusA": "ZIKO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MUNO"
+        }
+      ],
+      "probeStimA": "MUNO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YISA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "YISA = ZIKO > MUNO, so MUNO is NOT more than YISA."
+    },
+    {
+      "id": "s012_t05",
+      "premises": [
+        {
+          "stimulusA": "LOJO",
+          "relationType": "SAME",
+          "stimulusB": "REVI"
+        },
+        {
+          "stimulusA": "REVI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZESI"
+        }
+      ],
+      "probeStimA": "LOJO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZESI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "LOJO = REVI and REVI > ZESI, so LOJO > ZESI."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s012_x01",
+      "premises": [
+        {
+          "stimulusA": "FUPU",
+          "relationType": "SAME",
+          "stimulusB": "WOMO"
+        },
+        {
+          "stimulusA": "WOMO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZELO"
+        }
+      ],
+      "probeStimA": "FUPU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZELO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s012_x02",
+      "premises": [
+        {
+          "stimulusA": "TEZU",
+          "relationType": "SAME",
+          "stimulusB": "PAJA"
+        },
+        {
+          "stimulusA": "PAJA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "CIJE"
+        }
+      ],
+      "probeStimA": "TEZU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CIJE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s012_x03",
+      "premises": [
+        {
+          "stimulusA": "ZILO",
+          "relationType": "SAME",
+          "stimulusB": "DEME"
+        },
+        {
+          "stimulusA": "DEME",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZOCU"
+        }
+      ],
+      "probeStimA": "ZILO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZOCU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "id": 36,
+  "title": "Four Premise Chains",
+  "description": "Extended chains with 4 premises requiring deep derivation.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 4,
+  "difficulty": "ADVANCED",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 45,
+  "xpReward": 260,
+  "trainingTrials": [
+    {
+      "id": "s036_t01",
+      "premises": [
+        {
+          "stimulusA": "TUGE",
+          "relationType": "SAME",
+          "stimulusB": "YOHI"
+        },
+        {
+          "stimulusA": "YOHI",
+          "relationType": "SAME",
+          "stimulusB": "DUXE"
+        },
+        {
+          "stimulusA": "DUXE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LUMU"
+        }
+      ],
+      "probeStimA": "TUGE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LUMU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "TUGE = YOHI = DUXE > LUMU, so TUGE > LUMU."
+    },
+    {
+      "id": "s036_t02",
+      "premises": [
+        {
+          "stimulusA": "PUVO",
+          "relationType": "SAME",
+          "stimulusB": "ROMI"
+        },
+        {
+          "stimulusA": "ROMI",
+          "relationType": "SAME",
+          "stimulusB": "VESA"
+        },
+        {
+          "stimulusA": "VESA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NAMA"
+        }
+      ],
+      "probeStimA": "PUVO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NAMA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "PUVO = ROMI = VESA > NAMA, so PUVO > NAMA."
+    },
+    {
+      "id": "s036_t03",
+      "premises": [
+        {
+          "stimulusA": "KAKE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ROTA"
+        },
+        {
+          "stimulusA": "ROTA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CIRU"
+        },
+        {
+          "stimulusA": "CIRU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RELA"
+        }
+      ],
+      "probeStimA": "KAKE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "TUGO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "KAKE is opposite ROTA, and ROTA > CIRU. Opposition reverses the relation."
+    },
+    {
+      "id": "s036_t04",
+      "premises": [
+        {
+          "stimulusA": "MUVU",
+          "relationType": "SAME",
+          "stimulusB": "TIKU"
+        },
+        {
+          "stimulusA": "TIKU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DIHU"
+        },
+        {
+          "stimulusA": "DIHU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MIGU"
+        }
+      ],
+      "probeStimA": "MUVU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PAGI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "MUVU = TIKU > DIHU > MIGU, so MUVU > PAGI."
+    },
+    {
+      "id": "s036_t05",
+      "premises": [
+        {
+          "stimulusA": "WEJU",
+          "relationType": "SAME",
+          "stimulusB": "LIKU"
+        },
+        {
+          "stimulusA": "LIKU",
+          "relationType": "SAME",
+          "stimulusB": "CAYU"
+        },
+        {
+          "stimulusA": "CAYU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DIJA"
+        }
+      ],
+      "probeStimA": "WEJU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DIJA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 45,
+      "explanation": "WEJU = LIKU = CAYU > DIJA, so WEJU > DIJA."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s036_x01",
+      "premises": [
+        {
+          "stimulusA": "RITE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "HOLE"
+        },
+        {
+          "stimulusA": "HOLE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SICU"
+        },
+        {
+          "stimulusA": "SICU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KIMU"
+        }
+      ],
+      "probeStimA": "RITE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CIBI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    },
+    {
+      "id": "s036_x02",
+      "premises": [
+        {
+          "stimulusA": "JUCI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ROFE"
+        },
+        {
+          "stimulusA": "ROFE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MIYU"
+        },
+        {
+          "stimulusA": "MIYU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BUXE"
+        }
+      ],
+      "probeStimA": "JUCI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "FOVA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    },
+    {
+      "id": "s036_x03",
+      "premises": [
+        {
+          "stimulusA": "RARE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BEWI"
+        },
+        {
+          "stimulusA": "BEWI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAYE"
+        },
+        {
+          "stimulusA": "ZAYE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CATE"
+        }
+      ],
+      "probeStimA": "RARE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "LAJA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    }
+  ]
+}

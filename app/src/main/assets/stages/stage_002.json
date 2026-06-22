@@ -1,0 +1,91 @@
+{
+  "id": 2,
+  "title": "Basic Transitive Comparison II",
+  "description": "More practice with transitive more than/less than relations and varied stimuli.",
+  "relationTypes": ["MORE_THAN", "LESS_THAN"],
+  "premiseCount": 2,
+  "difficulty": "BEGINNER",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 100,
+  "trainingTrials": [
+    {
+      "id": "s002_t01",
+      "premises": [
+        {"stimulusA": "KPQ", "relationType": "MORE_THAN", "stimulusB": "WDR"},
+        {"stimulusA": "WDR", "relationType": "MORE_THAN", "stimulusB": "FXL"}
+      ],
+      "probeStimA": "KPQ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FXL",
+      "correctAnswer": true,
+      "explanation": "KPQ > WDR > FXL, so KPQ is more than FXL.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s002_t02",
+      "premises": [
+        {"stimulusA": "NTV", "relationType": "MORE_THAN", "stimulusB": "HBZ"},
+        {"stimulusA": "HBZ", "relationType": "MORE_THAN", "stimulusB": "YCG"}
+      ],
+      "probeStimA": "YCG",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NTV",
+      "correctAnswer": false,
+      "explanation": "NTV > HBZ > YCG, so YCG is NOT more than NTV.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s002_t03",
+      "premises": [
+        {"stimulusA": "RJW", "relationType": "MORE_THAN", "stimulusB": "PKS"},
+        {"stimulusA": "PKS", "relationType": "MORE_THAN", "stimulusB": "DLM"}
+      ],
+      "probeStimA": "RJW",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DLM",
+      "correctAnswer": true,
+      "explanation": "RJW > PKS > DLM, so RJW is more than DLM.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s002_t04",
+      "premises": [
+        {"stimulusA": "GVF", "relationType": "MORE_THAN", "stimulusB": "QBT"},
+        {"stimulusA": "QBT", "relationType": "MORE_THAN", "stimulusB": "XHN"}
+      ],
+      "probeStimA": "XHN",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GVF",
+      "correctAnswer": false,
+      "explanation": "GVF > QBT > XHN, so XHN is NOT more than GVF.",
+      "timeLimitSeconds": 25
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s002_x01",
+      "premises": [
+        {"stimulusA": "CMZ", "relationType": "MORE_THAN", "stimulusB": "TYK"},
+        {"stimulusA": "TYK", "relationType": "MORE_THAN", "stimulusB": "BPW"}
+      ],
+      "probeStimA": "CMZ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BPW",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s002_x02",
+      "premises": [
+        {"stimulusA": "LRH", "relationType": "MORE_THAN", "stimulusB": "VFG"},
+        {"stimulusA": "VFG", "relationType": "MORE_THAN", "stimulusB": "JNQ"}
+      ],
+      "probeStimA": "JNQ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LRH",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    }
+  ]
+}

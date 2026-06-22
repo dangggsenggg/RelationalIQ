@@ -1,0 +1,185 @@
+{
+  "id": 32,
+  "title": "Mixed Opposition II",
+  "description": "Advanced opposition training with three premises.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 210,
+  "trainingTrials": [
+    {
+      "id": "s032_t01",
+      "premises": [
+        {
+          "stimulusA": "ROQE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "XEJO"
+        },
+        {
+          "stimulusA": "XEJO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KUJE"
+        }
+      ],
+      "probeStimA": "ROQE",
+      "probeRelation": "SAME",
+      "probeStimB": "KUJE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "ROQE is opposite XEJO, XEJO is opposite KUJE. Opposite of opposite = same."
+    },
+    {
+      "id": "s032_t02",
+      "premises": [
+        {
+          "stimulusA": "RIVO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LIGE"
+        },
+        {
+          "stimulusA": "LIGE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GIMU"
+        }
+      ],
+      "probeStimA": "RIVO",
+      "probeRelation": "SAME",
+      "probeStimB": "GIMU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "RIVO is opposite LIGE, LIGE is opposite GIMU. Opposite of opposite = same."
+    },
+    {
+      "id": "s032_t03",
+      "premises": [
+        {
+          "stimulusA": "BEVU",
+          "relationType": "SAME",
+          "stimulusB": "MISE"
+        },
+        {
+          "stimulusA": "MISE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "FUKE"
+        }
+      ],
+      "probeStimA": "BEVU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "FUKE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "BEVU = MISE and MISE is opposite FUKE, so BEVU is opposite FUKE."
+    },
+    {
+      "id": "s032_t04",
+      "premises": [
+        {
+          "stimulusA": "NOCA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LAYU"
+        },
+        {
+          "stimulusA": "LAYU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "VOBO"
+        }
+      ],
+      "probeStimA": "NOCA",
+      "probeRelation": "SAME",
+      "probeStimB": "VOBO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "NOCA is opposite LAYU, LAYU is opposite VOBO. Opposite of opposite = same."
+    },
+    {
+      "id": "s032_t05",
+      "premises": [
+        {
+          "stimulusA": "FAMU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "DUZO"
+        },
+        {
+          "stimulusA": "DUZO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "JIBU"
+        }
+      ],
+      "probeStimA": "FAMU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "JIBU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "FAMU is opposite DUZO, DUZO is opposite JIBU. Opposite of opposite = same, not opposite."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s032_x01",
+      "premises": [
+        {
+          "stimulusA": "KOWA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YONI"
+        },
+        {
+          "stimulusA": "YONI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JUSI"
+        }
+      ],
+      "probeStimA": "KOWA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "JUSI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s032_x02",
+      "premises": [
+        {
+          "stimulusA": "LIXU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MALE"
+        },
+        {
+          "stimulusA": "MALE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KETO"
+        }
+      ],
+      "probeStimA": "LIXU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "KETO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s032_x03",
+      "premises": [
+        {
+          "stimulusA": "ZIBE",
+          "relationType": "SAME",
+          "stimulusB": "WEPE"
+        },
+        {
+          "stimulusA": "WEPE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KAKE"
+        }
+      ],
+      "probeStimA": "ZIBE",
+      "probeRelation": "SAME",
+      "probeStimB": "KAKE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

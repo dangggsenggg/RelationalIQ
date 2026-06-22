@@ -2,7 +2,6 @@ package com.relationaliq.data.datasource
 
 import android.content.Context
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.relationaliq.domain.model.Difficulty
 import com.relationaliq.domain.model.Premise
 import com.relationaliq.domain.model.RelationType
@@ -18,29 +17,82 @@ class StageDataSource @Inject constructor(
     private val gson: Gson
 ) {
     private var cachedStages: List<Stage>? = null
+    private var stageIndex: StageIndex? = null
 
     suspend fun getAllStages(): List<Stage> {
         cachedStages?.let { return it }
-        val stages = loadStagesFromAssets()
+        val stages = loadAllStagesFromAssets()
         cachedStages = stages
         return stages
     }
 
-    suspend fun getStage(stageId: Int): Stage? =
-        getAllStages().find { it.id == stageId }
+    suspend fun getStage(stageId: Int): Stage? {
+        cachedStages?.find { it.id == stageId }?.let { return it }
+        return loadSingleStage(stageId)
+    }
 
-    private fun loadStagesFromAssets(): List<Stage> {
+    suspend fun getStageCount(): Int {
+        return getIndex().totalStages
+    }
+
+    private fun getIndex(): StageIndex {
+        stageIndex?.let { return it }
+        val index = loadIndex()
+        stageIndex = index
+        return index
+    }
+
+    private fun loadIndex(): StageIndex {
         return try {
-            val json = context.assets.open("stages.json")
+            val json = context.assets.open("stages/index.json")
                 .bufferedReader().use { it.readText() }
-            val type = object : TypeToken<List<StageJson>>() {}.type
-            val stageJsonList: List<StageJson> = gson.fromJson(json, type)
-            stageJsonList.map { it.toDomain() }
+            gson.fromJson(json, StageIndex::class.java)
         } catch (e: Exception) {
-            emptyList()
+            StageIndex(version = "1.0", totalStages = 0, stages = emptyList())
+        }
+    }
+
+    private fun loadSingleStage(stageId: Int): Stage? {
+        val index = getIndex()
+        val entry = index.stages.find { it.stageId == stageId } ?: return null
+        return try {
+            val json = context.assets.open("stages/${entry.file}")
+                .bufferedReader().use { it.readText() }
+            val stageJson: StageJson = gson.fromJson(json, StageJson::class.java)
+            stageJson.toDomain()
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    private fun loadAllStagesFromAssets(): List<Stage> {
+        val index = getIndex()
+        return index.stages.mapNotNull { entry ->
+            try {
+                val json = context.assets.open("stages/${entry.file}")
+                    .bufferedReader().use { it.readText() }
+                val stageJson: StageJson = gson.fromJson(json, StageJson::class.java)
+                stageJson.toDomain()
+            } catch (e: Exception) {
+                null
+            }
         }
     }
 }
+
+data class StageIndex(
+    val version: String,
+    val totalStages: Int,
+    val stages: List<StageIndexEntry>
+)
+
+data class StageIndexEntry(
+    val stageId: Int,
+    val level: Int,
+    val title: String,
+    val difficulty: String,
+    val file: String
+)
 
 data class StageJson(
     val id: Int,

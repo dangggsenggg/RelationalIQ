@@ -1,0 +1,184 @@
+{
+  "id": 17,
+  "title": "Redundant Same Relations",
+  "description": "Handle redundant sameness information in premises.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 180,
+  "trainingTrials": [
+    {
+      "id": "s017_t01",
+      "premises": [
+        {
+          "stimulusA": "FANA",
+          "relationType": "SAME",
+          "stimulusB": "MODU"
+        },
+        {
+          "stimulusA": "MODU",
+          "relationType": "LESS_THAN",
+          "stimulusB": "CEHE"
+        }
+      ],
+      "probeStimA": "FANA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CEHE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "FANA = MODU and MODU < CEHE, so FANA < CEHE."
+    },
+    {
+      "id": "s017_t02",
+      "premises": [
+        {
+          "stimulusA": "YECA",
+          "relationType": "SAME",
+          "stimulusB": "BIFO"
+        },
+        {
+          "stimulusA": "BIFO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAJA"
+        }
+      ],
+      "probeStimA": "ZAJA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YECA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "YECA = BIFO > ZAJA, so ZAJA is NOT more than YECA."
+    },
+    {
+      "id": "s017_t03",
+      "premises": [
+        {
+          "stimulusA": "GUJU",
+          "relationType": "SAME",
+          "stimulusB": "GEBE"
+        },
+        {
+          "stimulusA": "GEBE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HAFO"
+        }
+      ],
+      "probeStimA": "GUJU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HAFO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "GUJU = GEBE and GEBE > HAFO, so GUJU > HAFO."
+    },
+    {
+      "id": "s017_t04",
+      "premises": [
+        {
+          "stimulusA": "FUWO",
+          "relationType": "SAME",
+          "stimulusB": "REQE"
+        },
+        {
+          "stimulusA": "REQE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QUDA"
+        }
+      ],
+      "probeStimA": "QUDA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FUWO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "FUWO = REQE > QUDA, so QUDA is NOT more than FUWO."
+    },
+    {
+      "id": "s017_t05",
+      "premises": [
+        {
+          "stimulusA": "SUSI",
+          "relationType": "SAME",
+          "stimulusB": "MICU"
+        },
+        {
+          "stimulusA": "MICU",
+          "relationType": "LESS_THAN",
+          "stimulusB": "KAJA"
+        }
+      ],
+      "probeStimA": "SUSI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "KAJA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "SUSI = MICU and MICU < KAJA, so SUSI < KAJA."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s017_x01",
+      "premises": [
+        {
+          "stimulusA": "YEFA",
+          "relationType": "SAME",
+          "stimulusB": "YIWE"
+        },
+        {
+          "stimulusA": "YIWE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAVA"
+        }
+      ],
+      "probeStimA": "YEFA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZAVA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s017_x02",
+      "premises": [
+        {
+          "stimulusA": "XAVU",
+          "relationType": "SAME",
+          "stimulusB": "NOFA"
+        },
+        {
+          "stimulusA": "NOFA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "JEKA"
+        }
+      ],
+      "probeStimA": "XAVU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "JEKA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s017_x03",
+      "premises": [
+        {
+          "stimulusA": "SUSE",
+          "relationType": "SAME",
+          "stimulusB": "YEYI"
+        },
+        {
+          "stimulusA": "YEYI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VITU"
+        }
+      ],
+      "probeStimA": "SUSE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "VITU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

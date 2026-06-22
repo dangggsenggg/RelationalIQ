@@ -1,0 +1,184 @@
+{
+  "id": 14,
+  "title": "Bidirectional Sameness",
+  "description": "Understand that sameness works in both directions.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 160,
+  "trainingTrials": [
+    {
+      "id": "s014_t01",
+      "premises": [
+        {
+          "stimulusA": "QIKA",
+          "relationType": "SAME",
+          "stimulusB": "NUFI"
+        },
+        {
+          "stimulusA": "NUFI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "WAZO"
+        }
+      ],
+      "probeStimA": "QIKA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WAZO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "QIKA = NUFI and NUFI < WAZO, so QIKA < WAZO."
+    },
+    {
+      "id": "s014_t02",
+      "premises": [
+        {
+          "stimulusA": "FUQA",
+          "relationType": "SAME",
+          "stimulusB": "BALA"
+        },
+        {
+          "stimulusA": "BALA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DOJI"
+        }
+      ],
+      "probeStimA": "FUQA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DOJI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "FUQA = BALA and BALA > DOJI, so FUQA > DOJI."
+    },
+    {
+      "id": "s014_t03",
+      "premises": [
+        {
+          "stimulusA": "YATU",
+          "relationType": "SAME",
+          "stimulusB": "LIKO"
+        },
+        {
+          "stimulusA": "LIKO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "DOZO"
+        }
+      ],
+      "probeStimA": "YATU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DOZO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "YATU = LIKO < DOZO, so YATU is NOT more than DOZO."
+    },
+    {
+      "id": "s014_t04",
+      "premises": [
+        {
+          "stimulusA": "GOPO",
+          "relationType": "SAME",
+          "stimulusB": "RIQA"
+        },
+        {
+          "stimulusA": "RIQA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GAFU"
+        }
+      ],
+      "probeStimA": "GOPO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GAFU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "GOPO = RIQA and RIQA > GAFU, so GOPO > GAFU."
+    },
+    {
+      "id": "s014_t05",
+      "premises": [
+        {
+          "stimulusA": "JUVU",
+          "relationType": "SAME",
+          "stimulusB": "BUQO"
+        },
+        {
+          "stimulusA": "BUQO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "SINU"
+        }
+      ],
+      "probeStimA": "JUVU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SINU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "JUVU = BUQO and BUQO < SINU, so JUVU < SINU."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s014_x01",
+      "premises": [
+        {
+          "stimulusA": "RUHO",
+          "relationType": "SAME",
+          "stimulusB": "TUDA"
+        },
+        {
+          "stimulusA": "TUDA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CAYU"
+        }
+      ],
+      "probeStimA": "RUHO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CAYU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s014_x02",
+      "premises": [
+        {
+          "stimulusA": "TICA",
+          "relationType": "SAME",
+          "stimulusB": "MIHE"
+        },
+        {
+          "stimulusA": "MIHE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MUVO"
+        }
+      ],
+      "probeStimA": "MUVO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TICA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s014_x03",
+      "premises": [
+        {
+          "stimulusA": "ZAYI",
+          "relationType": "SAME",
+          "stimulusB": "PUME"
+        },
+        {
+          "stimulusA": "PUME",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HURU"
+        }
+      ],
+      "probeStimA": "ZAYI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HURU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

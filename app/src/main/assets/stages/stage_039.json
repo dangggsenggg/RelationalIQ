@@ -1,0 +1,251 @@
+{
+  "id": 39,
+  "title": "Expert Derivation I",
+  "description": "Expert-level relational derivation with 4-5 premises and deep chains.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 4,
+  "difficulty": "EXPERT",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 50,
+  "xpReward": 300,
+  "trainingTrials": [
+    {
+      "id": "s039_t01",
+      "premises": [
+        {
+          "stimulusA": "SURIW",
+          "relationType": "SAME",
+          "stimulusB": "BUKAK"
+        },
+        {
+          "stimulusA": "BUKAK",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GOLIK"
+        },
+        {
+          "stimulusA": "GOLIK",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MEJER"
+        }
+      ],
+      "probeStimA": "SURIW",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CELAW",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "SURIW = BUKAK > GOLIK > MEJER, so SURIW > CELAW."
+    },
+    {
+      "id": "s039_t02",
+      "premises": [
+        {
+          "stimulusA": "PIGUS",
+          "relationType": "SAME",
+          "stimulusB": "CEWUQ"
+        },
+        {
+          "stimulusA": "CEWUQ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LOLEY"
+        },
+        {
+          "stimulusA": "LOLEY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ROGAY"
+        }
+      ],
+      "probeStimA": "PIGUS",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FOQAD",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "PIGUS = CEWUQ > LOLEY > ROGAY, so PIGUS > FOQAD."
+    },
+    {
+      "id": "s039_t03",
+      "premises": [
+        {
+          "stimulusA": "CAFOG",
+          "relationType": "SAME",
+          "stimulusB": "XEZEB"
+        },
+        {
+          "stimulusA": "XEZEB",
+          "relationType": "SAME",
+          "stimulusB": "MEXOS"
+        },
+        {
+          "stimulusA": "MEXOS",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TEPAW"
+        }
+      ],
+      "probeStimA": "CAFOG",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TEPAW",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "CAFOG = XEZEB = MEXOS > TEPAW, so CAFOG > TEPAW."
+    },
+    {
+      "id": "s039_t04",
+      "premises": [
+        {
+          "stimulusA": "GEBOK",
+          "relationType": "OPPOSITE",
+          "stimulusB": "QADAD"
+        },
+        {
+          "stimulusA": "QADAD",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PEZIG"
+        },
+        {
+          "stimulusA": "PEZIG",
+          "relationType": "MORE_THAN",
+          "stimulusB": "COJAC"
+        }
+      ],
+      "probeStimA": "GEBOK",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DUJAL",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "GEBOK is opposite QADAD, and QADAD > PEZIG. Opposition reverses the relation."
+    },
+    {
+      "id": "s039_t05",
+      "premises": [
+        {
+          "stimulusA": "JOJUQ",
+          "relationType": "OPPOSITE",
+          "stimulusB": "TASUM"
+        },
+        {
+          "stimulusA": "TASUM",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LUWAF"
+        },
+        {
+          "stimulusA": "LUWAF",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TEKOG"
+        }
+      ],
+      "probeStimA": "JOJUQ",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "HOLIB",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "JOJUQ is opposite TASUM, and TASUM > LUWAF. Opposition reverses the relation."
+    },
+    {
+      "id": "s039_t06",
+      "premises": [
+        {
+          "stimulusA": "COWAC",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ZAXAY"
+        },
+        {
+          "stimulusA": "ZAXAY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TUGIL"
+        },
+        {
+          "stimulusA": "TUGIL",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAPAH"
+        }
+      ],
+      "probeStimA": "COWAC",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SABOF",
+      "correctAnswer": false,
+      "timeLimitSeconds": 50,
+      "explanation": "COWAC is opposite ZAXAY, and ZAXAY > TUGIL. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s039_x01",
+      "premises": [
+        {
+          "stimulusA": "POCOR",
+          "relationType": "SAME",
+          "stimulusB": "TOXUS"
+        },
+        {
+          "stimulusA": "TOXUS",
+          "relationType": "SAME",
+          "stimulusB": "MEBOQ"
+        },
+        {
+          "stimulusA": "MEBOQ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "FEXIT"
+        }
+      ],
+      "probeStimA": "POCOR",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FEXIT",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    },
+    {
+      "id": "s039_x02",
+      "premises": [
+        {
+          "stimulusA": "JUDOB",
+          "relationType": "SAME",
+          "stimulusB": "RUWUC"
+        },
+        {
+          "stimulusA": "RUWUC",
+          "relationType": "SAME",
+          "stimulusB": "SAVOZ"
+        },
+        {
+          "stimulusA": "SAVOZ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QITOX"
+        }
+      ],
+      "probeStimA": "JUDOB",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "QITOX",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    },
+    {
+      "id": "s039_x03",
+      "premises": [
+        {
+          "stimulusA": "WUXIZ",
+          "relationType": "SAME",
+          "stimulusB": "TANEB"
+        },
+        {
+          "stimulusA": "TANEB",
+          "relationType": "MORE_THAN",
+          "stimulusB": "POHIF"
+        },
+        {
+          "stimulusA": "POHIF",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PEYEN"
+        }
+      ],
+      "probeStimA": "WUXIZ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PIBEB",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    }
+  ]
+}

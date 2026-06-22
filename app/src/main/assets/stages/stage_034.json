@@ -1,0 +1,251 @@
+{
+  "id": 34,
+  "title": "Complex Mixed I",
+  "description": "Complex multi-step derivations with all relation types.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "ADVANCED",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 40,
+  "xpReward": 240,
+  "trainingTrials": [
+    {
+      "id": "s034_t01",
+      "premises": [
+        {
+          "stimulusA": "VUZE",
+          "relationType": "SAME",
+          "stimulusB": "HIQA"
+        },
+        {
+          "stimulusA": "HIQA",
+          "relationType": "SAME",
+          "stimulusB": "WOQO"
+        },
+        {
+          "stimulusA": "WOQO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HEQU"
+        }
+      ],
+      "probeStimA": "VUZE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HEQU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "VUZE = HIQA = WOQO > HEQU, so VUZE > HEQU."
+    },
+    {
+      "id": "s034_t02",
+      "premises": [
+        {
+          "stimulusA": "KAFE",
+          "relationType": "SAME",
+          "stimulusB": "MIQA"
+        },
+        {
+          "stimulusA": "MIQA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NIFE"
+        },
+        {
+          "stimulusA": "NIFE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BIKO"
+        }
+      ],
+      "probeStimA": "KAFE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BIKO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "KAFE = MIQA > NIFE > BIKO, so KAFE > BIKO."
+    },
+    {
+      "id": "s034_t03",
+      "premises": [
+        {
+          "stimulusA": "WOTA",
+          "relationType": "SAME",
+          "stimulusB": "DITO"
+        },
+        {
+          "stimulusA": "DITO",
+          "relationType": "SAME",
+          "stimulusB": "FUMO"
+        },
+        {
+          "stimulusA": "FUMO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CEBA"
+        }
+      ],
+      "probeStimA": "WOTA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CEBA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "WOTA = DITO = FUMO > CEBA, so WOTA > CEBA."
+    },
+    {
+      "id": "s034_t04",
+      "premises": [
+        {
+          "stimulusA": "PUFE",
+          "relationType": "SAME",
+          "stimulusB": "DAKO"
+        },
+        {
+          "stimulusA": "DAKO",
+          "relationType": "SAME",
+          "stimulusB": "NOSO"
+        },
+        {
+          "stimulusA": "NOSO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XUPI"
+        }
+      ],
+      "probeStimA": "PUFE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XUPI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "PUFE = DAKO = NOSO > XUPI, so PUFE > XUPI."
+    },
+    {
+      "id": "s034_t05",
+      "premises": [
+        {
+          "stimulusA": "SAKA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GUZE"
+        },
+        {
+          "stimulusA": "GUZE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CENE"
+        },
+        {
+          "stimulusA": "CENE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CEHA"
+        }
+      ],
+      "probeStimA": "SAKA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CEHA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "SAKA is opposite GUZE, and GUZE > CENE. Opposition reverses the relation."
+    },
+    {
+      "id": "s034_t06",
+      "premises": [
+        {
+          "stimulusA": "CARE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "HUKO"
+        },
+        {
+          "stimulusA": "HUKO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PEDA"
+        },
+        {
+          "stimulusA": "PEDA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YULE"
+        }
+      ],
+      "probeStimA": "CARE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "YULE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "CARE is opposite HUKO, and HUKO > PEDA. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s034_x01",
+      "premises": [
+        {
+          "stimulusA": "KICI",
+          "relationType": "SAME",
+          "stimulusB": "FEZO"
+        },
+        {
+          "stimulusA": "FEZO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YISA"
+        },
+        {
+          "stimulusA": "YISA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZUPI"
+        }
+      ],
+      "probeStimA": "KICI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZUPI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s034_x02",
+      "premises": [
+        {
+          "stimulusA": "YERO",
+          "relationType": "SAME",
+          "stimulusB": "FEZE"
+        },
+        {
+          "stimulusA": "FEZE",
+          "relationType": "SAME",
+          "stimulusB": "CONU"
+        },
+        {
+          "stimulusA": "CONU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QOFO"
+        }
+      ],
+      "probeStimA": "YERO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "QOFO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s034_x03",
+      "premises": [
+        {
+          "stimulusA": "ROBA",
+          "relationType": "SAME",
+          "stimulusB": "BEZO"
+        },
+        {
+          "stimulusA": "BEZO",
+          "relationType": "SAME",
+          "stimulusB": "METO"
+        },
+        {
+          "stimulusA": "METO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YAVI"
+        }
+      ],
+      "probeStimA": "ROBA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YAVI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    }
+  ]
+}

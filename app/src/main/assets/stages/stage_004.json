@@ -1,0 +1,116 @@
+{
+  "id": 4,
+  "title": "Mixed Bigger/Smaller",
+  "description": "Mix of 'more than' and 'less than' premises in the same trial to build flexible reasoning.",
+  "relationTypes": ["MORE_THAN", "LESS_THAN"],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 120,
+  "trainingTrials": [
+    {
+      "id": "s004_t01",
+      "premises": [
+        {"stimulusA": "AWS", "relationType": "MORE_THAN", "stimulusB": "GHU"},
+        {"stimulusA": "LOP", "relationType": "LESS_THAN", "stimulusB": "GHU"}
+      ],
+      "probeStimA": "AWS",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LOP",
+      "correctAnswer": true,
+      "explanation": "AWS > GHU and LOP < GHU means AWS > GHU > LOP, so AWS > LOP.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s004_t02",
+      "premises": [
+        {"stimulusA": "XYT", "relationType": "MORE_THAN", "stimulusB": "BNM"},
+        {"stimulusA": "BNM", "relationType": "LESS_THAN", "stimulusB": "XYT"}
+      ],
+      "probeStimA": "BNM",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XYT",
+      "correctAnswer": false,
+      "explanation": "XYT > BNM (both premises say this), so BNM is NOT more than XYT.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s004_t03",
+      "premises": [
+        {"stimulusA": "RTY", "relationType": "MORE_THAN", "stimulusB": "UIO"},
+        {"stimulusA": "PAS", "relationType": "LESS_THAN", "stimulusB": "UIO"}
+      ],
+      "probeStimA": "PAS",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "RTY",
+      "correctAnswer": true,
+      "explanation": "RTY > UIO > PAS, so PAS is less than RTY.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s004_t04",
+      "premises": [
+        {"stimulusA": "DFK", "relationType": "LESS_THAN", "stimulusB": "JHL"},
+        {"stimulusA": "JHL", "relationType": "MORE_THAN", "stimulusB": "ZXC"}
+      ],
+      "probeStimA": "DFK",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZXC",
+      "correctAnswer": false,
+      "explanation": "DFK < JHL and JHL > ZXC. We cannot determine the relation between DFK and ZXC from these premises alone.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s004_t05",
+      "premises": [
+        {"stimulusA": "VBN", "relationType": "MORE_THAN", "stimulusB": "MKL"},
+        {"stimulusA": "WER", "relationType": "LESS_THAN", "stimulusB": "MKL"}
+      ],
+      "probeStimA": "VBN",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "WER",
+      "correctAnswer": true,
+      "explanation": "VBN > MKL > WER, so VBN is more than WER.",
+      "timeLimitSeconds": 25
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s004_x01",
+      "premises": [
+        {"stimulusA": "TYU", "relationType": "MORE_THAN", "stimulusB": "GHJ"},
+        {"stimulusA": "BNM", "relationType": "LESS_THAN", "stimulusB": "GHJ"}
+      ],
+      "probeStimA": "TYU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BNM",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s004_x02",
+      "premises": [
+        {"stimulusA": "PLK", "relationType": "MORE_THAN", "stimulusB": "QWE"},
+        {"stimulusA": "ZXC", "relationType": "LESS_THAN", "stimulusB": "QWE"}
+      ],
+      "probeStimA": "ZXC",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PLK",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s004_x03",
+      "premises": [
+        {"stimulusA": "FDS", "relationType": "LESS_THAN", "stimulusB": "HGF"},
+        {"stimulusA": "HGF", "relationType": "MORE_THAN", "stimulusB": "YTR"}
+      ],
+      "probeStimA": "FDS",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "HGF",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    }
+  ]
+}

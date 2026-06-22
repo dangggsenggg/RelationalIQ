@@ -1,0 +1,250 @@
+{
+  "id": 23,
+  "title": "Multi-Step Derivation",
+  "description": "Require 2-3 derivation steps to reach the correct answer.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 40,
+  "xpReward": 220,
+  "trainingTrials": [
+    {
+      "id": "s023_t01",
+      "premises": [
+        {
+          "stimulusA": "CIXO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "NOQI"
+        },
+        {
+          "stimulusA": "NOQI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZUMA"
+        },
+        {
+          "stimulusA": "ZUMA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VAME"
+        }
+      ],
+      "probeStimA": "CIXO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "VAME",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "CIXO is opposite NOQI, and NOQI > ZUMA. Opposition reverses the relation."
+    },
+    {
+      "id": "s023_t02",
+      "premises": [
+        {
+          "stimulusA": "BENU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GEXI"
+        },
+        {
+          "stimulusA": "GEXI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GIDO"
+        },
+        {
+          "stimulusA": "GIDO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KECI"
+        }
+      ],
+      "probeStimA": "BENU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "KECI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "BENU is opposite GEXI, and GEXI > GIDO. Opposition reverses the relation."
+    },
+    {
+      "id": "s023_t03",
+      "premises": [
+        {
+          "stimulusA": "PENA",
+          "relationType": "SAME",
+          "stimulusB": "MICO"
+        },
+        {
+          "stimulusA": "MICO",
+          "relationType": "SAME",
+          "stimulusB": "DIDO"
+        },
+        {
+          "stimulusA": "DIDO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZUHU"
+        }
+      ],
+      "probeStimA": "PENA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZUHU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "PENA = MICO = DIDO > ZUHU, so PENA > ZUHU."
+    },
+    {
+      "id": "s023_t04",
+      "premises": [
+        {
+          "stimulusA": "DOYA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SIFO"
+        },
+        {
+          "stimulusA": "SIFO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VONE"
+        },
+        {
+          "stimulusA": "VONE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CAHO"
+        }
+      ],
+      "probeStimA": "DOYA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CAHO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "DOYA is opposite SIFO, and SIFO > VONE. Opposition reverses the relation."
+    },
+    {
+      "id": "s023_t05",
+      "premises": [
+        {
+          "stimulusA": "TEMO",
+          "relationType": "SAME",
+          "stimulusB": "LILA"
+        },
+        {
+          "stimulusA": "LILA",
+          "relationType": "SAME",
+          "stimulusB": "ZELA"
+        },
+        {
+          "stimulusA": "ZELA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TIKA"
+        }
+      ],
+      "probeStimA": "TEMO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TIKA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "TEMO = LILA = ZELA > TIKA, so TEMO > TIKA."
+    },
+    {
+      "id": "s023_t06",
+      "premises": [
+        {
+          "stimulusA": "GAJA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MEDE"
+        },
+        {
+          "stimulusA": "MEDE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RUFI"
+        },
+        {
+          "stimulusA": "RUFI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SURE"
+        }
+      ],
+      "probeStimA": "GAJA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SURE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "GAJA is opposite MEDE, and MEDE > RUFI. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s023_x01",
+      "premises": [
+        {
+          "stimulusA": "NUXA",
+          "relationType": "SAME",
+          "stimulusB": "XEZA"
+        },
+        {
+          "stimulusA": "XEZA",
+          "relationType": "SAME",
+          "stimulusB": "HAHA"
+        },
+        {
+          "stimulusA": "HAHA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NAWA"
+        }
+      ],
+      "probeStimA": "NUXA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NAWA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s023_x02",
+      "premises": [
+        {
+          "stimulusA": "CAZU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BOKU"
+        },
+        {
+          "stimulusA": "BOKU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HUSA"
+        },
+        {
+          "stimulusA": "HUSA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VIWU"
+        }
+      ],
+      "probeStimA": "CAZU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "VIWU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s023_x03",
+      "premises": [
+        {
+          "stimulusA": "VEYA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "FUGI"
+        },
+        {
+          "stimulusA": "FUGI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BIFU"
+        },
+        {
+          "stimulusA": "BIFU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NILU"
+        }
+      ],
+      "probeStimA": "VEYA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "NILU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    }
+  ]
+}

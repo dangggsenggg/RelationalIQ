@@ -1,0 +1,251 @@
+{
+  "id": 35,
+  "title": "Complex Mixed II",
+  "description": "Further complex mixed-relation derivation training.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "ADVANCED",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 40,
+  "xpReward": 240,
+  "trainingTrials": [
+    {
+      "id": "s035_t01",
+      "premises": [
+        {
+          "stimulusA": "ZOGE",
+          "relationType": "SAME",
+          "stimulusB": "HUTA"
+        },
+        {
+          "stimulusA": "HUTA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RUQE"
+        },
+        {
+          "stimulusA": "RUQE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BALI"
+        }
+      ],
+      "probeStimA": "ZOGE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BALI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "ZOGE = HUTA > RUQE > BALI, so ZOGE > BALI."
+    },
+    {
+      "id": "s035_t02",
+      "premises": [
+        {
+          "stimulusA": "PIYI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BIFA"
+        },
+        {
+          "stimulusA": "BIFA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TOHA"
+        },
+        {
+          "stimulusA": "TOHA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JUNU"
+        }
+      ],
+      "probeStimA": "PIYI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "JUNU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "PIYI is opposite BIFA, and BIFA > TOHA. Opposition reverses the relation."
+    },
+    {
+      "id": "s035_t03",
+      "premises": [
+        {
+          "stimulusA": "LOVU",
+          "relationType": "SAME",
+          "stimulusB": "DOGO"
+        },
+        {
+          "stimulusA": "DOGO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GOWI"
+        },
+        {
+          "stimulusA": "GOWI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GUZE"
+        }
+      ],
+      "probeStimA": "LOVU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GUZE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "LOVU = DOGO > GOWI > GUZE, so LOVU > GUZE."
+    },
+    {
+      "id": "s035_t04",
+      "premises": [
+        {
+          "stimulusA": "MUBU",
+          "relationType": "SAME",
+          "stimulusB": "HOFA"
+        },
+        {
+          "stimulusA": "HOFA",
+          "relationType": "SAME",
+          "stimulusB": "PAHU"
+        },
+        {
+          "stimulusA": "PAHU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SUYI"
+        }
+      ],
+      "probeStimA": "MUBU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "SUYI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "MUBU = HOFA = PAHU > SUYI, so MUBU > SUYI."
+    },
+    {
+      "id": "s035_t05",
+      "premises": [
+        {
+          "stimulusA": "BAKO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "XUGE"
+        },
+        {
+          "stimulusA": "XUGE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PAGA"
+        },
+        {
+          "stimulusA": "PAGA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JOGU"
+        }
+      ],
+      "probeStimA": "BAKO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "JOGU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "BAKO is opposite XUGE, and XUGE > PAGA. Opposition reverses the relation."
+    },
+    {
+      "id": "s035_t06",
+      "premises": [
+        {
+          "stimulusA": "QEBI",
+          "relationType": "SAME",
+          "stimulusB": "TAHO"
+        },
+        {
+          "stimulusA": "TAHO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VECE"
+        },
+        {
+          "stimulusA": "VECE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "POKI"
+        }
+      ],
+      "probeStimA": "QEBI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "POKI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "QEBI = TAHO > VECE > POKI, so QEBI > POKI."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s035_x01",
+      "premises": [
+        {
+          "stimulusA": "FUFA",
+          "relationType": "SAME",
+          "stimulusB": "SOQE"
+        },
+        {
+          "stimulusA": "SOQE",
+          "relationType": "SAME",
+          "stimulusB": "COBU"
+        },
+        {
+          "stimulusA": "COBU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VIBA"
+        }
+      ],
+      "probeStimA": "FUFA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VIBA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s035_x02",
+      "premises": [
+        {
+          "stimulusA": "BUNI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "JONO"
+        },
+        {
+          "stimulusA": "JONO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JUMI"
+        },
+        {
+          "stimulusA": "JUMI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NIZE"
+        }
+      ],
+      "probeStimA": "BUNI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "NIZE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s035_x03",
+      "premises": [
+        {
+          "stimulusA": "SOGO",
+          "relationType": "SAME",
+          "stimulusB": "LICU"
+        },
+        {
+          "stimulusA": "LICU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SARA"
+        },
+        {
+          "stimulusA": "SARA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZUGA"
+        }
+      ],
+      "probeStimA": "SOGO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZUGA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    }
+  ]
+}

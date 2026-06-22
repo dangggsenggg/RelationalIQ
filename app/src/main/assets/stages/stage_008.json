@@ -1,0 +1,183 @@
+{
+  "id": 8,
+  "title": "Varied Direction Queries",
+  "description": "Questions ask about relations in unexpected directions.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 140,
+  "trainingTrials": [
+    {
+      "id": "s008_t01",
+      "premises": [
+        {
+          "stimulusA": "BUJ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GUP"
+        },
+        {
+          "stimulusA": "GUP",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HOB"
+        }
+      ],
+      "probeStimA": "HOB",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BUJ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "BUJ > GUP > HOB, so HOB is NOT more than BUJ."
+    },
+    {
+      "id": "s008_t02",
+      "premises": [
+        {
+          "stimulusA": "DOD",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TOX"
+        },
+        {
+          "stimulusA": "TOX",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MEZ"
+        }
+      ],
+      "probeStimA": "MEZ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DOD",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "DOD > TOX > MEZ, so MEZ is NOT more than DOD."
+    },
+    {
+      "id": "s008_t03",
+      "premises": [
+        {
+          "stimulusA": "JIV",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YAK"
+        },
+        {
+          "stimulusA": "YAK",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JOC"
+        }
+      ],
+      "probeStimA": "JOC",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JIV",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "JIV > YAK > JOC, so JOC is NOT more than JIV."
+    },
+    {
+      "id": "s008_t04",
+      "premises": [
+        {
+          "stimulusA": "XAS",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BOR"
+        },
+        {
+          "stimulusA": "BOR",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TEP"
+        }
+      ],
+      "probeStimA": "TEP",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "XAS",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "TEP > BOR > XAS, so TEP is NOT less than XAS."
+    },
+    {
+      "id": "s008_t05",
+      "premises": [
+        {
+          "stimulusA": "TES",
+          "relationType": "LESS_THAN",
+          "stimulusB": "YEQ"
+        },
+        {
+          "stimulusA": "YEQ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ROV"
+        }
+      ],
+      "probeStimA": "ROV",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "TES",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "ROV > YEQ > TES, so ROV is NOT less than TES."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s008_x01",
+      "premises": [
+        {
+          "stimulusA": "PEY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SOD"
+        },
+        {
+          "stimulusA": "SOD",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VIN"
+        }
+      ],
+      "probeStimA": "VIN",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PEY",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s008_x02",
+      "premises": [
+        {
+          "stimulusA": "HEB",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TON"
+        },
+        {
+          "stimulusA": "TON",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TOZ"
+        }
+      ],
+      "probeStimA": "TOZ",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "HEB",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s008_x03",
+      "premises": [
+        {
+          "stimulusA": "CAP",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GUT"
+        },
+        {
+          "stimulusA": "GUT",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TER"
+        }
+      ],
+      "probeStimA": "TER",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CAP",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": 26,
+  "title": "Opposition Intro",
+  "description": "Learn basic opposite relations and how they interact with sameness.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE"
+  ],
+  "premiseCount": 2,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 170,
+  "trainingTrials": [
+    {
+      "id": "s026_t01",
+      "premises": [
+        {
+          "stimulusA": "YUTI",
+          "relationType": "SAME",
+          "stimulusB": "KELU"
+        },
+        {
+          "stimulusA": "KELU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MUDO"
+        }
+      ],
+      "probeStimA": "YUTI",
+      "probeRelation": "SAME",
+      "probeStimB": "MUDO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "YUTI = KELU and KELU is opposite MUDO, so YUTI is NOT same as MUDO."
+    },
+    {
+      "id": "s026_t02",
+      "premises": [
+        {
+          "stimulusA": "REWA",
+          "relationType": "SAME",
+          "stimulusB": "DELI"
+        },
+        {
+          "stimulusA": "DELI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KAQA"
+        }
+      ],
+      "probeStimA": "REWA",
+      "probeRelation": "SAME",
+      "probeStimB": "KAQA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "REWA = DELI and DELI is opposite KAQA, so REWA is NOT same as KAQA."
+    },
+    {
+      "id": "s026_t03",
+      "premises": [
+        {
+          "stimulusA": "NULO",
+          "relationType": "SAME",
+          "stimulusB": "LUMU"
+        },
+        {
+          "stimulusA": "LUMU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "NIZA"
+        }
+      ],
+      "probeStimA": "NULO",
+      "probeRelation": "SAME",
+      "probeStimB": "NIZA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "NULO = LUMU and LUMU is opposite NIZA, so NULO is NOT same as NIZA."
+    },
+    {
+      "id": "s026_t04",
+      "premises": [
+        {
+          "stimulusA": "PUGO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ZURU"
+        },
+        {
+          "stimulusA": "ZURU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MEKI"
+        }
+      ],
+      "probeStimA": "PUGO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "MEKI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "PUGO is opposite ZURU, and ZURU > MEKI. Opposite reverses, so PUGO < MEKI."
+    },
+    {
+      "id": "s026_t05",
+      "premises": [
+        {
+          "stimulusA": "HERO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YUJI"
+        },
+        {
+          "stimulusA": "YUJI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "QIXO"
+        }
+      ],
+      "probeStimA": "HERO",
+      "probeRelation": "SAME",
+      "probeStimB": "QIXO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "HERO is opposite YUJI, YUJI is opposite QIXO. Opposite of opposite = same."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s026_x01",
+      "premises": [
+        {
+          "stimulusA": "JATI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "CERU"
+        },
+        {
+          "stimulusA": "CERU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MONI"
+        }
+      ],
+      "probeStimA": "JATI",
+      "probeRelation": "SAME",
+      "probeStimB": "MONI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s026_x02",
+      "premises": [
+        {
+          "stimulusA": "MIVE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GEBA"
+        },
+        {
+          "stimulusA": "GEBA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LOGA"
+        }
+      ],
+      "probeStimA": "MIVE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LOGA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s026_x03",
+      "premises": [
+        {
+          "stimulusA": "ZEYA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YUZA"
+        },
+        {
+          "stimulusA": "YUZA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "RUVA"
+        }
+      ],
+      "probeStimA": "ZEYA",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "RUVA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

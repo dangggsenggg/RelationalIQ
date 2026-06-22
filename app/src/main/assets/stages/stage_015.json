@@ -1,0 +1,184 @@
+{
+  "id": 15,
+  "title": "Three Premise Coordination",
+  "description": "Coordinate three premises involving sameness and comparison.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 170,
+  "trainingTrials": [
+    {
+      "id": "s015_t01",
+      "premises": [
+        {
+          "stimulusA": "SEVA",
+          "relationType": "SAME",
+          "stimulusB": "YIJI"
+        },
+        {
+          "stimulusA": "YIJI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HOYO"
+        }
+      ],
+      "probeStimA": "SEVA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "HOYO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "SEVA = YIJI and YIJI > HOYO, so SEVA > HOYO."
+    },
+    {
+      "id": "s015_t02",
+      "premises": [
+        {
+          "stimulusA": "JORU",
+          "relationType": "SAME",
+          "stimulusB": "LEQA"
+        },
+        {
+          "stimulusA": "LEQA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "CODU"
+        }
+      ],
+      "probeStimA": "JORU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CODU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "JORU = LEQA < CODU, so JORU is NOT more than CODU."
+    },
+    {
+      "id": "s015_t03",
+      "premises": [
+        {
+          "stimulusA": "FEVE",
+          "relationType": "SAME",
+          "stimulusB": "NUQU"
+        },
+        {
+          "stimulusA": "NUQU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VOZU"
+        }
+      ],
+      "probeStimA": "VOZU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FEVE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "FEVE = NUQU > VOZU, so VOZU is NOT more than FEVE."
+    },
+    {
+      "id": "s015_t04",
+      "premises": [
+        {
+          "stimulusA": "SUWE",
+          "relationType": "SAME",
+          "stimulusB": "NIJO"
+        },
+        {
+          "stimulusA": "NIJO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GAHO"
+        }
+      ],
+      "probeStimA": "GAHO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "SUWE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "SUWE = NIJO > GAHO, so GAHO is NOT more than SUWE."
+    },
+    {
+      "id": "s015_t05",
+      "premises": [
+        {
+          "stimulusA": "MISU",
+          "relationType": "SAME",
+          "stimulusB": "VAVU"
+        },
+        {
+          "stimulusA": "VAVU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KOXI"
+        }
+      ],
+      "probeStimA": "KOXI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MISU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "MISU = VAVU > KOXI, so KOXI is NOT more than MISU."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s015_x01",
+      "premises": [
+        {
+          "stimulusA": "CAMU",
+          "relationType": "SAME",
+          "stimulusB": "NULO"
+        },
+        {
+          "stimulusA": "NULO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZAMA"
+        }
+      ],
+      "probeStimA": "CAMU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZAMA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s015_x02",
+      "premises": [
+        {
+          "stimulusA": "LOVA",
+          "relationType": "SAME",
+          "stimulusB": "ZOVA"
+        },
+        {
+          "stimulusA": "ZOVA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YORU"
+        }
+      ],
+      "probeStimA": "YORU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LOVA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s015_x03",
+      "premises": [
+        {
+          "stimulusA": "KIME",
+          "relationType": "SAME",
+          "stimulusB": "SERU"
+        },
+        {
+          "stimulusA": "SERU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LOSI"
+        }
+      ],
+      "probeStimA": "KIME",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LOSI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

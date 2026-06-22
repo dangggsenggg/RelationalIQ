@@ -1,0 +1,225 @@
+{
+  "id": 37,
+  "title": "All Relations Combined I",
+  "description": "Master-level training combining all relation types in complex chains.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 4,
+  "difficulty": "ADVANCED",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 45,
+  "xpReward": 260,
+  "trainingTrials": [
+    {
+      "id": "s037_t01",
+      "premises": [
+        {
+          "stimulusA": "RADA",
+          "relationType": "SAME",
+          "stimulusB": "XEGO"
+        },
+        {
+          "stimulusA": "XEGO",
+          "relationType": "SAME",
+          "stimulusB": "MIDE"
+        },
+        {
+          "stimulusA": "MIDE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JIWE"
+        }
+      ],
+      "probeStimA": "RADA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JIWE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "RADA = XEGO = MIDE > JIWE, so RADA > JIWE."
+    },
+    {
+      "id": "s037_t02",
+      "premises": [
+        {
+          "stimulusA": "WEVU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GIFI"
+        },
+        {
+          "stimulusA": "GIFI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUBE"
+        },
+        {
+          "stimulusA": "KUBE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QUSU"
+        }
+      ],
+      "probeStimA": "WEVU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "ZUBU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "WEVU is opposite GIFI, and GIFI > KUBE. Opposition reverses the relation."
+    },
+    {
+      "id": "s037_t03",
+      "premises": [
+        {
+          "stimulusA": "YEXU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GOYU"
+        },
+        {
+          "stimulusA": "GOYU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DARE"
+        },
+        {
+          "stimulusA": "DARE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RIZE"
+        }
+      ],
+      "probeStimA": "YEXU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SOLA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "YEXU is opposite GOYU, and GOYU > DARE. Opposition reverses the relation."
+    },
+    {
+      "id": "s037_t04",
+      "premises": [
+        {
+          "stimulusA": "POMA",
+          "relationType": "SAME",
+          "stimulusB": "DEDE"
+        },
+        {
+          "stimulusA": "DEDE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "FIXI"
+        },
+        {
+          "stimulusA": "FIXI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JOKA"
+        }
+      ],
+      "probeStimA": "POMA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NIBA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45,
+      "explanation": "POMA = DEDE > FIXI > JOKA, so POMA > NIBA."
+    },
+    {
+      "id": "s037_t05",
+      "premises": [
+        {
+          "stimulusA": "ROHO",
+          "relationType": "SAME",
+          "stimulusB": "ZIWI"
+        },
+        {
+          "stimulusA": "ZIWI",
+          "relationType": "SAME",
+          "stimulusB": "PAVA"
+        },
+        {
+          "stimulusA": "PAVA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YUFO"
+        }
+      ],
+      "probeStimA": "ROHO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YUFO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 45,
+      "explanation": "ROHO = ZIWI = PAVA > YUFO, so ROHO > YUFO."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s037_x01",
+      "premises": [
+        {
+          "stimulusA": "TIMU",
+          "relationType": "SAME",
+          "stimulusB": "VAGO"
+        },
+        {
+          "stimulusA": "VAGO",
+          "relationType": "SAME",
+          "stimulusB": "PECA"
+        },
+        {
+          "stimulusA": "PECA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZEKU"
+        }
+      ],
+      "probeStimA": "TIMU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZEKU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    },
+    {
+      "id": "s037_x02",
+      "premises": [
+        {
+          "stimulusA": "SUGU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LENO"
+        },
+        {
+          "stimulusA": "LENO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YEGO"
+        },
+        {
+          "stimulusA": "YEGO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KABI"
+        }
+      ],
+      "probeStimA": "SUGU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "XUJA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    },
+    {
+      "id": "s037_x03",
+      "premises": [
+        {
+          "stimulusA": "QARE",
+          "relationType": "SAME",
+          "stimulusB": "CAVU"
+        },
+        {
+          "stimulusA": "CAVU",
+          "relationType": "SAME",
+          "stimulusB": "MUZA"
+        },
+        {
+          "stimulusA": "MUZA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GUFO"
+        }
+      ],
+      "probeStimA": "QARE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GUFO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 45
+    }
+  ]
+}

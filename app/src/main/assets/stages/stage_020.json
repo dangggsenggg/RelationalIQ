@@ -1,0 +1,224 @@
+{
+  "id": 20,
+  "title": "Complex Coordination",
+  "description": "Advanced coordination with multi-step derivation chains.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 200,
+  "trainingTrials": [
+    {
+      "id": "s020_t01",
+      "premises": [
+        {
+          "stimulusA": "JOSU",
+          "relationType": "SAME",
+          "stimulusB": "SOPE"
+        },
+        {
+          "stimulusA": "SOPE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "FUQO"
+        },
+        {
+          "stimulusA": "FUQO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "LABO"
+        }
+      ],
+      "probeStimA": "JOSU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LABO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "JOSU = SOPE > FUQO > LABO, so JOSU > LABO."
+    },
+    {
+      "id": "s020_t02",
+      "premises": [
+        {
+          "stimulusA": "NERU",
+          "relationType": "SAME",
+          "stimulusB": "VEVO"
+        },
+        {
+          "stimulusA": "VEVO",
+          "relationType": "SAME",
+          "stimulusB": "TAGI"
+        },
+        {
+          "stimulusA": "TAGI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VOSU"
+        }
+      ],
+      "probeStimA": "NERU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VOSU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "NERU = VEVO = TAGI > VOSU, so NERU > VOSU."
+    },
+    {
+      "id": "s020_t03",
+      "premises": [
+        {
+          "stimulusA": "QEQI",
+          "relationType": "SAME",
+          "stimulusB": "PIQE"
+        },
+        {
+          "stimulusA": "PIQE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SAVU"
+        },
+        {
+          "stimulusA": "SAVU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RONE"
+        }
+      ],
+      "probeStimA": "QEQI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "RONE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "QEQI = PIQE > SAVU > RONE, so QEQI > RONE."
+    },
+    {
+      "id": "s020_t04",
+      "premises": [
+        {
+          "stimulusA": "HUQI",
+          "relationType": "SAME",
+          "stimulusB": "JEXO"
+        },
+        {
+          "stimulusA": "JEXO",
+          "relationType": "SAME",
+          "stimulusB": "WUYE"
+        },
+        {
+          "stimulusA": "WUYE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GITO"
+        }
+      ],
+      "probeStimA": "HUQI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GITO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "HUQI = JEXO = WUYE > GITO, so HUQI > GITO."
+    },
+    {
+      "id": "s020_t05",
+      "premises": [
+        {
+          "stimulusA": "ZESA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GACU"
+        },
+        {
+          "stimulusA": "GACU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VEXE"
+        },
+        {
+          "stimulusA": "VEXE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DIYU"
+        }
+      ],
+      "probeStimA": "ZESA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DIYU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "ZESA is opposite GACU, and GACU > VEXE. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s020_x01",
+      "premises": [
+        {
+          "stimulusA": "HIKI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "WAZO"
+        },
+        {
+          "stimulusA": "WAZO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XUVO"
+        },
+        {
+          "stimulusA": "XUVO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NAHI"
+        }
+      ],
+      "probeStimA": "HIKI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "NAHI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s020_x02",
+      "premises": [
+        {
+          "stimulusA": "GERE",
+          "relationType": "SAME",
+          "stimulusB": "KOZO"
+        },
+        {
+          "stimulusA": "KOZO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZAFU"
+        },
+        {
+          "stimulusA": "ZAFU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MUJI"
+        }
+      ],
+      "probeStimA": "GERE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MUJI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s020_x03",
+      "premises": [
+        {
+          "stimulusA": "JUSI",
+          "relationType": "SAME",
+          "stimulusB": "MIWI"
+        },
+        {
+          "stimulusA": "MIWI",
+          "relationType": "SAME",
+          "stimulusB": "POCE"
+        },
+        {
+          "stimulusA": "POCE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QIRO"
+        }
+      ],
+      "probeStimA": "JUSI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "QIRO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}
