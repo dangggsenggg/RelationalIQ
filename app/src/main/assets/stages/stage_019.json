@@ -1,0 +1,184 @@
+{
+  "id": 19,
+  "title": "Mixed Same/Comparison II",
+  "description": "Further practice with mixed coordination and comparison.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 190,
+  "trainingTrials": [
+    {
+      "id": "s019_t01",
+      "premises": [
+        {
+          "stimulusA": "RIRA",
+          "relationType": "SAME",
+          "stimulusB": "RELO"
+        },
+        {
+          "stimulusA": "RELO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DUTE"
+        }
+      ],
+      "probeStimA": "DUTE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "RIRA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "RIRA = RELO > DUTE, so DUTE is NOT more than RIRA."
+    },
+    {
+      "id": "s019_t02",
+      "premises": [
+        {
+          "stimulusA": "NEPI",
+          "relationType": "SAME",
+          "stimulusB": "LANE"
+        },
+        {
+          "stimulusA": "LANE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JUZA"
+        }
+      ],
+      "probeStimA": "JUZA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NEPI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "NEPI = LANE > JUZA, so JUZA is NOT more than NEPI."
+    },
+    {
+      "id": "s019_t03",
+      "premises": [
+        {
+          "stimulusA": "KUXO",
+          "relationType": "SAME",
+          "stimulusB": "MEMA"
+        },
+        {
+          "stimulusA": "MEMA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HEPU"
+        }
+      ],
+      "probeStimA": "HEPU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "KUXO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "KUXO = MEMA > HEPU, so HEPU is NOT more than KUXO."
+    },
+    {
+      "id": "s019_t04",
+      "premises": [
+        {
+          "stimulusA": "FIJI",
+          "relationType": "SAME",
+          "stimulusB": "CEFO"
+        },
+        {
+          "stimulusA": "CEFO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "SUJA"
+        }
+      ],
+      "probeStimA": "FIJI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "SUJA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "FIJI = CEFO < SUJA, so FIJI is NOT more than SUJA."
+    },
+    {
+      "id": "s019_t05",
+      "premises": [
+        {
+          "stimulusA": "SUQE",
+          "relationType": "SAME",
+          "stimulusB": "XEVO"
+        },
+        {
+          "stimulusA": "XEVO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DEMO"
+        }
+      ],
+      "probeStimA": "DEMO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "SUQE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "SUQE = XEVO > DEMO, so DEMO is NOT more than SUQE."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s019_x01",
+      "premises": [
+        {
+          "stimulusA": "NUCU",
+          "relationType": "SAME",
+          "stimulusB": "TITA"
+        },
+        {
+          "stimulusA": "TITA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VEMO"
+        }
+      ],
+      "probeStimA": "NUCU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VEMO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s019_x02",
+      "premises": [
+        {
+          "stimulusA": "YULU",
+          "relationType": "SAME",
+          "stimulusB": "LELO"
+        },
+        {
+          "stimulusA": "LELO",
+          "relationType": "LESS_THAN",
+          "stimulusB": "XARO"
+        }
+      ],
+      "probeStimA": "YULU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XARO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s019_x03",
+      "premises": [
+        {
+          "stimulusA": "DUNO",
+          "relationType": "SAME",
+          "stimulusB": "WICA"
+        },
+        {
+          "stimulusA": "WICA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YAKO"
+        }
+      ],
+      "probeStimA": "DUNO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YAKO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": 31,
+  "title": "Mixed Opposition I",
+  "description": "Combine opposition with multiple relation types.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 210,
+  "trainingTrials": [
+    {
+      "id": "s031_t01",
+      "premises": [
+        {
+          "stimulusA": "TAXU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SOVU"
+        },
+        {
+          "stimulusA": "SOVU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KAXO"
+        }
+      ],
+      "probeStimA": "TAXU",
+      "probeRelation": "SAME",
+      "probeStimB": "KAXO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "TAXU is opposite SOVU, SOVU is opposite KAXO. Opposite of opposite = same."
+    },
+    {
+      "id": "s031_t02",
+      "premises": [
+        {
+          "stimulusA": "VEPO",
+          "relationType": "SAME",
+          "stimulusB": "DOGU"
+        },
+        {
+          "stimulusA": "DOGU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BOFI"
+        }
+      ],
+      "probeStimA": "VEPO",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "BOFI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "VEPO = DOGU and DOGU is opposite BOFI, so VEPO is opposite BOFI."
+    },
+    {
+      "id": "s031_t03",
+      "premises": [
+        {
+          "stimulusA": "XEXI",
+          "relationType": "SAME",
+          "stimulusB": "FOCA"
+        },
+        {
+          "stimulusA": "FOCA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YIJO"
+        }
+      ],
+      "probeStimA": "XEXI",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "YIJO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "XEXI = FOCA and FOCA is opposite YIJO, so XEXI is opposite YIJO."
+    },
+    {
+      "id": "s031_t04",
+      "premises": [
+        {
+          "stimulusA": "ZUJE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ROPE"
+        },
+        {
+          "stimulusA": "ROPE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SEMO"
+        }
+      ],
+      "probeStimA": "ZUJE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "SEMO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "ZUJE is opposite ROPE, and ROPE > SEMO. Opposite reverses, so ZUJE is NOT more than SEMO."
+    },
+    {
+      "id": "s031_t05",
+      "premises": [
+        {
+          "stimulusA": "BEJE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "VILU"
+        },
+        {
+          "stimulusA": "VILU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RIYU"
+        }
+      ],
+      "probeStimA": "BEJE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "RIYU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "BEJE is opposite VILU, and VILU > RIYU. Opposite reverses, so BEJE < RIYU."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s031_x01",
+      "premises": [
+        {
+          "stimulusA": "JAKA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "PUBI"
+        },
+        {
+          "stimulusA": "PUBI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GEJA"
+        }
+      ],
+      "probeStimA": "JAKA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GEJA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s031_x02",
+      "premises": [
+        {
+          "stimulusA": "JUZI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "HOTE"
+        },
+        {
+          "stimulusA": "HOTE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QOHA"
+        }
+      ],
+      "probeStimA": "JUZI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "QOHA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s031_x03",
+      "premises": [
+        {
+          "stimulusA": "KAPI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LEDA"
+        },
+        {
+          "stimulusA": "LEDA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "JITO"
+        }
+      ],
+      "probeStimA": "KAPI",
+      "probeRelation": "SAME",
+      "probeStimB": "JITO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

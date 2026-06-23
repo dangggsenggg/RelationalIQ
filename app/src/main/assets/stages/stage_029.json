@@ -1,0 +1,183 @@
+{
+  "id": 29,
+  "title": "Double Opposition",
+  "description": "Opposite of opposite equals same.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE"
+  ],
+  "premiseCount": 2,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 200,
+  "trainingTrials": [
+    {
+      "id": "s029_t01",
+      "premises": [
+        {
+          "stimulusA": "WEFU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BIDU"
+        },
+        {
+          "stimulusA": "BIDU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CEGO"
+        }
+      ],
+      "probeStimA": "WEFU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CEGO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "WEFU is opposite BIDU, and BIDU > CEGO. Opposite reverses, so WEFU is NOT more than CEGO."
+    },
+    {
+      "id": "s029_t02",
+      "premises": [
+        {
+          "stimulusA": "XEBA",
+          "relationType": "SAME",
+          "stimulusB": "XUQA"
+        },
+        {
+          "stimulusA": "XUQA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LOQE"
+        }
+      ],
+      "probeStimA": "XEBA",
+      "probeRelation": "SAME",
+      "probeStimB": "LOQE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "XEBA = XUQA and XUQA is opposite LOQE, so XEBA is NOT same as LOQE."
+    },
+    {
+      "id": "s029_t03",
+      "premises": [
+        {
+          "stimulusA": "TUQU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SEYE"
+        },
+        {
+          "stimulusA": "SEYE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KEVA"
+        }
+      ],
+      "probeStimA": "TUQU",
+      "probeRelation": "SAME",
+      "probeStimB": "KEVA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "TUQU is opposite SEYE, SEYE is opposite KEVA. Opposite of opposite = same."
+    },
+    {
+      "id": "s029_t04",
+      "premises": [
+        {
+          "stimulusA": "DUZU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "DUPE"
+        },
+        {
+          "stimulusA": "DUPE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QIGE"
+        }
+      ],
+      "probeStimA": "DUZU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "QIGE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "DUZU is opposite DUPE, and DUPE > QIGE. Opposite reverses, so DUZU is NOT more than QIGE."
+    },
+    {
+      "id": "s029_t05",
+      "premises": [
+        {
+          "stimulusA": "VEGA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MUDE"
+        },
+        {
+          "stimulusA": "MUDE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CUNE"
+        }
+      ],
+      "probeStimA": "VEGA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CUNE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "VEGA is opposite MUDE, and MUDE > CUNE. Opposite reverses, so VEGA is NOT more than CUNE."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s029_x01",
+      "premises": [
+        {
+          "stimulusA": "HAZE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MUKE"
+        },
+        {
+          "stimulusA": "MUKE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "BACE"
+        }
+      ],
+      "probeStimA": "HAZE",
+      "probeRelation": "SAME",
+      "probeStimB": "BACE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s029_x02",
+      "premises": [
+        {
+          "stimulusA": "XUWE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "JAHI"
+        },
+        {
+          "stimulusA": "JAHI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "HUGI"
+        }
+      ],
+      "probeStimA": "XUWE",
+      "probeRelation": "SAME",
+      "probeStimB": "HUGI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s029_x03",
+      "premises": [
+        {
+          "stimulusA": "JAVE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LURA"
+        },
+        {
+          "stimulusA": "LURA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "DAFI"
+        }
+      ],
+      "probeStimA": "JAVE",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "DAFI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

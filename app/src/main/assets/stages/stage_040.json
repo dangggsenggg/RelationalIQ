@@ -1,0 +1,276 @@
+{
+  "id": 40,
+  "title": "Expert Derivation II",
+  "description": "The ultimate relational training challenge with maximum complexity.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 4,
+  "difficulty": "EXPERT",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 50,
+  "xpReward": 320,
+  "trainingTrials": [
+    {
+      "id": "s040_t01",
+      "premises": [
+        {
+          "stimulusA": "MEMUP",
+          "relationType": "SAME",
+          "stimulusB": "DIYUB"
+        },
+        {
+          "stimulusA": "DIYUB",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JIFIS"
+        },
+        {
+          "stimulusA": "JIFIS",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BELIY"
+        }
+      ],
+      "probeStimA": "MEMUP",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VAGAK",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "MEMUP = DIYUB > JIFIS > BELIY, so MEMUP > VAGAK."
+    },
+    {
+      "id": "s040_t02",
+      "premises": [
+        {
+          "stimulusA": "YIQOW",
+          "relationType": "SAME",
+          "stimulusB": "BUSOR"
+        },
+        {
+          "stimulusA": "BUSOR",
+          "relationType": "SAME",
+          "stimulusB": "XUFIJ"
+        },
+        {
+          "stimulusA": "XUFIJ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TUFUG"
+        }
+      ],
+      "probeStimA": "YIQOW",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TUFUG",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "YIQOW = BUSOR = XUFIJ > TUFUG, so YIQOW > TUFUG."
+    },
+    {
+      "id": "s040_t03",
+      "premises": [
+        {
+          "stimulusA": "MUDAN",
+          "relationType": "OPPOSITE",
+          "stimulusB": "DIGIG"
+        },
+        {
+          "stimulusA": "DIGIG",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JAVOF"
+        },
+        {
+          "stimulusA": "JAVOF",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RASOL"
+        }
+      ],
+      "probeStimA": "MUDAN",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WEXUF",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "MUDAN is opposite DIGIG, and DIGIG > JAVOF. Opposition reverses the relation."
+    },
+    {
+      "id": "s040_t04",
+      "premises": [
+        {
+          "stimulusA": "KIVIK",
+          "relationType": "SAME",
+          "stimulusB": "QOMOK"
+        },
+        {
+          "stimulusA": "QOMOK",
+          "relationType": "SAME",
+          "stimulusB": "JAMES"
+        },
+        {
+          "stimulusA": "JAMES",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NAGUG"
+        }
+      ],
+      "probeStimA": "KIVIK",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NAGUG",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "KIVIK = QOMOK = JAMES > NAGUG, so KIVIK > NAGUG."
+    },
+    {
+      "id": "s040_t05",
+      "premises": [
+        {
+          "stimulusA": "RECOV",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LALAW"
+        },
+        {
+          "stimulusA": "LALAW",
+          "relationType": "MORE_THAN",
+          "stimulusB": "HEBEN"
+        },
+        {
+          "stimulusA": "HEBEN",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TEGEQ"
+        }
+      ],
+      "probeStimA": "RECOV",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DEVAD",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50,
+      "explanation": "RECOV is opposite LALAW, and LALAW > HEBEN. Opposition reverses the relation."
+    },
+    {
+      "id": "s040_t06",
+      "premises": [
+        {
+          "stimulusA": "SAWOR",
+          "relationType": "OPPOSITE",
+          "stimulusB": "WUVIN"
+        },
+        {
+          "stimulusA": "WUVIN",
+          "relationType": "MORE_THAN",
+          "stimulusB": "REDIL"
+        },
+        {
+          "stimulusA": "REDIL",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WATIJ"
+        }
+      ],
+      "probeStimA": "SAWOR",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "PUNUZ",
+      "correctAnswer": false,
+      "timeLimitSeconds": 50,
+      "explanation": "SAWOR is opposite WUVIN, and WUVIN > REDIL. Opposition reverses the relation."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s040_x01",
+      "premises": [
+        {
+          "stimulusA": "VODOG",
+          "relationType": "SAME",
+          "stimulusB": "GIQIY"
+        },
+        {
+          "stimulusA": "GIQIY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MIQED"
+        },
+        {
+          "stimulusA": "MIQED",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KIBIT"
+        }
+      ],
+      "probeStimA": "VODOG",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "XEDUC",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    },
+    {
+      "id": "s040_x02",
+      "premises": [
+        {
+          "stimulusA": "NEXEQ",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YAPEW"
+        },
+        {
+          "stimulusA": "YAPEW",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DOWOP"
+        },
+        {
+          "stimulusA": "DOWOP",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MOVOW"
+        }
+      ],
+      "probeStimA": "NEXEQ",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WIFIP",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    },
+    {
+      "id": "s040_x03",
+      "premises": [
+        {
+          "stimulusA": "HADAW",
+          "relationType": "SAME",
+          "stimulusB": "FOJOC"
+        },
+        {
+          "stimulusA": "FOJOC",
+          "relationType": "SAME",
+          "stimulusB": "FIJUQ"
+        },
+        {
+          "stimulusA": "FIJUQ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NEYUZ"
+        }
+      ],
+      "probeStimA": "HADAW",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NEYUZ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    },
+    {
+      "id": "s040_x04",
+      "premises": [
+        {
+          "stimulusA": "HELID",
+          "relationType": "OPPOSITE",
+          "stimulusB": "PUKUZ"
+        },
+        {
+          "stimulusA": "PUKUZ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YULEN"
+        },
+        {
+          "stimulusA": "YULEN",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XULOW"
+        }
+      ],
+      "probeStimA": "HELID",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CETAG",
+      "correctAnswer": true,
+      "timeLimitSeconds": 50
+    }
+  ]
+}

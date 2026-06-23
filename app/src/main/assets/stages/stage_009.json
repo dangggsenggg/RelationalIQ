@@ -1,0 +1,223 @@
+{
+  "id": 9,
+  "title": "Redundant Premise Training",
+  "description": "Learn to handle extra information that confirms existing relations.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 150,
+  "trainingTrials": [
+    {
+      "id": "s009_t01",
+      "premises": [
+        {
+          "stimulusA": "BIQ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SES"
+        },
+        {
+          "stimulusA": "SES",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RAG"
+        },
+        {
+          "stimulusA": "RAG",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KIF"
+        }
+      ],
+      "probeStimA": "BIQ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "KIF",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "BIQ > SES > RAG > KIF, so BIQ is more than KIF."
+    },
+    {
+      "id": "s009_t02",
+      "premises": [
+        {
+          "stimulusA": "DOL",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QIT"
+        },
+        {
+          "stimulusA": "QIT",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VOH"
+        },
+        {
+          "stimulusA": "VOH",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUW"
+        }
+      ],
+      "probeStimA": "KUW",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DOL",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "DOL > QIT > VOH > KUW, so KUW is NOT more than DOL."
+    },
+    {
+      "id": "s009_t03",
+      "premises": [
+        {
+          "stimulusA": "MOB",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VUT"
+        },
+        {
+          "stimulusA": "VUT",
+          "relationType": "LESS_THAN",
+          "stimulusB": "GUG"
+        },
+        {
+          "stimulusA": "GUG",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FAM"
+        }
+      ],
+      "probeStimA": "MOB",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "FAM",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "MOB < VUT < GUG < FAM, so MOB is less than FAM."
+    },
+    {
+      "id": "s009_t04",
+      "premises": [
+        {
+          "stimulusA": "DUZ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ROT"
+        },
+        {
+          "stimulusA": "ROT",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BUG"
+        },
+        {
+          "stimulusA": "BUG",
+          "relationType": "LESS_THAN",
+          "stimulusB": "LEP"
+        }
+      ],
+      "probeStimA": "LEP",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DUZ",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "LEP > BUG > ROT > DUZ, so LEP is NOT less than DUZ."
+    },
+    {
+      "id": "s009_t05",
+      "premises": [
+        {
+          "stimulusA": "HOS",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RUR"
+        },
+        {
+          "stimulusA": "RUR",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YUY"
+        },
+        {
+          "stimulusA": "YUY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NIJ"
+        }
+      ],
+      "probeStimA": "HOS",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NIJ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "HOS > RUR > YUY > NIJ, so HOS is more than NIJ."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s009_x01",
+      "premises": [
+        {
+          "stimulusA": "KUK",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VEX"
+        },
+        {
+          "stimulusA": "VEX",
+          "relationType": "LESS_THAN",
+          "stimulusB": "HOB"
+        },
+        {
+          "stimulusA": "HOB",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ROR"
+        }
+      ],
+      "probeStimA": "KUK",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "ROR",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s009_x02",
+      "premises": [
+        {
+          "stimulusA": "ZAM",
+          "relationType": "LESS_THAN",
+          "stimulusB": "RER"
+        },
+        {
+          "stimulusA": "RER",
+          "relationType": "LESS_THAN",
+          "stimulusB": "YEL"
+        },
+        {
+          "stimulusA": "YEL",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NIC"
+        }
+      ],
+      "probeStimA": "NIC",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "ZAM",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s009_x03",
+      "premises": [
+        {
+          "stimulusA": "LEJ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "PAM"
+        },
+        {
+          "stimulusA": "PAM",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZEZ"
+        },
+        {
+          "stimulusA": "ZEZ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TIZ"
+        }
+      ],
+      "probeStimA": "LEJ",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "TIZ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "id": 21,
+  "title": "Derived Relations I",
+  "description": "Derive complex relations through multi-premise chains.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 200,
+  "trainingTrials": [
+    {
+      "id": "s021_t01",
+      "premises": [
+        {
+          "stimulusA": "BIGU",
+          "relationType": "SAME",
+          "stimulusB": "TURU"
+        },
+        {
+          "stimulusA": "TURU",
+          "relationType": "SAME",
+          "stimulusB": "QEQI"
+        },
+        {
+          "stimulusA": "QEQI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JURO"
+        }
+      ],
+      "probeStimA": "BIGU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JURO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "BIGU = TURU = QEQI > JURO, so BIGU > JURO."
+    },
+    {
+      "id": "s021_t02",
+      "premises": [
+        {
+          "stimulusA": "MAXE",
+          "relationType": "SAME",
+          "stimulusB": "GEWO"
+        },
+        {
+          "stimulusA": "GEWO",
+          "relationType": "SAME",
+          "stimulusB": "PIRO"
+        },
+        {
+          "stimulusA": "PIRO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "YUNE"
+        }
+      ],
+      "probeStimA": "MAXE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YUNE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "MAXE = GEWO = PIRO > YUNE, so MAXE > YUNE."
+    },
+    {
+      "id": "s021_t03",
+      "premises": [
+        {
+          "stimulusA": "LUNE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SECI"
+        },
+        {
+          "stimulusA": "SECI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RUYI"
+        },
+        {
+          "stimulusA": "RUYI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RABE"
+        }
+      ],
+      "probeStimA": "LUNE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "RABE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "LUNE is opposite SECI, and SECI > RUYI. Opposition reverses the relation."
+    },
+    {
+      "id": "s021_t04",
+      "premises": [
+        {
+          "stimulusA": "RAGO",
+          "relationType": "SAME",
+          "stimulusB": "VOLE"
+        },
+        {
+          "stimulusA": "VOLE",
+          "relationType": "SAME",
+          "stimulusB": "SAYI"
+        },
+        {
+          "stimulusA": "SAYI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WEMO"
+        }
+      ],
+      "probeStimA": "RAGO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "WEMO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "RAGO = VOLE = SAYI > WEMO, so RAGO > WEMO."
+    },
+    {
+      "id": "s021_t05",
+      "premises": [
+        {
+          "stimulusA": "XUXA",
+          "relationType": "SAME",
+          "stimulusB": "ZIHO"
+        },
+        {
+          "stimulusA": "ZIHO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "FUTE"
+        },
+        {
+          "stimulusA": "FUTE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RAPA"
+        }
+      ],
+      "probeStimA": "XUXA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "RAPA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "XUXA = ZIHO > FUTE > RAPA, so XUXA > RAPA."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s021_x01",
+      "premises": [
+        {
+          "stimulusA": "COXU",
+          "relationType": "SAME",
+          "stimulusB": "YOLI"
+        },
+        {
+          "stimulusA": "YOLI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TONI"
+        },
+        {
+          "stimulusA": "TONI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JOXE"
+        }
+      ],
+      "probeStimA": "COXU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JOXE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s021_x02",
+      "premises": [
+        {
+          "stimulusA": "ROLE",
+          "relationType": "SAME",
+          "stimulusB": "SEVU"
+        },
+        {
+          "stimulusA": "SEVU",
+          "relationType": "SAME",
+          "stimulusB": "KAJI"
+        },
+        {
+          "stimulusA": "KAJI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MUJO"
+        }
+      ],
+      "probeStimA": "ROLE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MUJO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s021_x03",
+      "premises": [
+        {
+          "stimulusA": "NOXA",
+          "relationType": "SAME",
+          "stimulusB": "CUBU"
+        },
+        {
+          "stimulusA": "CUBU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GEZI"
+        },
+        {
+          "stimulusA": "GEZI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BEZI"
+        }
+      ],
+      "probeStimA": "NOXA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BEZI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": 6,
+  "title": "Longer Chains I",
+  "description": "Extended transitive chains requiring multi-step reasoning.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 130,
+  "trainingTrials": [
+    {
+      "id": "s006_t01",
+      "premises": [
+        {
+          "stimulusA": "YAM",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WEJ"
+        },
+        {
+          "stimulusA": "WEJ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "NIS"
+        }
+      ],
+      "probeStimA": "NIS",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "YAM",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "YAM > WEJ > NIS, so NIS is NOT more than YAM."
+    },
+    {
+      "id": "s006_t02",
+      "premises": [
+        {
+          "stimulusA": "MAL",
+          "relationType": "LESS_THAN",
+          "stimulusB": "LOD"
+        },
+        {
+          "stimulusA": "LOD",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BAY"
+        }
+      ],
+      "probeStimA": "BAY",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "MAL",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "BAY > LOD > MAL, so BAY is NOT less than MAL."
+    },
+    {
+      "id": "s006_t03",
+      "premises": [
+        {
+          "stimulusA": "LAZ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "GIV"
+        },
+        {
+          "stimulusA": "GIV",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZUB"
+        }
+      ],
+      "probeStimA": "ZUB",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "LAZ",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "ZUB > GIV > LAZ, so ZUB is NOT less than LAZ."
+    },
+    {
+      "id": "s006_t04",
+      "premises": [
+        {
+          "stimulusA": "WEZ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "JAC"
+        },
+        {
+          "stimulusA": "JAC",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FAR"
+        }
+      ],
+      "probeStimA": "FAR",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WEZ",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "FAR > JAC > WEZ, so FAR is NOT less than WEZ."
+    },
+    {
+      "id": "s006_t05",
+      "premises": [
+        {
+          "stimulusA": "FUH",
+          "relationType": "LESS_THAN",
+          "stimulusB": "WUH"
+        },
+        {
+          "stimulusA": "WUH",
+          "relationType": "LESS_THAN",
+          "stimulusB": "SIK"
+        }
+      ],
+      "probeStimA": "FUH",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SIK",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "FUH < WUH < SIK, so FUH is less than SIK."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s006_x01",
+      "premises": [
+        {
+          "stimulusA": "GOH",
+          "relationType": "LESS_THAN",
+          "stimulusB": "HUM"
+        },
+        {
+          "stimulusA": "HUM",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VOP"
+        }
+      ],
+      "probeStimA": "GOH",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "VOP",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s006_x02",
+      "premises": [
+        {
+          "stimulusA": "ZAN",
+          "relationType": "LESS_THAN",
+          "stimulusB": "GAQ"
+        },
+        {
+          "stimulusA": "GAQ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "XOD"
+        }
+      ],
+      "probeStimA": "ZAN",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "XOD",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s006_x03",
+      "premises": [
+        {
+          "stimulusA": "LUR",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KOC"
+        },
+        {
+          "stimulusA": "KOC",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GOH"
+        }
+      ],
+      "probeStimA": "GOH",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LUR",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    }
+  ]
+}

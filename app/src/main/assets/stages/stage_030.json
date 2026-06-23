@@ -1,0 +1,185 @@
+{
+  "id": 30,
+  "title": "Opposition Reversal",
+  "description": "Master how opposition reverses comparison direction.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 200,
+  "trainingTrials": [
+    {
+      "id": "s030_t01",
+      "premises": [
+        {
+          "stimulusA": "DENO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "TOFE"
+        },
+        {
+          "stimulusA": "TOFE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GAJI"
+        }
+      ],
+      "probeStimA": "DENO",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "GAJI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "DENO is opposite TOFE, and TOFE > GAJI. Opposite reverses, so DENO < GAJI."
+    },
+    {
+      "id": "s030_t02",
+      "premises": [
+        {
+          "stimulusA": "SALE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LOTU"
+        },
+        {
+          "stimulusA": "LOTU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LAKA"
+        }
+      ],
+      "probeStimA": "SALE",
+      "probeRelation": "SAME",
+      "probeStimB": "LAKA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "SALE is opposite LOTU, LOTU is opposite LAKA. Opposite of opposite = same."
+    },
+    {
+      "id": "s030_t03",
+      "premises": [
+        {
+          "stimulusA": "LOFA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GEGA"
+        },
+        {
+          "stimulusA": "GEGA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GIDU"
+        }
+      ],
+      "probeStimA": "LOFA",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "GIDU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "LOFA is opposite GEGA, GEGA is opposite GIDU. Opposite of opposite = same, not opposite."
+    },
+    {
+      "id": "s030_t04",
+      "premises": [
+        {
+          "stimulusA": "JIKO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MAFU"
+        },
+        {
+          "stimulusA": "MAFU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "WUDI"
+        }
+      ],
+      "probeStimA": "JIKO",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "WUDI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "JIKO is opposite MAFU, MAFU is opposite WUDI. Opposite of opposite = same, not opposite."
+    },
+    {
+      "id": "s030_t05",
+      "premises": [
+        {
+          "stimulusA": "VIPU",
+          "relationType": "SAME",
+          "stimulusB": "WAQU"
+        },
+        {
+          "stimulusA": "WAQU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "VECA"
+        }
+      ],
+      "probeStimA": "VIPU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "VECA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "VIPU = WAQU and WAQU is opposite VECA, so VIPU is opposite VECA."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s030_x01",
+      "premises": [
+        {
+          "stimulusA": "HAQE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "TOYA"
+        },
+        {
+          "stimulusA": "TOYA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "RODA"
+        }
+      ],
+      "probeStimA": "HAQE",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "RODA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s030_x02",
+      "premises": [
+        {
+          "stimulusA": "KADU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ZEVE"
+        },
+        {
+          "stimulusA": "ZEVE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "LIPO"
+        }
+      ],
+      "probeStimA": "KADU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "LIPO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s030_x03",
+      "premises": [
+        {
+          "stimulusA": "HELO",
+          "relationType": "SAME",
+          "stimulusB": "LEVU"
+        },
+        {
+          "stimulusA": "LEVU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MOQU"
+        }
+      ],
+      "probeStimA": "HELO",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "MOQU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

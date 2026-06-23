@@ -1,0 +1,184 @@
+{
+  "id": 18,
+  "title": "Mixed Same/Comparison I",
+  "description": "Complex trials mixing coordination and comparison frames.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 180,
+  "trainingTrials": [
+    {
+      "id": "s018_t01",
+      "premises": [
+        {
+          "stimulusA": "SIYU",
+          "relationType": "SAME",
+          "stimulusB": "PAFE"
+        },
+        {
+          "stimulusA": "PAFE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "WUHI"
+        }
+      ],
+      "probeStimA": "SIYU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WUHI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "SIYU = PAFE and PAFE < WUHI, so SIYU < WUHI."
+    },
+    {
+      "id": "s018_t02",
+      "premises": [
+        {
+          "stimulusA": "HIWA",
+          "relationType": "SAME",
+          "stimulusB": "SOXU"
+        },
+        {
+          "stimulusA": "SOXU",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NIHU"
+        }
+      ],
+      "probeStimA": "HIWA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "NIHU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "HIWA = SOXU < NIHU, so HIWA is NOT more than NIHU."
+    },
+    {
+      "id": "s018_t03",
+      "premises": [
+        {
+          "stimulusA": "WUVA",
+          "relationType": "SAME",
+          "stimulusB": "RALA"
+        },
+        {
+          "stimulusA": "RALA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "REQA"
+        }
+      ],
+      "probeStimA": "WUVA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "REQA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "WUVA = RALA and RALA > REQA, so WUVA > REQA."
+    },
+    {
+      "id": "s018_t04",
+      "premises": [
+        {
+          "stimulusA": "BOCU",
+          "relationType": "SAME",
+          "stimulusB": "TUNI"
+        },
+        {
+          "stimulusA": "TUNI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CUHU"
+        }
+      ],
+      "probeStimA": "BOCU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "CUHU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "BOCU = TUNI and TUNI > CUHU, so BOCU > CUHU."
+    },
+    {
+      "id": "s018_t05",
+      "premises": [
+        {
+          "stimulusA": "DURI",
+          "relationType": "SAME",
+          "stimulusB": "QIZE"
+        },
+        {
+          "stimulusA": "QIZE",
+          "relationType": "LESS_THAN",
+          "stimulusB": "LUZA"
+        }
+      ],
+      "probeStimA": "DURI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LUZA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "DURI = QIZE < LUZA, so DURI is NOT more than LUZA."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s018_x01",
+      "premises": [
+        {
+          "stimulusA": "KUNA",
+          "relationType": "SAME",
+          "stimulusB": "VOHI"
+        },
+        {
+          "stimulusA": "VOHI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZEPA"
+        }
+      ],
+      "probeStimA": "KUNA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZEPA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s018_x02",
+      "premises": [
+        {
+          "stimulusA": "RUSU",
+          "relationType": "SAME",
+          "stimulusB": "ZARA"
+        },
+        {
+          "stimulusA": "ZARA",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FESO"
+        }
+      ],
+      "probeStimA": "RUSU",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "FESO",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s018_x03",
+      "premises": [
+        {
+          "stimulusA": "LUDA",
+          "relationType": "SAME",
+          "stimulusB": "TUSO"
+        },
+        {
+          "stimulusA": "TUSO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "COLU"
+        }
+      ],
+      "probeStimA": "COLU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "LUDA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": 24,
+  "title": "Coordination Fluency",
+  "description": "Build speed and accuracy with complex coordination trials.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "HARD",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 40,
+  "xpReward": 220,
+  "trainingTrials": [
+    {
+      "id": "s024_t01",
+      "premises": [
+        {
+          "stimulusA": "VONA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "FAGU"
+        },
+        {
+          "stimulusA": "FAGU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "FUPA"
+        },
+        {
+          "stimulusA": "FUPA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WILE"
+        }
+      ],
+      "probeStimA": "VONA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WILE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "VONA is opposite FAGU, and FAGU > FUPA. Opposition reverses the relation."
+    },
+    {
+      "id": "s024_t02",
+      "premises": [
+        {
+          "stimulusA": "GUCE",
+          "relationType": "SAME",
+          "stimulusB": "GAKO"
+        },
+        {
+          "stimulusA": "GAKO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PAFE"
+        },
+        {
+          "stimulusA": "PAFE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KIKE"
+        }
+      ],
+      "probeStimA": "GUCE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "KIKE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "GUCE = GAKO > PAFE > KIKE, so GUCE > KIKE."
+    },
+    {
+      "id": "s024_t03",
+      "premises": [
+        {
+          "stimulusA": "SOMI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "GOPO"
+        },
+        {
+          "stimulusA": "GOPO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "XIRI"
+        },
+        {
+          "stimulusA": "XIRI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CUVE"
+        }
+      ],
+      "probeStimA": "SOMI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CUVE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "SOMI is opposite GOPO, and GOPO > XIRI. Opposition reverses the relation."
+    },
+    {
+      "id": "s024_t04",
+      "premises": [
+        {
+          "stimulusA": "GICE",
+          "relationType": "SAME",
+          "stimulusB": "TINO"
+        },
+        {
+          "stimulusA": "TINO",
+          "relationType": "SAME",
+          "stimulusB": "TOSE"
+        },
+        {
+          "stimulusA": "TOSE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WAFA"
+        }
+      ],
+      "probeStimA": "GICE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "WAFA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "GICE = TINO = TOSE > WAFA, so GICE > WAFA."
+    },
+    {
+      "id": "s024_t05",
+      "premises": [
+        {
+          "stimulusA": "TICA",
+          "relationType": "SAME",
+          "stimulusB": "GAVE"
+        },
+        {
+          "stimulusA": "GAVE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TOZI"
+        },
+        {
+          "stimulusA": "TOZI",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUMA"
+        }
+      ],
+      "probeStimA": "TICA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "KUMA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40,
+      "explanation": "TICA = GAVE > TOZI > KUMA, so TICA > KUMA."
+    },
+    {
+      "id": "s024_t06",
+      "premises": [
+        {
+          "stimulusA": "HIJO",
+          "relationType": "SAME",
+          "stimulusB": "DAPU"
+        },
+        {
+          "stimulusA": "DAPU",
+          "relationType": "SAME",
+          "stimulusB": "GAQE"
+        },
+        {
+          "stimulusA": "GAQE",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GIRU"
+        }
+      ],
+      "probeStimA": "HIJO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GIRU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 40,
+      "explanation": "HIJO = DAPU = GAQE > GIRU, so HIJO > GIRU."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s024_x01",
+      "premises": [
+        {
+          "stimulusA": "WULA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "NIKO"
+        },
+        {
+          "stimulusA": "NIKO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "KUGO"
+        },
+        {
+          "stimulusA": "KUGO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "QASU"
+        }
+      ],
+      "probeStimA": "WULA",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "QASU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s024_x02",
+      "premises": [
+        {
+          "stimulusA": "HURA",
+          "relationType": "SAME",
+          "stimulusB": "JIKI"
+        },
+        {
+          "stimulusA": "JIKI",
+          "relationType": "SAME",
+          "stimulusB": "TEJA"
+        },
+        {
+          "stimulusA": "TEJA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PAVI"
+        }
+      ],
+      "probeStimA": "HURA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "PAVI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    },
+    {
+      "id": "s024_x03",
+      "premises": [
+        {
+          "stimulusA": "BUGA",
+          "relationType": "SAME",
+          "stimulusB": "YAFO"
+        },
+        {
+          "stimulusA": "YAFO",
+          "relationType": "SAME",
+          "stimulusB": "YICO"
+        },
+        {
+          "stimulusA": "YICO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RISA"
+        }
+      ],
+      "probeStimA": "BUGA",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "RISA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 40
+    }
+  ]
+}

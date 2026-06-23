@@ -1,0 +1,185 @@
+{
+  "id": 28,
+  "title": "Opposite + Comparison",
+  "description": "Opposition reverses comparison relations.",
+  "relationTypes": [
+    "SAME",
+    "OPPOSITE",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 180,
+  "trainingTrials": [
+    {
+      "id": "s028_t01",
+      "premises": [
+        {
+          "stimulusA": "XEGA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "DEPE"
+        },
+        {
+          "stimulusA": "DEPE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "MORI"
+        }
+      ],
+      "probeStimA": "XEGA",
+      "probeRelation": "SAME",
+      "probeStimB": "MORI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "XEGA is opposite DEPE, DEPE is opposite MORI. Opposite of opposite = same."
+    },
+    {
+      "id": "s028_t02",
+      "premises": [
+        {
+          "stimulusA": "MERO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SOVE"
+        },
+        {
+          "stimulusA": "SOVE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "NUTE"
+        }
+      ],
+      "probeStimA": "MERO",
+      "probeRelation": "SAME",
+      "probeStimB": "NUTE",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "MERO is opposite SOVE, SOVE is opposite NUTE. Opposite of opposite = same."
+    },
+    {
+      "id": "s028_t03",
+      "premises": [
+        {
+          "stimulusA": "VUTE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SATU"
+        },
+        {
+          "stimulusA": "SATU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YUDA"
+        }
+      ],
+      "probeStimA": "VUTE",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "YUDA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "VUTE is opposite SATU, SATU is opposite YUDA. Opposite of opposite = same, not opposite."
+    },
+    {
+      "id": "s028_t04",
+      "premises": [
+        {
+          "stimulusA": "NIQU",
+          "relationType": "OPPOSITE",
+          "stimulusB": "COKO"
+        },
+        {
+          "stimulusA": "COKO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SIHO"
+        }
+      ],
+      "probeStimA": "NIQU",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "SIHO",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "NIQU is opposite COKO, COKO is opposite SIHO. Opposite of opposite = same, not opposite."
+    },
+    {
+      "id": "s028_t05",
+      "premises": [
+        {
+          "stimulusA": "NOHO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SELO"
+        },
+        {
+          "stimulusA": "SELO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "KEXA"
+        }
+      ],
+      "probeStimA": "NOHO",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "KEXA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "NOHO is opposite SELO, SELO is opposite KEXA. Opposite of opposite = same, not opposite."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s028_x01",
+      "premises": [
+        {
+          "stimulusA": "VADO",
+          "relationType": "OPPOSITE",
+          "stimulusB": "JUPA"
+        },
+        {
+          "stimulusA": "JUPA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "FUQA"
+        }
+      ],
+      "probeStimA": "VADO",
+      "probeRelation": "OPPOSITE",
+      "probeStimB": "FUQA",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s028_x02",
+      "premises": [
+        {
+          "stimulusA": "VILE",
+          "relationType": "SAME",
+          "stimulusB": "FORE"
+        },
+        {
+          "stimulusA": "FORE",
+          "relationType": "OPPOSITE",
+          "stimulusB": "SUHU"
+        }
+      ],
+      "probeStimA": "VILE",
+      "probeRelation": "SAME",
+      "probeStimB": "SUHU",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s028_x03",
+      "premises": [
+        {
+          "stimulusA": "VEGA",
+          "relationType": "OPPOSITE",
+          "stimulusB": "ZIVI"
+        },
+        {
+          "stimulusA": "ZIVI",
+          "relationType": "OPPOSITE",
+          "stimulusB": "YILU"
+        }
+      ],
+      "probeStimA": "VEGA",
+      "probeRelation": "SAME",
+      "probeStimB": "YILU",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

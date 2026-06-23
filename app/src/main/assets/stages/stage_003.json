@@ -1,0 +1,116 @@
+{
+  "id": 3,
+  "title": "Reversed Direction",
+  "description": "Practice with 'less than' premises and reversed direction questions.",
+  "relationTypes": ["MORE_THAN", "LESS_THAN"],
+  "premiseCount": 2,
+  "difficulty": "BEGINNER",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 110,
+  "trainingTrials": [
+    {
+      "id": "s003_t01",
+      "premises": [
+        {"stimulusA": "LOP", "relationType": "LESS_THAN", "stimulusB": "GHU"},
+        {"stimulusA": "GHU", "relationType": "LESS_THAN", "stimulusB": "AWS"}
+      ],
+      "probeStimA": "LOP",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "AWS",
+      "correctAnswer": true,
+      "explanation": "LOP < GHU < AWS, so LOP is less than AWS.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s003_t02",
+      "premises": [
+        {"stimulusA": "QWE", "relationType": "LESS_THAN", "stimulusB": "BNM"},
+        {"stimulusA": "BNM", "relationType": "LESS_THAN", "stimulusB": "XYT"}
+      ],
+      "probeStimA": "QWE",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "XYT",
+      "correctAnswer": true,
+      "explanation": "QWE < BNM < XYT, so QWE is less than XYT.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s003_t03",
+      "premises": [
+        {"stimulusA": "PAS", "relationType": "LESS_THAN", "stimulusB": "UIO"},
+        {"stimulusA": "UIO", "relationType": "LESS_THAN", "stimulusB": "RTY"}
+      ],
+      "probeStimA": "RTY",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "PAS",
+      "correctAnswer": false,
+      "explanation": "PAS < UIO < RTY, so RTY is NOT less than PAS.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s003_t04",
+      "premises": [
+        {"stimulusA": "ZXC", "relationType": "LESS_THAN", "stimulusB": "JHL"},
+        {"stimulusA": "JHL", "relationType": "LESS_THAN", "stimulusB": "DFK"}
+      ],
+      "probeStimA": "ZXC",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "DFK",
+      "correctAnswer": true,
+      "explanation": "ZXC < JHL < DFK, so ZXC is less than DFK.",
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s003_t05",
+      "premises": [
+        {"stimulusA": "WER", "relationType": "LESS_THAN", "stimulusB": "MKL"},
+        {"stimulusA": "MKL", "relationType": "LESS_THAN", "stimulusB": "VBN"}
+      ],
+      "probeStimA": "VBN",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WER",
+      "correctAnswer": false,
+      "explanation": "WER < MKL < VBN, so VBN is NOT less than WER.",
+      "timeLimitSeconds": 25
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s003_x01",
+      "premises": [
+        {"stimulusA": "FGH", "relationType": "LESS_THAN", "stimulusB": "TRE"},
+        {"stimulusA": "TRE", "relationType": "LESS_THAN", "stimulusB": "YUI"}
+      ],
+      "probeStimA": "FGH",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "YUI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s003_x02",
+      "premises": [
+        {"stimulusA": "CVB", "relationType": "LESS_THAN", "stimulusB": "NKJ"},
+        {"stimulusA": "NKJ", "relationType": "LESS_THAN", "stimulusB": "MPL"}
+      ],
+      "probeStimA": "MPL",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "CVB",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s003_x03",
+      "premises": [
+        {"stimulusA": "HGD", "relationType": "LESS_THAN", "stimulusB": "QKP"},
+        {"stimulusA": "QKP", "relationType": "LESS_THAN", "stimulusB": "WRZ"}
+      ],
+      "probeStimA": "HGD",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "WRZ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    }
+  ]
+}

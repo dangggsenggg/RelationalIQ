@@ -1,0 +1,184 @@
+{
+  "id": 16,
+  "title": "Same Chain + Comparison",
+  "description": "Build longer derivation chains combining sameness and magnitude.",
+  "relationTypes": [
+    "SAME",
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 35,
+  "xpReward": 170,
+  "trainingTrials": [
+    {
+      "id": "s016_t01",
+      "premises": [
+        {
+          "stimulusA": "BAJE",
+          "relationType": "SAME",
+          "stimulusB": "WULA"
+        },
+        {
+          "stimulusA": "WULA",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JALA"
+        }
+      ],
+      "probeStimA": "BAJE",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JALA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "BAJE = WULA and WULA > JALA, so BAJE > JALA."
+    },
+    {
+      "id": "s016_t02",
+      "premises": [
+        {
+          "stimulusA": "TIBO",
+          "relationType": "SAME",
+          "stimulusB": "NIKU"
+        },
+        {
+          "stimulusA": "NIKU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BIPI"
+        }
+      ],
+      "probeStimA": "TIBO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "BIPI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "TIBO = NIKU and NIKU > BIPI, so TIBO > BIPI."
+    },
+    {
+      "id": "s016_t03",
+      "premises": [
+        {
+          "stimulusA": "TUBI",
+          "relationType": "SAME",
+          "stimulusB": "QUJO"
+        },
+        {
+          "stimulusA": "QUJO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GEVI"
+        }
+      ],
+      "probeStimA": "TUBI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GEVI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35,
+      "explanation": "TUBI = QUJO and QUJO > GEVI, so TUBI > GEVI."
+    },
+    {
+      "id": "s016_t04",
+      "premises": [
+        {
+          "stimulusA": "GOTE",
+          "relationType": "SAME",
+          "stimulusB": "RITU"
+        },
+        {
+          "stimulusA": "RITU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZODU"
+        }
+      ],
+      "probeStimA": "ZODU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GOTE",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "GOTE = RITU > ZODU, so ZODU is NOT more than GOTE."
+    },
+    {
+      "id": "s016_t05",
+      "premises": [
+        {
+          "stimulusA": "BEDI",
+          "relationType": "SAME",
+          "stimulusB": "MEXI"
+        },
+        {
+          "stimulusA": "MEXI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "DACI"
+        }
+      ],
+      "probeStimA": "BEDI",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "DACI",
+      "correctAnswer": false,
+      "timeLimitSeconds": 35,
+      "explanation": "BEDI = MEXI < DACI, so BEDI is NOT more than DACI."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s016_x01",
+      "premises": [
+        {
+          "stimulusA": "CAKU",
+          "relationType": "SAME",
+          "stimulusB": "GUGO"
+        },
+        {
+          "stimulusA": "GUGO",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VUQA"
+        }
+      ],
+      "probeStimA": "CAKU",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VUQA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s016_x02",
+      "premises": [
+        {
+          "stimulusA": "PUXI",
+          "relationType": "SAME",
+          "stimulusB": "FUTI"
+        },
+        {
+          "stimulusA": "FUTI",
+          "relationType": "LESS_THAN",
+          "stimulusB": "GIMA"
+        }
+      ],
+      "probeStimA": "PUXI",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "GIMA",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    },
+    {
+      "id": "s016_x03",
+      "premises": [
+        {
+          "stimulusA": "TUXO",
+          "relationType": "SAME",
+          "stimulusB": "DIGU"
+        },
+        {
+          "stimulusA": "DIGU",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MOSI"
+        }
+      ],
+      "probeStimA": "TUXO",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MOSI",
+      "correctAnswer": true,
+      "timeLimitSeconds": 35
+    }
+  ]
+}

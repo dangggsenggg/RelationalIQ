@@ -1,0 +1,249 @@
+{
+  "id": 10,
+  "title": "Comparison Mastery",
+  "description": "Master basic comparison with longer chains and mixed directions.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 3,
+  "difficulty": "MEDIUM",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 30,
+  "xpReward": 160,
+  "trainingTrials": [
+    {
+      "id": "s010_t01",
+      "premises": [
+        {
+          "stimulusA": "TAY",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BUN"
+        },
+        {
+          "stimulusA": "BUN",
+          "relationType": "LESS_THAN",
+          "stimulusB": "QAF"
+        },
+        {
+          "stimulusA": "QAF",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BIL"
+        }
+      ],
+      "probeStimA": "BIL",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "TAY",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "BIL > QAF > BUN > TAY, so BIL is NOT less than TAY."
+    },
+    {
+      "id": "s010_t02",
+      "premises": [
+        {
+          "stimulusA": "HOF",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FIT"
+        },
+        {
+          "stimulusA": "FIT",
+          "relationType": "LESS_THAN",
+          "stimulusB": "NIG"
+        },
+        {
+          "stimulusA": "NIG",
+          "relationType": "LESS_THAN",
+          "stimulusB": "RIF"
+        }
+      ],
+      "probeStimA": "RIF",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "HOF",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "RIF > NIG > FIT > HOF, so RIF is NOT less than HOF."
+    },
+    {
+      "id": "s010_t03",
+      "premises": [
+        {
+          "stimulusA": "BOY",
+          "relationType": "MORE_THAN",
+          "stimulusB": "DUC"
+        },
+        {
+          "stimulusA": "DUC",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BUV"
+        },
+        {
+          "stimulusA": "BUV",
+          "relationType": "MORE_THAN",
+          "stimulusB": "JUG"
+        }
+      ],
+      "probeStimA": "BOY",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "JUG",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "BOY > DUC > BUV > JUG, so BOY is more than JUG."
+    },
+    {
+      "id": "s010_t04",
+      "premises": [
+        {
+          "stimulusA": "JOS",
+          "relationType": "LESS_THAN",
+          "stimulusB": "BEV"
+        },
+        {
+          "stimulusA": "BEV",
+          "relationType": "LESS_THAN",
+          "stimulusB": "FOB"
+        },
+        {
+          "stimulusA": "FOB",
+          "relationType": "LESS_THAN",
+          "stimulusB": "VAL"
+        }
+      ],
+      "probeStimA": "VAL",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "JOS",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "VAL > FOB > BEV > JOS, so VAL is NOT less than JOS."
+    },
+    {
+      "id": "s010_t05",
+      "premises": [
+        {
+          "stimulusA": "SEB",
+          "relationType": "LESS_THAN",
+          "stimulusB": "SES"
+        },
+        {
+          "stimulusA": "SES",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZUS"
+        },
+        {
+          "stimulusA": "ZUS",
+          "relationType": "LESS_THAN",
+          "stimulusB": "TEC"
+        }
+      ],
+      "probeStimA": "TEC",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "SEB",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30,
+      "explanation": "TEC > ZUS > SES > SEB, so TEC is NOT less than SEB."
+    },
+    {
+      "id": "s010_t06",
+      "premises": [
+        {
+          "stimulusA": "PUV",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MUB"
+        },
+        {
+          "stimulusA": "MUB",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GOR"
+        },
+        {
+          "stimulusA": "GOR",
+          "relationType": "MORE_THAN",
+          "stimulusB": "TEC"
+        }
+      ],
+      "probeStimA": "PUV",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "TEC",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30,
+      "explanation": "PUV > MUB > GOR > TEC, so PUV is more than TEC."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s010_x01",
+      "premises": [
+        {
+          "stimulusA": "NAL",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GUG"
+        },
+        {
+          "stimulusA": "GUG",
+          "relationType": "MORE_THAN",
+          "stimulusB": "CIF"
+        },
+        {
+          "stimulusA": "CIF",
+          "relationType": "MORE_THAN",
+          "stimulusB": "VUQ"
+        }
+      ],
+      "probeStimA": "NAL",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "VUQ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s010_x02",
+      "premises": [
+        {
+          "stimulusA": "MED",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZUG"
+        },
+        {
+          "stimulusA": "ZUG",
+          "relationType": "LESS_THAN",
+          "stimulusB": "DUK"
+        },
+        {
+          "stimulusA": "DUK",
+          "relationType": "LESS_THAN",
+          "stimulusB": "JEK"
+        }
+      ],
+      "probeStimA": "JEK",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "MED",
+      "correctAnswer": false,
+      "timeLimitSeconds": 30
+    },
+    {
+      "id": "s010_x03",
+      "premises": [
+        {
+          "stimulusA": "XOH",
+          "relationType": "MORE_THAN",
+          "stimulusB": "SIF"
+        },
+        {
+          "stimulusA": "SIF",
+          "relationType": "MORE_THAN",
+          "stimulusB": "PIM"
+        },
+        {
+          "stimulusA": "PIM",
+          "relationType": "MORE_THAN",
+          "stimulusB": "ZEG"
+        }
+      ],
+      "probeStimA": "XOH",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "ZEG",
+      "correctAnswer": true,
+      "timeLimitSeconds": 30
+    }
+  ]
+}

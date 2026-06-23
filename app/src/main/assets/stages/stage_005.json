@@ -1,0 +1,183 @@
+{
+  "id": 5,
+  "title": "Three-Step Chains",
+  "description": "Derive relations across three-item transitive chains with more than.",
+  "relationTypes": [
+    "MORE_THAN",
+    "LESS_THAN"
+  ],
+  "premiseCount": 2,
+  "difficulty": "EASY",
+  "masteryThreshold": 0.85,
+  "timeLimitSeconds": 25,
+  "xpReward": 120,
+  "trainingTrials": [
+    {
+      "id": "s005_t01",
+      "premises": [
+        {
+          "stimulusA": "MEC",
+          "relationType": "LESS_THAN",
+          "stimulusB": "HAZ"
+        },
+        {
+          "stimulusA": "HAZ",
+          "relationType": "LESS_THAN",
+          "stimulusB": "QAQ"
+        }
+      ],
+      "probeStimA": "MEC",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "QAQ",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "MEC < HAZ < QAQ, so MEC is less than QAQ."
+    },
+    {
+      "id": "s005_t02",
+      "premises": [
+        {
+          "stimulusA": "WOF",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WAS"
+        },
+        {
+          "stimulusA": "WAS",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GOG"
+        }
+      ],
+      "probeStimA": "WOF",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "GOG",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "WOF > WAS > GOG, so WOF is more than GOG."
+    },
+    {
+      "id": "s005_t03",
+      "premises": [
+        {
+          "stimulusA": "MAN",
+          "relationType": "LESS_THAN",
+          "stimulusB": "LID"
+        },
+        {
+          "stimulusA": "LID",
+          "relationType": "LESS_THAN",
+          "stimulusB": "DIY"
+        }
+      ],
+      "probeStimA": "DIY",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "MAN",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25,
+      "explanation": "DIY > LID > MAN, so DIY is NOT less than MAN."
+    },
+    {
+      "id": "s005_t04",
+      "premises": [
+        {
+          "stimulusA": "ZEB",
+          "relationType": "MORE_THAN",
+          "stimulusB": "BEJ"
+        },
+        {
+          "stimulusA": "BEJ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "MOW"
+        }
+      ],
+      "probeStimA": "ZEB",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "MOW",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "ZEB > BEJ > MOW, so ZEB is more than MOW."
+    },
+    {
+      "id": "s005_t05",
+      "premises": [
+        {
+          "stimulusA": "YIZ",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WED"
+        },
+        {
+          "stimulusA": "WED",
+          "relationType": "MORE_THAN",
+          "stimulusB": "WEP"
+        }
+      ],
+      "probeStimA": "YIZ",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "WEP",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25,
+      "explanation": "YIZ > WED > WEP, so YIZ is more than WEP."
+    }
+  ],
+  "testTrials": [
+    {
+      "id": "s005_x01",
+      "premises": [
+        {
+          "stimulusA": "DAY",
+          "relationType": "LESS_THAN",
+          "stimulusB": "WET"
+        },
+        {
+          "stimulusA": "WET",
+          "relationType": "LESS_THAN",
+          "stimulusB": "QEN"
+        }
+      ],
+      "probeStimA": "DAY",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "QEN",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s005_x02",
+      "premises": [
+        {
+          "stimulusA": "FAN",
+          "relationType": "MORE_THAN",
+          "stimulusB": "GIL"
+        },
+        {
+          "stimulusA": "GIL",
+          "relationType": "MORE_THAN",
+          "stimulusB": "RUY"
+        }
+      ],
+      "probeStimA": "RUY",
+      "probeRelation": "MORE_THAN",
+      "probeStimB": "FAN",
+      "correctAnswer": false,
+      "timeLimitSeconds": 25
+    },
+    {
+      "id": "s005_x03",
+      "premises": [
+        {
+          "stimulusA": "WOM",
+          "relationType": "LESS_THAN",
+          "stimulusB": "XAC"
+        },
+        {
+          "stimulusA": "XAC",
+          "relationType": "LESS_THAN",
+          "stimulusB": "ZAR"
+        }
+      ],
+      "probeStimA": "WOM",
+      "probeRelation": "LESS_THAN",
+      "probeStimB": "ZAR",
+      "correctAnswer": true,
+      "timeLimitSeconds": 25
+    }
+  ]
+}
