@@ -621,5 +621,1009 @@
         "correctAnswer": false
       }
     ]
+  },
+  {
+    "id": 9,
+    "title": "Containment Relations",
+    "description": "Learn Contains/Within relations for hierarchical reasoning",
+    "relationTypes": ["CONTAINS", "WITHIN"],
+    "premiseCount": 1,
+    "difficulty": "MEDIUM",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 25,
+    "xpReward": 160,
+    "trainingTrials": [
+      {
+        "id": "s9_t1",
+        "premises": [{"stimulusA": "GYQ", "relationType": "CONTAINS", "stimulusB": "FYW"}],
+        "probeStimA": "FYW",
+        "probeRelation": "WITHIN",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "If GYQ contains FYW, then FYW is within GYQ."
+      },
+      {
+        "id": "s9_t2",
+        "premises": [{"stimulusA": "VOP", "relationType": "WITHIN", "stimulusB": "CUB"}],
+        "probeStimA": "CUB",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "If VOP is within CUB, then CUB contains VOP."
+      },
+      {
+        "id": "s9_t3",
+        "premises": [{"stimulusA": "KES", "relationType": "CONTAINS", "stimulusB": "DAX"}],
+        "probeStimA": "DAX",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "KES",
+        "correctAnswer": false,
+        "explanation": "KES contains DAX, so DAX does NOT contain KES."
+      },
+      {
+        "id": "s9_t4",
+        "premises": [{"stimulusA": "PIR", "relationType": "WITHIN", "stimulusB": "MOQ"}],
+        "probeStimA": "PIR",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "MOQ",
+        "correctAnswer": false,
+        "explanation": "PIR is within MOQ, not the reverse."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s9_x1",
+        "premises": [{"stimulusA": "ZUB", "relationType": "CONTAINS", "stimulusB": "TEL"}],
+        "probeStimA": "TEL",
+        "probeRelation": "WITHIN",
+        "probeStimB": "ZUB",
+        "correctAnswer": true
+      },
+      {
+        "id": "s9_x2",
+        "premises": [{"stimulusA": "BEQ", "relationType": "WITHIN", "stimulusB": "RUF"}],
+        "probeStimA": "BEQ",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "RUF",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Advanced Temporal Chains",
+    "description": "Derive temporal order through three-premise chains",
+    "relationTypes": ["BEFORE", "AFTER"],
+    "premiseCount": 3,
+    "difficulty": "HARD",
+    "masteryThreshold": 0.85,
+    "timeLimitSeconds": 30,
+    "xpReward": 200,
+    "trainingTrials": [
+      {
+        "id": "s10_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "BEFORE", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "BEFORE", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "BEFORE", "stimulusB": "CUB"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "BEFORE",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "GYQ then FYW then VOP then CUB, so GYQ is before CUB."
+      },
+      {
+        "id": "s10_t2",
+        "premises": [
+          {"stimulusA": "KES", "relationType": "AFTER", "stimulusB": "DAX"},
+          {"stimulusA": "DAX", "relationType": "AFTER", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "AFTER", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "MOQ",
+        "probeRelation": "BEFORE",
+        "probeStimB": "KES",
+        "correctAnswer": true,
+        "explanation": "MOQ then PIR then DAX then KES, so MOQ is before KES."
+      },
+      {
+        "id": "s10_t3",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "BEFORE", "stimulusB": "TEL"},
+          {"stimulusA": "TEL", "relationType": "BEFORE", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "BEFORE", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "BEFORE",
+        "probeStimB": "ZUB",
+        "correctAnswer": false,
+        "explanation": "ZUB then TEL then BEQ then RUF, so RUF is NOT before ZUB."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s10_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "AFTER", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "AFTER", "stimulusB": "NAV"},
+          {"stimulusA": "NAV", "relationType": "AFTER", "stimulusB": "QIP"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "AFTER",
+        "probeStimB": "QIP",
+        "correctAnswer": true
+      },
+      {
+        "id": "s10_x2",
+        "premises": [
+          {"stimulusA": "DUK", "relationType": "BEFORE", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "BEFORE", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "BEFORE", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "HEW",
+        "probeRelation": "AFTER",
+        "probeStimB": "DUK",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Multi-Frame Coordination",
+    "description": "Combine Same, Different, and Opposite in multi-premise chains",
+    "relationTypes": ["SAME", "DIFFERENT", "OPPOSITE"],
+    "premiseCount": 2,
+    "difficulty": "HARD",
+    "masteryThreshold": 0.80,
+    "timeLimitSeconds": 30,
+    "xpReward": 220,
+    "trainingTrials": [
+      {
+        "id": "s11_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "DIFFERENT", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "DIFFERENT",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "GYQ=FYW and FYW is different from VOP, so GYQ is different from VOP."
+      },
+      {
+        "id": "s11_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "OPPOSITE", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "SAME", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "CUB",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "DAX",
+        "correctAnswer": true,
+        "explanation": "CUB is opposite KES, and KES=DAX, so CUB is opposite DAX."
+      },
+      {
+        "id": "s11_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "OPPOSITE", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "OPPOSITE", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "PIR",
+        "probeRelation": "SAME",
+        "probeStimB": "ZUB",
+        "correctAnswer": true,
+        "explanation": "Opposite of opposite = same."
+      },
+      {
+        "id": "s11_t4",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "DIFFERENT", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "SAME", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "SAME",
+        "probeStimB": "RUF",
+        "correctAnswer": false,
+        "explanation": "TEL is different from BEQ, and BEQ=RUF, so TEL is different from RUF."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s11_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "OPPOSITE", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "SAME", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "NAV",
+        "correctAnswer": true
+      },
+      {
+        "id": "s11_x2",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "SAME", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "DIFFERENT", "stimulusB": "FEZ"}
+        ],
+        "probeStimA": "QIP",
+        "probeRelation": "SAME",
+        "probeStimB": "FEZ",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Complex Comparison Chains",
+    "description": "Derive comparison relations across three-premise mixed chains",
+    "relationTypes": ["SAME", "MORE_THAN", "LESS_THAN"],
+    "premiseCount": 3,
+    "difficulty": "HARD",
+    "masteryThreshold": 0.80,
+    "timeLimitSeconds": 30,
+    "xpReward": 240,
+    "trainingTrials": [
+      {
+        "id": "s12_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "MORE_THAN", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "SAME", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "MORE_THAN", "stimulusB": "CUB"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "GYQ>FYW=VOP>CUB, so GYQ>CUB."
+      },
+      {
+        "id": "s12_t2",
+        "premises": [
+          {"stimulusA": "KES", "relationType": "LESS_THAN", "stimulusB": "DAX"},
+          {"stimulusA": "DAX", "relationType": "LESS_THAN", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "SAME", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "KES",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "MOQ",
+        "correctAnswer": true,
+        "explanation": "KES<DAX<PIR=MOQ, so KES<MOQ."
+      },
+      {
+        "id": "s12_t3",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "SAME", "stimulusB": "TEL"},
+          {"stimulusA": "TEL", "relationType": "MORE_THAN", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "MORE_THAN", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "ZUB",
+        "correctAnswer": false,
+        "explanation": "ZUB=TEL>BEQ>RUF, so RUF is NOT more than ZUB."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s12_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "MORE_THAN", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "MORE_THAN", "stimulusB": "NAV"},
+          {"stimulusA": "NAV", "relationType": "SAME", "stimulusB": "QIP"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "QIP",
+        "correctAnswer": true
+      },
+      {
+        "id": "s12_x2",
+        "premises": [
+          {"stimulusA": "DUK", "relationType": "SAME", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "LESS_THAN", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "LESS_THAN", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "DUK",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "HEW",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Temporal-Comparison Mix",
+    "description": "Combine temporal and comparison relations for cross-frame reasoning",
+    "relationTypes": ["BEFORE", "AFTER", "MORE_THAN", "LESS_THAN"],
+    "premiseCount": 2,
+    "difficulty": "HARD",
+    "masteryThreshold": 0.80,
+    "timeLimitSeconds": 30,
+    "xpReward": 240,
+    "trainingTrials": [
+      {
+        "id": "s13_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "BEFORE", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "BEFORE", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "VOP",
+        "probeRelation": "AFTER",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "GYQ then FYW then VOP, so VOP is after GYQ."
+      },
+      {
+        "id": "s13_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "MORE_THAN", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "MORE_THAN", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "DAX",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "CUB>KES>DAX, so DAX<CUB."
+      },
+      {
+        "id": "s13_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "AFTER", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "AFTER", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "ZUB",
+        "probeRelation": "AFTER",
+        "probeStimB": "PIR",
+        "correctAnswer": false,
+        "explanation": "ZUB then MOQ then PIR, so ZUB is NOT after PIR."
+      },
+      {
+        "id": "s13_t4",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "LESS_THAN", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "LESS_THAN", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "RUF",
+        "correctAnswer": false,
+        "explanation": "TEL<BEQ<RUF, so TEL is NOT more than RUF."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s13_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "BEFORE", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "BEFORE", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "AFTER",
+        "probeStimB": "NAV",
+        "correctAnswer": false
+      },
+      {
+        "id": "s13_x2",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "MORE_THAN", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "MORE_THAN", "stimulusB": "FEZ"}
+        ],
+        "probeStimA": "QIP",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "FEZ",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Symmetric Relations Combined",
+    "description": "Master all symmetric relations (Same, Different, Opposite) in complex chains",
+    "relationTypes": ["SAME", "DIFFERENT", "OPPOSITE"],
+    "premiseCount": 3,
+    "difficulty": "ADVANCED",
+    "masteryThreshold": 0.80,
+    "timeLimitSeconds": 35,
+    "xpReward": 260,
+    "trainingTrials": [
+      {
+        "id": "s14_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "OPPOSITE", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "SAME", "stimulusB": "CUB"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "GYQ=FYW, FYW is opposite VOP, VOP=CUB, so GYQ is opposite CUB."
+      },
+      {
+        "id": "s14_t2",
+        "premises": [
+          {"stimulusA": "KES", "relationType": "OPPOSITE", "stimulusB": "DAX"},
+          {"stimulusA": "DAX", "relationType": "OPPOSITE", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "OPPOSITE", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "KES",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "MOQ",
+        "correctAnswer": true,
+        "explanation": "Three opposites: opposite(opposite(opposite))=opposite. KES is opposite MOQ."
+      },
+      {
+        "id": "s14_t3",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "SAME", "stimulusB": "TEL"},
+          {"stimulusA": "TEL", "relationType": "SAME", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "OPPOSITE", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "ZUB",
+        "probeRelation": "SAME",
+        "probeStimB": "RUF",
+        "correctAnswer": false,
+        "explanation": "ZUB=TEL=BEQ, and BEQ is opposite RUF, so ZUB is opposite RUF, not same."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s14_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "OPPOSITE", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "OPPOSITE", "stimulusB": "NAV"},
+          {"stimulusA": "NAV", "relationType": "SAME", "stimulusB": "QIP"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "SAME",
+        "probeStimB": "QIP",
+        "correctAnswer": true
+      },
+      {
+        "id": "s14_x2",
+        "premises": [
+          {"stimulusA": "DUK", "relationType": "SAME", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "OPPOSITE", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "OPPOSITE", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "DUK",
+        "probeRelation": "SAME",
+        "probeStimB": "HEW",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Containment Chains",
+    "description": "Derive containment relations through transitive chains",
+    "relationTypes": ["CONTAINS", "WITHIN", "SAME"],
+    "premiseCount": 2,
+    "difficulty": "ADVANCED",
+    "masteryThreshold": 0.80,
+    "timeLimitSeconds": 30,
+    "xpReward": 260,
+    "trainingTrials": [
+      {
+        "id": "s15_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "CONTAINS", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "CONTAINS", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "VOP",
+        "correctAnswer": true,
+        "explanation": "GYQ contains FYW, FYW contains VOP, so GYQ contains VOP."
+      },
+      {
+        "id": "s15_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "WITHIN", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "WITHIN", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "CUB",
+        "probeRelation": "WITHIN",
+        "probeStimB": "DAX",
+        "correctAnswer": true,
+        "explanation": "CUB is within KES, KES is within DAX, so CUB is within DAX."
+      },
+      {
+        "id": "s15_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "SAME", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "CONTAINS", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "PIR",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "ZUB",
+        "correctAnswer": true,
+        "explanation": "PIR=MOQ and MOQ contains ZUB, so PIR contains ZUB."
+      },
+      {
+        "id": "s15_t4",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "WITHIN", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "WITHIN", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "WITHIN",
+        "probeStimB": "TEL",
+        "correctAnswer": false,
+        "explanation": "TEL is within BEQ, BEQ is within RUF, so RUF is NOT within TEL."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s15_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "CONTAINS", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "CONTAINS", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "NAV",
+        "probeRelation": "WITHIN",
+        "probeStimB": "WEX",
+        "correctAnswer": true
+      },
+      {
+        "id": "s15_x2",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "WITHIN", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "WITHIN", "stimulusB": "FEZ"}
+        ],
+        "probeStimA": "FEZ",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "QIP",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Four-Premise Comparison",
+    "description": "Derive comparison across four-premise chains for expert reasoning",
+    "relationTypes": ["MORE_THAN", "LESS_THAN", "SAME"],
+    "premiseCount": 4,
+    "difficulty": "ADVANCED",
+    "masteryThreshold": 0.75,
+    "timeLimitSeconds": 40,
+    "xpReward": 280,
+    "trainingTrials": [
+      {
+        "id": "s16_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "MORE_THAN", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "MORE_THAN", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "SAME", "stimulusB": "CUB"},
+          {"stimulusA": "CUB", "relationType": "MORE_THAN", "stimulusB": "KES"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "KES",
+        "correctAnswer": true,
+        "explanation": "GYQ>FYW>VOP=CUB>KES, so GYQ>KES."
+      },
+      {
+        "id": "s16_t2",
+        "premises": [
+          {"stimulusA": "DAX", "relationType": "LESS_THAN", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "SAME", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "LESS_THAN", "stimulusB": "ZUB"},
+          {"stimulusA": "ZUB", "relationType": "LESS_THAN", "stimulusB": "TEL"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "DAX",
+        "correctAnswer": false,
+        "explanation": "DAX<PIR=MOQ<ZUB<TEL, so TEL is NOT less than DAX."
+      },
+      {
+        "id": "s16_t3",
+        "premises": [
+          {"stimulusA": "BEQ", "relationType": "MORE_THAN", "stimulusB": "RUF"},
+          {"stimulusA": "RUF", "relationType": "MORE_THAN", "stimulusB": "WEX"},
+          {"stimulusA": "WEX", "relationType": "MORE_THAN", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "SAME", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "NAV",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "BEQ",
+        "correctAnswer": true,
+        "explanation": "BEQ>RUF>WEX>JOT=NAV, so NAV<BEQ."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s16_x1",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "MORE_THAN", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "SAME", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "MORE_THAN", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "MORE_THAN", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "QIP",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "HEW",
+        "correctAnswer": true
+      },
+      {
+        "id": "s16_x2",
+        "premises": [
+          {"stimulusA": "BOK", "relationType": "LESS_THAN", "stimulusB": "YEG"},
+          {"stimulusA": "YEG", "relationType": "LESS_THAN", "stimulusB": "PUX"},
+          {"stimulusA": "PUX", "relationType": "LESS_THAN", "stimulusB": "WAD"},
+          {"stimulusA": "WAD", "relationType": "SAME", "stimulusB": "CIJ"}
+        ],
+        "probeStimA": "BOK",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "CIJ",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Inverse Derivation",
+    "description": "Focus on deriving inverse and reciprocal relations",
+    "relationTypes": ["MORE_THAN", "LESS_THAN", "BEFORE", "AFTER", "CONTAINS", "WITHIN"],
+    "premiseCount": 2,
+    "difficulty": "ADVANCED",
+    "masteryThreshold": 0.80,
+    "timeLimitSeconds": 30,
+    "xpReward": 280,
+    "trainingTrials": [
+      {
+        "id": "s17_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "MORE_THAN", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "MORE_THAN", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "VOP",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "GYQ",
+        "correctAnswer": true,
+        "explanation": "GYQ>FYW>VOP, so VOP<GYQ."
+      },
+      {
+        "id": "s17_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "BEFORE", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "BEFORE", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "DAX",
+        "probeRelation": "AFTER",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "CUB then KES then DAX, so DAX is after CUB."
+      },
+      {
+        "id": "s17_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "CONTAINS", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "CONTAINS", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "ZUB",
+        "probeRelation": "WITHIN",
+        "probeStimB": "PIR",
+        "correctAnswer": true,
+        "explanation": "PIR contains MOQ, MOQ contains ZUB, so ZUB is within PIR."
+      },
+      {
+        "id": "s17_t4",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "AFTER", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "AFTER", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "AFTER",
+        "probeStimB": "TEL",
+        "correctAnswer": false,
+        "explanation": "RUF then BEQ then TEL, so RUF is BEFORE TEL, not after."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s17_x1",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "WITHIN", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "WITHIN", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "NAV",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "WEX",
+        "correctAnswer": true
+      },
+      {
+        "id": "s17_x2",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "LESS_THAN", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "LESS_THAN", "stimulusB": "FEZ"}
+        ],
+        "probeStimA": "FEZ",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "QIP",
+        "correctAnswer": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Speed Challenge",
+    "description": "Faster time limits push fluency with all relation types",
+    "relationTypes": ["SAME", "OPPOSITE", "MORE_THAN", "LESS_THAN", "BEFORE", "AFTER"],
+    "premiseCount": 2,
+    "difficulty": "ADVANCED",
+    "masteryThreshold": 0.75,
+    "timeLimitSeconds": 15,
+    "xpReward": 300,
+    "trainingTrials": [
+      {
+        "id": "s18_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "MORE_THAN", "stimulusB": "VOP"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "VOP",
+        "correctAnswer": true
+      },
+      {
+        "id": "s18_t2",
+        "premises": [
+          {"stimulusA": "CUB", "relationType": "BEFORE", "stimulusB": "KES"},
+          {"stimulusA": "KES", "relationType": "BEFORE", "stimulusB": "DAX"}
+        ],
+        "probeStimA": "CUB",
+        "probeRelation": "AFTER",
+        "probeStimB": "DAX",
+        "correctAnswer": false
+      },
+      {
+        "id": "s18_t3",
+        "premises": [
+          {"stimulusA": "PIR", "relationType": "OPPOSITE", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "OPPOSITE", "stimulusB": "ZUB"}
+        ],
+        "probeStimA": "PIR",
+        "probeRelation": "SAME",
+        "probeStimB": "ZUB",
+        "correctAnswer": true
+      },
+      {
+        "id": "s18_t4",
+        "premises": [
+          {"stimulusA": "TEL", "relationType": "LESS_THAN", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "SAME", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "RUF",
+        "correctAnswer": true
+      },
+      {
+        "id": "s18_t5",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "AFTER", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "SAME", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "WEX",
+        "probeRelation": "AFTER",
+        "probeStimB": "NAV",
+        "correctAnswer": true
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s18_x1",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "MORE_THAN", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "MORE_THAN", "stimulusB": "FEZ"}
+        ],
+        "probeStimA": "FEZ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "QIP",
+        "correctAnswer": false
+      },
+      {
+        "id": "s18_x2",
+        "premises": [
+          {"stimulusA": "LYR", "relationType": "OPPOSITE", "stimulusB": "HEW"},
+          {"stimulusA": "HEW", "relationType": "SAME", "stimulusB": "BOK"}
+        ],
+        "probeStimA": "LYR",
+        "probeRelation": "OPPOSITE",
+        "probeStimB": "BOK",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Mixed Hard Chains",
+    "description": "Three-premise chains mixing all relation types",
+    "relationTypes": ["SAME", "OPPOSITE", "MORE_THAN", "LESS_THAN", "BEFORE", "AFTER", "CONTAINS", "WITHIN"],
+    "premiseCount": 3,
+    "difficulty": "EXPERT",
+    "masteryThreshold": 0.75,
+    "timeLimitSeconds": 35,
+    "xpReward": 350,
+    "trainingTrials": [
+      {
+        "id": "s19_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "SAME", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "OPPOSITE", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "MORE_THAN", "stimulusB": "CUB"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "LESS_THAN",
+        "probeStimB": "CUB",
+        "correctAnswer": true,
+        "explanation": "GYQ=FYW, FYW is opposite VOP, and VOP>CUB. Opposite reverses: GYQ<CUB."
+      },
+      {
+        "id": "s19_t2",
+        "premises": [
+          {"stimulusA": "KES", "relationType": "CONTAINS", "stimulusB": "DAX"},
+          {"stimulusA": "DAX", "relationType": "SAME", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "CONTAINS", "stimulusB": "MOQ"}
+        ],
+        "probeStimA": "KES",
+        "probeRelation": "CONTAINS",
+        "probeStimB": "MOQ",
+        "correctAnswer": true,
+        "explanation": "KES contains DAX, DAX=PIR, PIR contains MOQ, so KES contains MOQ."
+      },
+      {
+        "id": "s19_t3",
+        "premises": [
+          {"stimulusA": "ZUB", "relationType": "BEFORE", "stimulusB": "TEL"},
+          {"stimulusA": "TEL", "relationType": "SAME", "stimulusB": "BEQ"},
+          {"stimulusA": "BEQ", "relationType": "BEFORE", "stimulusB": "RUF"}
+        ],
+        "probeStimA": "RUF",
+        "probeRelation": "AFTER",
+        "probeStimB": "ZUB",
+        "correctAnswer": true,
+        "explanation": "ZUB then TEL=BEQ then RUF, so RUF is after ZUB."
+      },
+      {
+        "id": "s19_t4",
+        "premises": [
+          {"stimulusA": "WEX", "relationType": "MORE_THAN", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "MORE_THAN", "stimulusB": "NAV"},
+          {"stimulusA": "NAV", "relationType": "SAME", "stimulusB": "QIP"}
+        ],
+        "probeStimA": "QIP",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "WEX",
+        "correctAnswer": false,
+        "explanation": "WEX>JOT>NAV=QIP, so QIP is NOT more than WEX."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s19_x1",
+        "premises": [
+          {"stimulusA": "DUK", "relationType": "OPPOSITE", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "SAME", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "OPPOSITE", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "DUK",
+        "probeRelation": "SAME",
+        "probeStimB": "HEW",
+        "correctAnswer": true
+      },
+      {
+        "id": "s19_x2",
+        "premises": [
+          {"stimulusA": "BOK", "relationType": "WITHIN", "stimulusB": "YEG"},
+          {"stimulusA": "YEG", "relationType": "SAME", "stimulusB": "PUX"},
+          {"stimulusA": "PUX", "relationType": "WITHIN", "stimulusB": "WAD"}
+        ],
+        "probeStimA": "BOK",
+        "probeRelation": "WITHIN",
+        "probeStimB": "WAD",
+        "correctAnswer": true
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Expert Challenge",
+    "description": "Four-premise chains with all relation types for mastery-level reasoning",
+    "relationTypes": ["SAME", "OPPOSITE", "MORE_THAN", "LESS_THAN", "BEFORE", "AFTER", "CONTAINS", "WITHIN"],
+    "premiseCount": 4,
+    "difficulty": "EXPERT",
+    "masteryThreshold": 0.70,
+    "timeLimitSeconds": 45,
+    "xpReward": 400,
+    "trainingTrials": [
+      {
+        "id": "s20_t1",
+        "premises": [
+          {"stimulusA": "GYQ", "relationType": "MORE_THAN", "stimulusB": "FYW"},
+          {"stimulusA": "FYW", "relationType": "SAME", "stimulusB": "VOP"},
+          {"stimulusA": "VOP", "relationType": "MORE_THAN", "stimulusB": "CUB"},
+          {"stimulusA": "CUB", "relationType": "MORE_THAN", "stimulusB": "KES"}
+        ],
+        "probeStimA": "GYQ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "KES",
+        "correctAnswer": true,
+        "explanation": "GYQ>FYW=VOP>CUB>KES, so GYQ>KES."
+      },
+      {
+        "id": "s20_t2",
+        "premises": [
+          {"stimulusA": "DAX", "relationType": "BEFORE", "stimulusB": "PIR"},
+          {"stimulusA": "PIR", "relationType": "SAME", "stimulusB": "MOQ"},
+          {"stimulusA": "MOQ", "relationType": "BEFORE", "stimulusB": "ZUB"},
+          {"stimulusA": "ZUB", "relationType": "BEFORE", "stimulusB": "TEL"}
+        ],
+        "probeStimA": "TEL",
+        "probeRelation": "AFTER",
+        "probeStimB": "DAX",
+        "correctAnswer": true,
+        "explanation": "DAX then PIR=MOQ then ZUB then TEL, so TEL is after DAX."
+      },
+      {
+        "id": "s20_t3",
+        "premises": [
+          {"stimulusA": "BEQ", "relationType": "CONTAINS", "stimulusB": "RUF"},
+          {"stimulusA": "RUF", "relationType": "SAME", "stimulusB": "WEX"},
+          {"stimulusA": "WEX", "relationType": "CONTAINS", "stimulusB": "JOT"},
+          {"stimulusA": "JOT", "relationType": "CONTAINS", "stimulusB": "NAV"}
+        ],
+        "probeStimA": "NAV",
+        "probeRelation": "WITHIN",
+        "probeStimB": "BEQ",
+        "correctAnswer": true,
+        "explanation": "BEQ contains RUF=WEX which contains JOT which contains NAV, so NAV is within BEQ."
+      },
+      {
+        "id": "s20_t4",
+        "premises": [
+          {"stimulusA": "QIP", "relationType": "OPPOSITE", "stimulusB": "DUK"},
+          {"stimulusA": "DUK", "relationType": "SAME", "stimulusB": "FEZ"},
+          {"stimulusA": "FEZ", "relationType": "OPPOSITE", "stimulusB": "LYR"},
+          {"stimulusA": "LYR", "relationType": "SAME", "stimulusB": "HEW"}
+        ],
+        "probeStimA": "QIP",
+        "probeRelation": "SAME",
+        "probeStimB": "HEW",
+        "correctAnswer": true,
+        "explanation": "QIP is opposite DUK=FEZ, FEZ is opposite LYR=HEW. Two opposites cancel: QIP=HEW."
+      }
+    ],
+    "testTrials": [
+      {
+        "id": "s20_x1",
+        "premises": [
+          {"stimulusA": "BOK", "relationType": "LESS_THAN", "stimulusB": "YEG"},
+          {"stimulusA": "YEG", "relationType": "SAME", "stimulusB": "PUX"},
+          {"stimulusA": "PUX", "relationType": "LESS_THAN", "stimulusB": "WAD"},
+          {"stimulusA": "WAD", "relationType": "LESS_THAN", "stimulusB": "CIJ"}
+        ],
+        "probeStimA": "CIJ",
+        "probeRelation": "MORE_THAN",
+        "probeStimB": "BOK",
+        "correctAnswer": true
+      },
+      {
+        "id": "s20_x2",
+        "premises": [
+          {"stimulusA": "TUG", "relationType": "AFTER", "stimulusB": "NEP"},
+          {"stimulusA": "NEP", "relationType": "SAME", "stimulusB": "RIW"},
+          {"stimulusA": "RIW", "relationType": "AFTER", "stimulusB": "VOZ"},
+          {"stimulusA": "VOZ", "relationType": "AFTER", "stimulusB": "KAX"}
+        ],
+        "probeStimA": "KAX",
+        "probeRelation": "BEFORE",
+        "probeStimB": "TUG",
+        "correctAnswer": true
+      }
+    ]
   }
 ]

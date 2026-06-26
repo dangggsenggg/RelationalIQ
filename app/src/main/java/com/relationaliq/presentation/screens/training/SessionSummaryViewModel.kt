@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.relationaliq.domain.model.TrainingSession
 import com.relationaliq.domain.repository.TrainingRepository
+import com.relationaliq.domain.usecase.AdaptiveExamEngine
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,13 +15,16 @@ import javax.inject.Inject
 
 data class SessionSummaryUiState(
     val session: TrainingSession? = null,
-    val isLoading: Boolean = true
+    val isLoading: Boolean = true,
+    val examAvailable: Boolean = false,
+    val examId: Int? = null
 )
 
 @HiltViewModel
 class SessionSummaryViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val trainingRepository: TrainingRepository
+    private val trainingRepository: TrainingRepository,
+    private val adaptiveExamEngine: AdaptiveExamEngine
 ) : ViewModel() {
 
     private val sessionId: Long = savedStateHandle["sessionId"] ?: 0L
@@ -31,7 +35,14 @@ class SessionSummaryViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val session = trainingRepository.getSessionById(sessionId)
-            _uiState.value = SessionSummaryUiState(session = session, isLoading = false)
+            val stageId = session?.stageId ?: 0
+            val exam = adaptiveExamEngine.getExamForStageCheckpoint(stageId)
+            _uiState.value = SessionSummaryUiState(
+                session = session,
+                isLoading = false,
+                examAvailable = exam != null && session?.passed == true,
+                examId = exam?.id
+            )
         }
     }
 }

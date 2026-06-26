@@ -12,6 +12,9 @@ sealed class Screen(val route: String) {
     data object SessionSummary : Screen("session_summary/{sessionId}") {
         fun createRoute(sessionId: Long) = "session_summary/$sessionId"
     }
+    data object Exam : Screen("exam/{examId}") {
+        fun createRoute(examId: Int) = "exam/$examId"
+    }
     data object Progress : Screen("progress")
     data object Settings : Screen("settings")
     data object Science : Screen("science")
