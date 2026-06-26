@@ -1,5 +1,7 @@
 package com.relationaliq.presentation.screens.training
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +18,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Card
@@ -23,6 +27,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -30,12 +35,30 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.relationaliq.domain.model.Stage
 import com.relationaliq.presentation.theme.CorrectGreenDark
+
+private val MODULE_DISPLAY_NAMES = mapOf(
+    "M1_Coordination" to "M1: Coordination (Same/Different)",
+    "M2_Comparison" to "M2: Comparison (More/Less)",
+    "M3_Opposition" to "M3: Opposition (Opposite)",
+    "M4_Temporal" to "M4: Temporal (Before/After)",
+    "M5_Containment" to "M5: Containment (Contains/Within)",
+    "M6_Mixed" to "M6: Mixed & Advanced"
+)
+
+private val MODULE_ORDER = listOf(
+    "M1_Coordination", "M2_Comparison", "M3_Opposition",
+    "M4_Temporal", "M5_Containment", "M6_Mixed"
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,6 +68,9 @@ fun StageListScreen(
     viewModel: StageListViewModel = hiltViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
+    val expandedModules = remember { mutableStateMapOf<String, Boolean>() }
+
+    val groupedStages = state.stages.groupBy { it.module.ifEmpty { "Other" } }
 
     Scaffold(
         topBar = {
@@ -63,20 +89,101 @@ fun StageListScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(state.stages) { stage ->
-                val isUnlocked = state.unlockedStageIds.contains(stage.id)
-                val isCompleted = state.completedStageIds.contains(stage.id)
+            val orderedModules = MODULE_ORDER.filter { groupedStages.containsKey(it) } +
+                groupedStages.keys.filter { it !in MODULE_ORDER }
 
-                StageCard(
-                    stage = stage,
-                    isUnlocked = isUnlocked,
-                    isCompleted = isCompleted,
-                    onClick = { if (isUnlocked) onStageSelected(stage.id) }
+            for (module in orderedModules) {
+                val stages = groupedStages[module] ?: continue
+                val isExpanded = expandedModules[module] ?: true
+                val completedCount = stages.count { state.completedStageIds.contains(it.id) }
+
+                item(key = "header_$module") {
+                    ModuleHeader(
+                        moduleName = MODULE_DISPLAY_NAMES[module] ?: module,
+                        completedCount = completedCount,
+                        totalCount = stages.size,
+                        isExpanded = isExpanded,
+                        onClick = { expandedModules[module] = !isExpanded }
+                    )
+                }
+
+                if (isExpanded) {
+                    items(stages, key = { it.id }) { stage ->
+                        val isUnlocked = state.unlockedStageIds.contains(stage.id)
+                        val isCompleted = state.completedStageIds.contains(stage.id)
+                        StageCard(
+                            stage = stage,
+                            isUnlocked = isUnlocked,
+                            isCompleted = isCompleted,
+                            onClick = { if (isUnlocked) onStageSelected(stage.id) }
+                        )
+                    }
+                }
+            }
+
+            item { Spacer(modifier = Modifier.height(16.dp)) }
+        }
+    }
+}
+
+@Composable
+private fun ModuleHeader(
+    moduleName: String,
+    completedCount: Int,
+    totalCount: Int,
+    isExpanded: Boolean,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable(onClick = onClick)
+                .padding(16.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = moduleName,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
+                    Text(
+                        text = "$completedCount / $totalCount stages completed",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
+                    )
+                }
+                Icon(
+                    imageVector = if (isExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                    contentDescription = if (isExpanded) "Collapse" else "Expand",
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
-            item { Spacer(modifier = Modifier.height(16.dp)) }
+            Spacer(modifier = Modifier.height(8.dp))
+            LinearProgressIndicator(
+                progress = { if (totalCount > 0) completedCount.toFloat() / totalCount else 0f },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(6.dp)
+                    .clip(RoundedCornerShape(3.dp)),
+                color = CorrectGreenDark,
+                trackColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.2f)
+            )
         }
     }
 }
@@ -129,8 +236,18 @@ private fun StageCard(
                     color = if (isUnlocked) MaterialTheme.colorScheme.onSurface
                     else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f)
                 )
+                val metaInfo = buildString {
+                    append(stage.difficulty.label)
+                    if (stage.frameType.isNotEmpty()) {
+                        append(" \u2022 ")
+                        append(stage.frameType)
+                    }
+                    if (stage.derivationDepth > 1) {
+                        append(" \u2022 Depth ${stage.derivationDepth}")
+                    }
+                }
                 Text(
-                    text = "${stage.difficulty.label} • ${stage.relationTypes.joinToString(", ") { it.displayName }}",
+                    text = metaInfo,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                 )

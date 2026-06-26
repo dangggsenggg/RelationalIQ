@@ -1,6 +1,6 @@
 ---
 name: testing-relationaliq
-description: Test the RelationalIQ Android app end-to-end on an emulator. Use when verifying UI flows, assessment quiz, training engine, or settings changes.
+description: Test the RelationalIQ Android app end-to-end on an emulator. Use when verifying UI flows, assessment quiz, training engine, exam system, or settings changes.
 ---
 
 # Testing RelationalIQ Android App
@@ -66,10 +66,48 @@ description: Test the RelationalIQ Android app end-to-end on an emulator. Use wh
 4. **Training** (Start Session → premise cards → YES/NO → feedback → session summary)
 5. **Settings** (gear icon top-right: Dark Mode, High Contrast, Sound, Haptics, Reduced Motion)
 
+## Testing the Exam System
+
+The adaptive exam triggers after every 10 training stages. Since completing 10 stages manually is impractical, use DB manipulation:
+
+1. **Fast-forward to exam checkpoint**:
+   ```bash
+   # Set currentStageId to 11 (simulates completing stages 1-10)
+   adb shell "run-as com.relationaliq.debug sqlite3 databases/relationaliq_db 'UPDATE user_profiles SET currentStageId = 11 WHERE id = 1;'"
+   ```
+
+2. **Force-stop and relaunch** (required to reload state from DB):
+   ```bash
+   adb shell am force-stop com.relationaliq.debug
+   adb shell am start -n com.relationaliq.debug/com.relationaliq.presentation.MainActivity
+   ```
+
+3. **Verify exam availability**: Dashboard should show "Exam Available!" card with trophy icon and "Take Exam" button.
+
+4. **Exam flow**: Intro screen → 15 adaptive questions → Results screen
+   - Starting difficulty: MEDIUM (blue badge, 35s timer, 2 premises)
+   - After 2 consecutive correct: difficulty increases (e.g., MEDIUM→HARD)
+   - After 2 consecutive wrong: difficulty decreases (e.g., HARD→MEDIUM)
+   - HARD: amber badge, 30s timer, 3 premises
+   - ADVANCED/EXPERT: red badge, 25s/20s timer, 3-4 premises
+
+5. **Results screen verification**:
+   - Pass (>=70%): "Exam Passed!" with trophy, "Continue" button
+   - Fail (<70%): "Not Yet..." with retry icon, "Back to Dashboard" + "Retry Exam" buttons
+   - Shows: accuracy %, correct/total, XP earned, peak difficulty, relation type breakdown
+
+### DB Access for Exam Testing
+- Package: `com.relationaliq.debug`
+- DB path: accessed via `run-as com.relationaliq.debug sqlite3 databases/relationaliq_db`
+- Key tables: `user_profiles` (currentStageId), `exam_results` (exam history)
+- For second exam checkpoint, set `currentStageId = 21`
+
 ## Known Issues
 
 - **Stage loading might fail silently**: `StageDataSource.loadStagesFromAssets()` catches all exceptions and returns empty list. If training shows "Stage not found", the issue is likely Gson parsing failing at runtime (possibly R8/ProGuard stripping reflection metadata). Check `app/proguard-rules.pro` for Gson keep rules.
 - The assessment quiz uses hardcoded trials in `AssessmentViewModel`, so it works independently of stages.json loading.
+- **Dashboard stats may show 0 after DB manipulation**: When fast-forwarding via DB, only `currentStageId` is updated. Streak/XP/Stages counters might not reflect the manipulated state. This is expected since those stats are computed from actual training session records.
+- **Emulator touch input can be slow**: Clicks may not register on the first attempt, especially with `swiftshader_indirect` GPU. Use precise coordinates and retry if needed. The computer-use tool's coordinate system maps to the emulator window, not the device's native 1080x2400 resolution.
 
 ## Key Files for Testing
 
@@ -77,6 +115,10 @@ description: Test the RelationalIQ Android app end-to-end on an emulator. Use wh
 - Stage data: `app/src/main/assets/stages.json`
 - Stage loader: `app/src/main/java/com/relationaliq/data/datasource/StageDataSource.kt`
 - Navigation: `app/src/main/java/com/relationaliq/presentation/navigation/NavGraph.kt`
+- Exam engine: `app/src/main/java/com/relationaliq/domain/usecase/AdaptiveExamEngine.kt`
+- Exam UI: `app/src/main/java/com/relationaliq/presentation/screens/exam/ExamScreen.kt`
+- Exam ViewModel: `app/src/main/java/com/relationaliq/presentation/screens/exam/ExamViewModel.kt`
+- Dashboard (exam card): `app/src/main/java/com/relationaliq/presentation/screens/dashboard/DashboardScreen.kt`
 - Unit tests: `app/src/test/java/com/relationaliq/`
 
 ## Devin Secrets Needed

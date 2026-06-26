@@ -59,12 +59,17 @@ data class StageJson(
     val id: Int? = null,
     val title: String? = null,
     val description: String? = null,
+    val module: String? = null,
+    val frame_type: String? = null,
+    val sub_frame: String? = null,
     val relationTypes: List<String>? = null,
     val premiseCount: Int? = null,
+    val derivation_depth: Int? = null,
     val difficulty: String? = null,
     val masteryThreshold: Float? = null,
     val timeLimitSeconds: Int? = null,
     val xpReward: Int? = null,
+    val estimated_time_minutes: Int? = null,
     val trainingTrials: List<TrialJson>? = null,
     val testTrials: List<TrialJson>? = null
 ) {
@@ -72,14 +77,19 @@ data class StageJson(
         id = id ?: 0,
         title = title ?: "",
         description = description ?: "",
+        module = module ?: "",
+        frameType = frame_type ?: "",
+        subFrame = sub_frame ?: "",
         relationTypes = relationTypes?.map { RelationType.valueOf(it) } ?: emptyList(),
         premiseCount = premiseCount ?: 1,
+        derivationDepth = derivation_depth ?: 1,
         difficulty = Difficulty.valueOf(difficulty ?: "BEGINNER"),
         trainingTrials = trainingTrials?.map { it.toDomain() } ?: emptyList(),
         testTrials = testTrials?.map { it.toDomain() } ?: emptyList(),
         masteryThreshold = masteryThreshold ?: 0.85f,
         timeLimitSeconds = timeLimitSeconds ?: 30,
-        xpReward = xpReward ?: 100
+        xpReward = xpReward ?: 100,
+        estimatedTimeMinutes = estimated_time_minutes ?: 4
     )
 }
 

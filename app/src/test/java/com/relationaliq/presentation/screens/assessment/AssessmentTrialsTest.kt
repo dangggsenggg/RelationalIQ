@@ -26,8 +26,8 @@ class AssessmentTrialsTest {
     }
 
     @Test
-    fun `assessment contains exactly 20 trials`() {
-        assertEquals(20, trials.size)
+    fun `assessment contains exactly 70 trials`() {
+        assertEquals(70, trials.size)
     }
 
     @Test
@@ -37,17 +37,17 @@ class AssessmentTrialsTest {
     }
 
     @Test
-    fun `every trial has at least 2 premises`() {
+    fun `every trial has at least 1 premise`() {
         for (trial in trials) {
             assertTrue(
-                "Trial ${trial.id} has only ${trial.premises.size} premise(s), expected at least 2",
-                trial.premises.size >= 2
+                "Trial ${trial.id} has ${trial.premises.size} premise(s), expected at least 1",
+                trial.premises.size >= 1
             )
         }
     }
 
     @Test
-    fun `probe stimuli are non-adjacent in the premise chain`() {
+    fun `probe stimuli appear in the premise chain`() {
         for (trial in trials) {
             val allStimuli = mutableSetOf<String>()
             trial.premises.forEach { p ->
@@ -71,7 +71,7 @@ class AssessmentTrialsTest {
         val falseCount = trials.count { !it.correctAnswer }
         assertTrue("Expected some true answers, got $trueCount", trueCount > 0)
         assertTrue("Expected some false answers, got $falseCount", falseCount > 0)
-        assertTrue("Expected at least 5 false answers for balance, got $falseCount", falseCount >= 5)
+        assertTrue("Expected at least 15 false answers for balance, got $falseCount", falseCount >= 15)
     }
 
     @Test
@@ -85,23 +85,57 @@ class AssessmentTrialsTest {
     }
 
     @Test
-    fun `difficulty progresses from 2-premise to 4-premise chains`() {
-        val first5 = trials.subList(0, 5)
-        val last5 = trials.subList(15, 20)
-
-        val avgPremisesEarly = first5.map { it.premises.size }.average()
-        val avgPremisesLate = last5.map { it.premises.size }.average()
-
-        assertTrue(
-            "Expected later trials to have more premises than early ones (early=$avgPremisesEarly, late=$avgPremisesLate)",
-            avgPremisesLate >= avgPremisesEarly
-        )
+    fun `assessment covers 7 subscales`() {
+        val prefixes = trials.map { it.id.substringBefore("_") }.toSet()
+        assertTrue("Should have coord subscale", prefixes.contains("coord"))
+        assertTrue("Should have comp subscale", prefixes.contains("comp"))
+        assertTrue("Should have opp subscale", prefixes.contains("opp"))
+        assertTrue("Should have temp subscale", prefixes.contains("temp"))
+        assertTrue("Should have cont subscale", prefixes.contains("cont"))
+        assertTrue("Should have mix subscale", prefixes.contains("mix"))
+        assertTrue("Should have anal subscale", prefixes.contains("anal"))
     }
 
     @Test
-    fun `last two trials have 3 or more premises`() {
-        assertTrue("Trial a19 should have 3+ premises", trials[18].premises.size >= 3)
-        assertTrue("Trial a20 should have 3+ premises", trials[19].premises.size >= 3)
+    fun `coordination subscale has 10 items`() {
+        val coordTrials = trials.filter { it.id.startsWith("coord_") }
+        assertEquals(10, coordTrials.size)
+    }
+
+    @Test
+    fun `comparison subscale has 12 items`() {
+        val compTrials = trials.filter { it.id.startsWith("comp_") }
+        assertEquals(12, compTrials.size)
+    }
+
+    @Test
+    fun `opposition subscale has 10 items`() {
+        val oppTrials = trials.filter { it.id.startsWith("opp_") }
+        assertEquals(10, oppTrials.size)
+    }
+
+    @Test
+    fun `temporal subscale has 10 items`() {
+        val tempTrials = trials.filter { it.id.startsWith("temp_") }
+        assertEquals(10, tempTrials.size)
+    }
+
+    @Test
+    fun `containment subscale has 8 items`() {
+        val contTrials = trials.filter { it.id.startsWith("cont_") }
+        assertEquals(8, contTrials.size)
+    }
+
+    @Test
+    fun `mixed subscale has 12 items`() {
+        val mixTrials = trials.filter { it.id.startsWith("mix_") }
+        assertEquals(12, mixTrials.size)
+    }
+
+    @Test
+    fun `analogy subscale has 8 items`() {
+        val analTrials = trials.filter { it.id.startsWith("anal_") }
+        assertEquals(8, analTrials.size)
     }
 
     @Test
@@ -112,6 +146,8 @@ class AssessmentTrialsTest {
         assertTrue("Should test LESS_THAN relation", probeRelations.contains(RelationType.LESS_THAN))
         assertTrue("Should test OPPOSITE relation", probeRelations.contains(RelationType.OPPOSITE))
         assertTrue("Should test BEFORE relation", probeRelations.contains(RelationType.BEFORE))
+        assertTrue("Should test CONTAINS relation", probeRelations.contains(RelationType.CONTAINS))
+        assertTrue("Should test WITHIN relation", probeRelations.contains(RelationType.WITHIN))
     }
 
     @Test
@@ -133,8 +169,7 @@ class AssessmentTrialsTest {
 
     @Test
     fun `transitive MORE_THAN chain derives correct answer`() {
-        // Q3: AWX > EGC, EGC > OPA → AWX > OPA? YES
-        val trial = trials.first { it.id == "a3" }
+        val trial = trials.first { it.id == "comp_1" }
         assertEquals("AWX", trial.premises[0].stimulusA)
         assertEquals(RelationType.MORE_THAN, trial.premises[0].relationType)
         assertEquals("EGC", trial.premises[0].stimulusB)
@@ -149,26 +184,13 @@ class AssessmentTrialsTest {
 
     @Test
     fun `reversed transitive chain derives correct false answer`() {
-        // Q4: BGW > MOQ, MOQ > TEL → TEL > BGW? NO
-        val trial = trials.first { it.id == "a4" }
+        val trial = trials.first { it.id == "comp_2" }
         assertEquals(false, trial.correctAnswer)
     }
 
     @Test
-    fun `4-premise chain derives correct answer`() {
-        // Q19: AWX > EGC, EGC > OPA, OPA > BGW, BGW > DUK → AWX > DUK? YES
-        val trial = trials.first { it.id == "a19" }
-        assertEquals(4, trial.premises.size)
-        assertEquals("AWX", trial.probeStimA)
-        assertEquals(RelationType.MORE_THAN, trial.probeRelation)
-        assertEquals("DUK", trial.probeStimB)
-        assertTrue(trial.correctAnswer)
-    }
-
-    @Test
     fun `opposite of opposite equals same`() {
-        // Q8: LYR ↔ BOK, BOK ↔ CUB → LYR = CUB? YES
-        val trial = trials.first { it.id == "a8" }
+        val trial = trials.first { it.id == "opp_2" }
         assertEquals(RelationType.OPPOSITE, trial.premises[0].relationType)
         assertEquals(RelationType.OPPOSITE, trial.premises[1].relationType)
         assertEquals(RelationType.SAME, trial.probeRelation)
@@ -176,44 +198,30 @@ class AssessmentTrialsTest {
     }
 
     @Test
-    fun `opposite reverses comparison relation`() {
-        // Q14: LYR ↔ BOK, BOK = CUB, CUB > FYW → LYR < FYW? YES
-        val trial = trials.first { it.id == "a14" }
-        assertEquals(RelationType.OPPOSITE, trial.premises[0].relationType)
-        assertEquals(RelationType.SAME, trial.premises[1].relationType)
-        assertEquals(RelationType.MORE_THAN, trial.premises[2].relationType)
-        assertEquals(RelationType.LESS_THAN, trial.probeRelation)
+    fun `containment transitivity works`() {
+        val trial = trials.first { it.id == "cont_3" }
+        assertEquals(RelationType.CONTAINS, trial.premises[0].relationType)
+        assertEquals(RelationType.CONTAINS, trial.premises[1].relationType)
+        assertEquals(RelationType.CONTAINS, trial.probeRelation)
         assertTrue(trial.correctAnswer)
     }
 
     @Test
-    fun `opposite with more_than gives false for more_than probe`() {
-        // Q18: RUF ↔ WEX, WEX = NAV, NAV > QIP → RUF > QIP? NO
-        val trial = trials.first { it.id == "a18" }
-        assertEquals(RelationType.OPPOSITE, trial.premises[0].relationType)
-        assertEquals(RelationType.MORE_THAN, trial.probeRelation)
-        assertNotNull(trial)
-        assertEquals(false, trial.correctAnswer)
-    }
-
-    @Test
     fun `submitting answers tracks score correctly`() {
-        // Answer all 20 correctly
         for (trial in trials) {
             viewModel.submitAnswer(trial.correctAnswer)
         }
         val state = viewModel.uiState.value
         assertTrue(state.showResult)
         assertEquals(1.0f, state.score)
-        assertEquals(20, state.correctCount)
+        assertEquals(70, state.correctCount)
     }
 
     @Test
     fun `submitting wrong answers reduces score`() {
-        // Answer first 10 correctly, last 10 incorrectly
         for (i in trials.indices) {
             val trial = trials[i]
-            if (i < 10) {
+            if (i < 35) {
                 viewModel.submitAnswer(trial.correctAnswer)
             } else {
                 viewModel.submitAnswer(!trial.correctAnswer)
@@ -222,7 +230,27 @@ class AssessmentTrialsTest {
         val state = viewModel.uiState.value
         assertTrue(state.showResult)
         assertEquals(0.5f, state.score)
-        assertEquals(10, state.correctCount)
+        assertEquals(35, state.correctCount)
+    }
+
+    @Test
+    fun `subscale scores are computed on completion`() {
+        for (trial in trials) {
+            viewModel.submitAnswer(trial.correctAnswer)
+        }
+        val state = viewModel.uiState.value
+        assertTrue(state.subscaleScores.isNotEmpty())
+        assertTrue(state.subscaleScores.containsKey("Coordination"))
+        assertTrue(state.subscaleScores.containsKey("Comparison"))
+        assertTrue(state.subscaleScores.containsKey("Opposition"))
+        assertTrue(state.subscaleScores.containsKey("Temporal"))
+        assertTrue(state.subscaleScores.containsKey("Containment"))
+        assertTrue(state.subscaleScores.containsKey("Mixed"))
+        assertTrue(state.subscaleScores.containsKey("Analogy"))
+
+        for ((_, subscale) in state.subscaleScores) {
+            assertEquals(1.0f, subscale.accuracy)
+        }
     }
 }
 
