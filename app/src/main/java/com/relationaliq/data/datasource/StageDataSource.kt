@@ -1,6 +1,7 @@
 package com.relationaliq.data.datasource
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.relationaliq.domain.model.Difficulty
@@ -38,74 +39,90 @@ class StageDataSource @Inject constructor(
             stageJsonList.mapNotNull { stageJson ->
                 try {
                     stageJson.toDomain()
-                } catch (e: IllegalArgumentException) {
+                } catch (e: Exception) {
+                    Log.e(TAG, "Failed to parse stage ${stageJson.id}: ${e.message}", e)
                     null
                 }
             }
         } catch (e: Exception) {
+            Log.e(TAG, "Failed to load stages from assets: ${e.message}", e)
             emptyList()
         }
+    }
+
+    companion object {
+        private const val TAG = "StageDataSource"
     }
 }
 
 data class StageJson(
-    val id: Int,
-    val title: String,
-    val description: String,
-    val relationTypes: List<String>,
-    val premiseCount: Int,
-    val difficulty: String,
-    val masteryThreshold: Float = 0.85f,
-    val timeLimitSeconds: Int = 30,
-    val xpReward: Int = 100,
-    val trainingTrials: List<TrialJson>,
-    val testTrials: List<TrialJson>
+    val id: Int? = null,
+    val title: String? = null,
+    val description: String? = null,
+    val module: String? = null,
+    val frame_type: String? = null,
+    val sub_frame: String? = null,
+    val relationTypes: List<String>? = null,
+    val premiseCount: Int? = null,
+    val derivation_depth: Int? = null,
+    val difficulty: String? = null,
+    val masteryThreshold: Float? = null,
+    val timeLimitSeconds: Int? = null,
+    val xpReward: Int? = null,
+    val estimated_time_minutes: Int? = null,
+    val trainingTrials: List<TrialJson>? = null,
+    val testTrials: List<TrialJson>? = null
 ) {
     fun toDomain(): Stage = Stage(
-        id = id,
-        title = title,
-        description = description,
-        relationTypes = relationTypes.map { RelationType.valueOf(it) },
-        premiseCount = premiseCount,
-        difficulty = Difficulty.valueOf(difficulty),
-        trainingTrials = trainingTrials.map { it.toDomain() },
-        testTrials = testTrials.map { it.toDomain() },
-        masteryThreshold = masteryThreshold,
-        timeLimitSeconds = timeLimitSeconds,
-        xpReward = xpReward
+        id = id ?: 0,
+        title = title ?: "",
+        description = description ?: "",
+        module = module ?: "",
+        frameType = frame_type ?: "",
+        subFrame = sub_frame ?: "",
+        relationTypes = relationTypes?.map { RelationType.valueOf(it) } ?: emptyList(),
+        premiseCount = premiseCount ?: 1,
+        derivationDepth = derivation_depth ?: 1,
+        difficulty = Difficulty.valueOf(difficulty ?: "BEGINNER"),
+        trainingTrials = trainingTrials?.map { it.toDomain() } ?: emptyList(),
+        testTrials = testTrials?.map { it.toDomain() } ?: emptyList(),
+        masteryThreshold = masteryThreshold ?: 0.85f,
+        timeLimitSeconds = timeLimitSeconds ?: 30,
+        xpReward = xpReward ?: 100,
+        estimatedTimeMinutes = estimated_time_minutes ?: 4
     )
 }
 
 data class TrialJson(
-    val id: String,
-    val premises: List<PremiseJson>,
-    val probeStimA: String,
-    val probeRelation: String,
-    val probeStimB: String,
-    val correctAnswer: Boolean,
-    val explanation: String = "",
-    val timeLimitSeconds: Int = 30
+    val id: String? = null,
+    val premises: List<PremiseJson>? = null,
+    val probeStimA: String? = null,
+    val probeRelation: String? = null,
+    val probeStimB: String? = null,
+    val correctAnswer: Boolean? = null,
+    val explanation: String? = null,
+    val timeLimitSeconds: Int? = null
 ) {
     fun toDomain(): Trial = Trial(
-        id = id,
-        premises = premises.map { it.toDomain() },
-        probeStimA = probeStimA,
-        probeRelation = RelationType.valueOf(probeRelation),
-        probeStimB = probeStimB,
-        correctAnswer = correctAnswer,
-        timeLimitSeconds = timeLimitSeconds,
-        explanation = explanation
+        id = id ?: "",
+        premises = premises?.map { it.toDomain() } ?: emptyList(),
+        probeStimA = probeStimA ?: "",
+        probeRelation = RelationType.valueOf(probeRelation ?: "SAME"),
+        probeStimB = probeStimB ?: "",
+        correctAnswer = correctAnswer ?: false,
+        timeLimitSeconds = timeLimitSeconds ?: 30,
+        explanation = explanation ?: ""
     )
 }
 
 data class PremiseJson(
-    val stimulusA: String,
-    val relationType: String,
-    val stimulusB: String
+    val stimulusA: String? = null,
+    val relationType: String? = null,
+    val stimulusB: String? = null
 ) {
     fun toDomain(): Premise = Premise(
-        stimulusA = stimulusA,
-        relationType = RelationType.valueOf(relationType),
-        stimulusB = stimulusB
+        stimulusA = stimulusA ?: "",
+        relationType = RelationType.valueOf(relationType ?: "SAME"),
+        stimulusB = stimulusB ?: ""
     )
 }

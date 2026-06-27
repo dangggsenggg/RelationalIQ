@@ -3,6 +3,7 @@ package com.relationaliq.di
 import android.content.Context
 import androidx.room.Room
 import com.relationaliq.data.local.dao.AchievementDao
+import com.relationaliq.data.local.dao.ExamResultDao
 import com.relationaliq.data.local.dao.StageProgressDao
 import com.relationaliq.data.local.dao.TrainingSessionDao
 import com.relationaliq.data.local.dao.TrialResultDao
@@ -26,7 +27,9 @@ object DatabaseModule {
             context,
             RelationalIQDatabase::class.java,
             RelationalIQDatabase.DATABASE_NAME
-        ).build()
+        )
+            .addMigrations(RelationalIQDatabase.MIGRATION_1_2)
+            .build()
 
     @Provides
     fun provideUserProfileDao(db: RelationalIQDatabase): UserProfileDao = db.userProfileDao()
@@ -42,4 +45,7 @@ object DatabaseModule {
 
     @Provides
     fun provideAchievementDao(db: RelationalIQDatabase): AchievementDao = db.achievementDao()
+
+    @Provides
+    fun provideExamResultDao(db: RelationalIQDatabase): ExamResultDao = db.examResultDao()
 }

@@ -55,6 +55,7 @@ fun DashboardScreen(
     onNavigateToProgress: () -> Unit,
     onNavigateToSettings: () -> Unit,
     onNavigateToScience: () -> Unit,
+    onNavigateToExam: (Int) -> Unit = {},
     viewModel: DashboardViewModel = hiltViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -150,6 +151,50 @@ fun DashboardScreen(
                         Icon(Icons.Default.PlayArrow, contentDescription = null)
                         Spacer(modifier = Modifier.width(8.dp))
                         Text("Start Session", fontSize = 16.sp)
+                    }
+                }
+            }
+
+            // Exam prompt
+            if (state.examAvailable && state.pendingExamId != null) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
+                    shape = RoundedCornerShape(20.dp)
+                ) {
+                    Column(modifier = Modifier.padding(24.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                Icons.Default.EmojiEvents,
+                                contentDescription = null,
+                                tint = StreakAmber,
+                                modifier = Modifier.size(28.dp)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = "Exam Available!",
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "You've completed enough stages for an exam. Pass to unlock the next set of stages!",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onTertiaryContainer.copy(alpha = 0.7f)
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Button(
+                            onClick = { onNavigateToExam(state.pendingExamId!!) },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(52.dp),
+                            shape = RoundedCornerShape(14.dp)
+                        ) {
+                            Icon(Icons.Default.EmojiEvents, contentDescription = null)
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text("Take Exam", fontSize = 16.sp)
+                        }
                     }
                 }
             }

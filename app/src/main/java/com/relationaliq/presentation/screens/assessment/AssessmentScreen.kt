@@ -12,7 +12,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Assessment
 import androidx.compose.material.icons.filled.Psychology
@@ -53,7 +56,7 @@ fun AssessmentScreen(
             onStart = { viewModel.startAssessment(isPreAssessment) }
         )
         state.showResult -> AssessmentResult(
-            score = state.score,
+            state = state,
             isPreAssessment = isPreAssessment,
             onContinue = {
                 viewModel.saveResult(isPreAssessment)
@@ -103,7 +106,7 @@ private fun AssessmentIntro(
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "20 questions • ~5 minutes",
+            text = "70 questions • 7 subscales • ~15 minutes",
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.primary
         )
@@ -223,17 +226,19 @@ private fun AssessmentTrial(
 
 @Composable
 private fun AssessmentResult(
-    score: Float,
+    state: AssessmentUiState,
     isPreAssessment: Boolean,
     onContinue: () -> Unit
 ) {
+    val score = state.score
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(32.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+            .padding(32.dp)
+            .verticalScroll(rememberScrollState()),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.height(24.dp))
         Icon(
             imageVector = Icons.Default.Psychology,
             contentDescription = null,
@@ -258,7 +263,39 @@ private fun AssessmentResult(
             style = MaterialTheme.typography.headlineSmall,
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
         )
+
+        if (state.fluencyScore > 0f) {
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Avg response: ${(state.fluencyScore / 1000).toInt()}s per correct answer",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+            )
+        }
+
         Spacer(modifier = Modifier.height(24.dp))
+
+        if (state.subscaleScores.isNotEmpty()) {
+            Text(
+                text = "Subscale Breakdown",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+
+            val orderedSubscales = listOf(
+                "Coordination", "Comparison", "Opposition",
+                "Temporal", "Containment", "Mixed", "Analogy"
+            )
+
+            for (name in orderedSubscales) {
+                val subscale = state.subscaleScores[name] ?: continue
+                SubscaleRow(subscale)
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = if (isPreAssessment)
                 "This is your baseline. Start training to improve your relational reasoning!"
@@ -268,7 +305,7 @@ private fun AssessmentResult(
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
         )
-        Spacer(modifier = Modifier.height(48.dp))
+        Spacer(modifier = Modifier.height(32.dp))
         Button(
             onClick = onContinue,
             modifier = Modifier
@@ -279,6 +316,49 @@ private fun AssessmentResult(
             Text(
                 text = if (isPreAssessment) "Start Your Training Program" else "View Results",
                 fontSize = 16.sp
+            )
+        }
+        Spacer(modifier = Modifier.height(24.dp))
+    }
+}
+
+@Composable
+private fun SubscaleRow(subscale: SubscaleScore) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = subscale.name,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                LinearProgressIndicator(
+                    progress = { subscale.accuracy },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(6.dp)
+                        .clip(RoundedCornerShape(3.dp)),
+                    color = if (subscale.accuracy >= 0.7f) CorrectGreenDark else
+                        if (subscale.accuracy >= 0.4f) MaterialTheme.colorScheme.primary
+                        else IncorrectRedDark
+                )
+            }
+            Spacer(modifier = Modifier.width(12.dp))
+            Text(
+                text = "${subscale.correct}/${subscale.total}",
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.primary
             )
         }
     }

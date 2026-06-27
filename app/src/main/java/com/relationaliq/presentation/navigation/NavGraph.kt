@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.relationaliq.presentation.screens.assessment.AssessmentScreen
 import com.relationaliq.presentation.screens.dashboard.DashboardScreen
+import com.relationaliq.presentation.screens.exam.ExamScreen
 import com.relationaliq.presentation.screens.onboarding.OnboardingScreen
 import com.relationaliq.presentation.screens.science.ScienceScreen
 import com.relationaliq.presentation.screens.settings.SettingsScreen
@@ -68,6 +69,9 @@ fun NavGraph(
                 },
                 onNavigateToScience = {
                     navController.navigate(Screen.Science.route)
+                },
+                onNavigateToExam = { examId ->
+                    navController.navigate(Screen.Exam.createRoute(examId))
                 }
             )
         }
@@ -111,7 +115,28 @@ fun NavGraph(
                     navController.navigate(Screen.Training.createRoute(stageId)) {
                         popUpTo(Screen.Dashboard.route)
                     }
+                },
+                onNavigateToExam = { examId ->
+                    navController.navigate(Screen.Exam.createRoute(examId)) {
+                        popUpTo(Screen.Dashboard.route)
+                    }
                 }
+            )
+        }
+
+        composable(
+            route = Screen.Exam.route,
+            arguments = listOf(navArgument("examId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val examId = backStackEntry.arguments?.getInt("examId") ?: 1
+            ExamScreen(
+                examId = examId,
+                onExamComplete = { passed ->
+                    navController.navigate(Screen.Dashboard.route) {
+                        popUpTo(Screen.Dashboard.route) { inclusive = true }
+                    }
+                },
+                onBack = { navController.popBackStack() }
             )
         }
 

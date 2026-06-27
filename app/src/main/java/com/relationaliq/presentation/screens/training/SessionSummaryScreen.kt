@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
@@ -42,6 +43,7 @@ import com.relationaliq.presentation.theme.XpBlue
 fun SessionSummaryScreen(
     onContinue: () -> Unit,
     onRetry: (Int) -> Unit,
+    onNavigateToExam: (Int) -> Unit = {},
     viewModel: SessionSummaryViewModel = hiltViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -125,6 +127,21 @@ fun SessionSummaryScreen(
         }
 
         Spacer(modifier = Modifier.height(48.dp))
+
+        if (state.examAvailable && state.examId != null) {
+            Button(
+                onClick = { onNavigateToExam(state.examId!!) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Icon(Icons.Default.EmojiEvents, contentDescription = null)
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Take Exam", fontSize = 18.sp)
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+        }
 
         Button(
             onClick = onContinue,
